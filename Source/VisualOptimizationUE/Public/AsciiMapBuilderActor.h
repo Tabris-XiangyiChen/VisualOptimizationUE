@@ -10,7 +10,7 @@
 class UInstancedStaticMeshComponent;
 class UStaticMesh;
 class UMaterialInterface;
-
+class UAsciiTileSetDataAsset;
 
 UCLASS()
 class VISUALOPTIMIZATIONUE_API AAsciiMapBuilderActor : public AActor
@@ -31,6 +31,9 @@ public:
 
 protected:
     virtual void OnConstruction(const FTransform& Transform) override;
+
+    UPROPERTY(EditAnywhere, Category = "ASCII Map")
+    UAsciiTileSetDataAsset* TileSet = nullptr;
 
 private:
     bool LoadMapLines(TArray<FString>& OutLines) const;

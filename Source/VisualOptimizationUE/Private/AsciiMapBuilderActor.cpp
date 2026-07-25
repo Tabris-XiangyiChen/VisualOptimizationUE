@@ -7,6 +7,7 @@
 #include "Materials/MaterialInterface.h"
 #include "Misc/FileHelper.h"
 #include "Misc/Paths.h"
+#include "AsciiTileSetDataAsset.h"
 
 // Sets default values
 AAsciiMapBuilderActor::AAsciiMapBuilderActor()
@@ -68,6 +69,26 @@ void AAsciiMapBuilderActor::CreateDefaultTileDefinitions()
 {
     TileDefinitions.Empty();
 
+    if (TileSet)
+    {
+        for (const FAsciiTileDefinition& Definition : TileSet->TileDefinitions)
+        {
+            if (Definition.Symbol.IsEmpty())
+            {
+                UE_LOG(LogTemp, Warning, TEXT("TileSet contains an empty symbol definition."));
+                continue;
+            }
+
+            TileDefinitions.Add(Definition.Symbol, Definition);
+        }
+
+        UE_LOG(LogTemp, Display, TEXT("Loaded %d tile definitions from TileSet."), TileDefinitions.Num());
+        return;
+    }
+
+    UE_LOG(LogTemp, Warning, TEXT("No TileSet assigned. Using built-in fallback tile definitions."));
+
+
     TileDefinitions.Add(TEXT("0"), { TEXT("0"), TEXT("void"), EAsciiTileRole::Void, false, 0.0f, 0.0f });
     TileDefinitions.Add(TEXT("."), { TEXT("."), TEXT("stone_floor"), EAsciiTileRole::Floor, true, 0.0f, 0.0f });
     TileDefinitions.Add(TEXT("g"), { TEXT("g"), TEXT("grass_ground"), EAsciiTileRole::Grass, true, 0.0f, 0.0f });
@@ -76,7 +97,11 @@ void AAsciiMapBuilderActor::CreateDefaultTileDefinitions()
     TileDefinitions.Add(TEXT("#"), { TEXT("#"), TEXT("stone_wall"), EAsciiTileRole::Wall, true, 0.0f, WallHeight });
     TileDefinitions.Add(TEXT("D"), { TEXT("D"), TEXT("wooden_door"), EAsciiTileRole::Door, true, 0.0f, DoorHeight });
 
-    TileDefinitions.Add(TEXT("T"), { TEXT("T"), TEXT("tree_foliage_proxy"), EAsciiTileRole::Foliage, true, 0.0f, 200.0f });
+    //TileDefinitions.Add(TEXT("T"), { TEXT("T"), TEXT("tree_foliage_proxy"), EAsciiTileRole::Foliage, true, 0.0f, 200.0f });
+    //TileDefinitions.Add(TEXT("c"), { TEXT("c"), TEXT("clover_patch"), EAsciiTileRole::Grass, true, 2.0f, 0.0f });
+    //TileDefinitions.Add(TEXT("^"), { TEXT("^"), TEXT("tall_grass"), EAsciiTileRole::Grass, true, 2.0f, 0.0f });
+
+    TileDefinitions.Add(TEXT("T"), { TEXT("T"), TEXT("tree_foliage_proxy"), EAsciiTileRole::Grass, true, 2.0f, 0.0f });
     TileDefinitions.Add(TEXT("c"), { TEXT("c"), TEXT("clover_patch"), EAsciiTileRole::Grass, true, 2.0f, 0.0f });
     TileDefinitions.Add(TEXT("^"), { TEXT("^"), TEXT("tall_grass"), EAsciiTileRole::Grass, true, 2.0f, 0.0f });
 }
@@ -170,15 +195,66 @@ void AAsciiMapBuilderActor::GenerateMap()
 
     UE_LOG(LogTemp, Display, TEXT("Generating ASCII map: %d x %d"), Width, Height);
 
+    TMap<FString, int32> SymbolCounts;
+    int32 GeneratedTileCount = 0;
+    int32 SkippedTileCount = 0;
+    int32 UnknownSymbolCount = 0;
+
     for (int32 Row = 0; Row < Height; ++Row)
     {
         for (int32 Column = 0; Column < Width; ++Column)
         {
             const TCHAR Symbol = Lines[Row][Column];
+            const FString SymbolKey = FString::Chr(Symbol);
+
+            SymbolCounts.FindOrAdd(SymbolKey)++;
+
+            const FAsciiTileDefinition Def = GetDefinitionForSymbol(Symbol);
+            if (!TileDefinitions.Contains(SymbolKey))
+            {
+                UnknownSymbolCount++;
+                UE_LOG(LogTemp, Warning, TEXT("Unknown map symbol '%s' at row=%d column=%d"),
+                    *SymbolKey, Row, Column);
+            }
+
+            if (Def.bGenerate)
+            {
+                GeneratedTileCount++;
+            }
+            else
+            {
+                SkippedTileCount++;
+            }
+
             const FVector WorldLocation = GridToWorld(Column, Row, Width, Height);
             AddTileInstance(Symbol, WorldLocation);
         }
     }
+
+    UE_LOG(LogTemp, Display, TEXT("ASCII map generation finished."));
+    UE_LOG(LogTemp, Display, TEXT("Map size: %d x %d = %d cells"), Width, Height, Width * Height);
+    UE_LOG(LogTemp, Display, TEXT("Generated tiles: %d"), GeneratedTileCount);
+    UE_LOG(LogTemp, Display, TEXT("Skipped tiles: %d"), SkippedTileCount);
+    UE_LOG(LogTemp, Display, TEXT("Unknown symbols: %d"), UnknownSymbolCount);
+
+    for (const TPair<FString, int32>& Pair : SymbolCounts)
+    {
+        const FAsciiTileDefinition Def = GetDefinitionForSymbol(Pair.Key[0]);
+        UE_LOG(LogTemp, Display, TEXT("Symbol '%s' | Count=%d | Slot=%s | Role=%d | Generate=%s"),
+            *Pair.Key,
+            Pair.Value,
+            *Def.SlotId.ToString(),
+            static_cast<int32>(Def.Role),
+            Def.bGenerate ? TEXT("true") : TEXT("false"));
+    }
+
+    UE_LOG(LogTemp, Display, TEXT("Instance counts | Floor=%d Grass=%d Wood=%d Water=%d Wall=%d Door=%d"),
+        FloorInstances->GetInstanceCount(),
+        GrassInstances->GetInstanceCount(),
+        WoodInstances->GetInstanceCount(),
+        WaterInstances->GetInstanceCount(),
+        WallInstances->GetInstanceCount(),
+        DoorInstances->GetInstanceCount());
 }
 
 void AAsciiMapBuilderActor::AddTileInstance(const TCHAR Symbol, const FVector& WorldLocation)
