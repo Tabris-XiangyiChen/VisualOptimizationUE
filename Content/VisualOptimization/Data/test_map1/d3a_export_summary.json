@@ -1,0 +1,36 @@
+{
+  "round_id": "d3a_ue_ready_export",
+  "map_id": "test_map1",
+  "dry_run": false,
+  "status": "operational_pass",
+  "package_id": "20260727_220046_test_map1_d3a_ue_ready_export",
+  "package_dir": "I:\\Disertation\\VisualOptimization\\generated\\ue_ready\\runs\\20260727_220046_test_map1_d3a_ue_ready_export",
+  "latest_dir": "I:\\Disertation\\VisualOptimization\\generated\\ue_ready\\latest\\test_map1",
+  "d1_run": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260726_200854_test_map1_d1_tileset_solver_mvp",
+  "material_source_run": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure",
+  "llm_calls": 0,
+  "sd_calls": 0,
+  "stablematerials_calls": 0,
+  "new_image_generation": false,
+  "validation": {
+    "passed": true,
+    "errors": [],
+    "expected_material_slots": [
+      "grass_ground",
+      "stone_floor",
+      "stone_wall",
+      "water",
+      "wood_planks",
+      "wooden_door"
+    ],
+    "manifest_material_slots": [
+      "grass_ground",
+      "stone_floor",
+      "stone_wall",
+      "water",
+      "wood_planks",
+      "wooden_door"
+    ]
+  },
+  "warnings": []
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": "material_slots_to_generate_v1",
+  "map_id": "test_map1",
+  "solver": {
+    "name": "rule_based_tileset_solver",
+    "version": "d1_mvp",
+    "llm_calls": 0,
+    "sd_calls": 0,
+    "stablematerials_calls": 0
+  },
+  "unique_material_slots": [
+    {
+      "material_slot_id": "grass_ground",
+      "material_family": "organic_ground",
+      "material_families": [
+        "organic_ground"
+      ],
+      "used_by_symbols": [
+        "T",
+        "^",
+        "c",
+        "g"
+      ],
+      "used_by_tile_type_ids": [
+        "organic_ground"
+      ],
+      "suggested_prompt_hint": "dark green mossy grass ground material"
+    },
+    {
+      "material_slot_id": "stone_floor",
+      "material_family": "stone",
+      "material_families": [
+        "stone"
+      ],
+      "used_by_symbols": [
+        "."
+      ],
+      "used_by_tile_type_ids": [
+        "stone_floor_basic"
+      ],
+      "suggested_prompt_hint": "dark worn stone floor material"
+    },
+    {
+      "material_slot_id": "stone_wall",
+      "material_family": "stone",
+      "material_families": [
+        "stone"
+      ],
+      "used_by_symbols": [
+        "#"
+      ],
+      "used_by_tile_type_ids": [
+        "stone_wall_basic"
+      ],
+      "suggested_prompt_hint": "weathered grey stone wall material"
+    },
+    {
+      "material_slot_id": "water",
+      "material_family": "water",
+      "material_families": [
+        "water"
+      ],
+      "used_by_symbols": [
+        "~"
+      ],
+      "used_by_tile_type_ids": [
+        "water_surface"
+      ],
+      "suggested_prompt_hint": "dark blue-green shallow water surface"
+    },
+    {
+      "material_slot_id": "wood_planks",
+      "material_family": "wood",
+      "material_families": [
+        "wood"
+      ],
+      "used_by_symbols": [
+        "="
+      ],
+      "used_by_tile_type_ids": [
+        "wood_planks_floor"
+      ],
+      "suggested_prompt_hint": "aged brown wooden plank floor material"
+    },
+    {
+      "material_slot_id": "wooden_door",
+      "material_family": "wood",
+      "material_families": [
+        "wood"
+      ],
+      "used_by_symbols": [
+        "D"
+      ],
+      "used_by_tile_type_ids": [
+        "wooden_door_old"
+      ],
+      "suggested_prompt_hint": "old wooden dungeon door material"
+    }
+  ]
+}

@@ -4,9 +4,14 @@
 #include "AsciiMapBuilderActor.h"
 #include "Components/InstancedStaticMeshComponent.h"
 #include "Engine/StaticMesh.h"
+#include "Engine/Texture2D.h"
+#include "IImageWrapper.h"
+#include "IImageWrapperModule.h"
 #include "Materials/MaterialInterface.h"
+#include "Materials/MaterialInstanceDynamic.h"
 #include "Misc/FileHelper.h"
 #include "Misc/Paths.h"
+#include "Modules/ModuleManager.h"
 #include "Dom/JsonObject.h"
 #include "Dom/JsonValue.h"
 #include "Serialization/JsonReader.h"
@@ -62,6 +67,7 @@ void AAsciiMapBuilderActor::OnConstruction(const FTransform& Transform)
     Super::OnConstruction(Transform);
 
     RebuildTileDefinitionsCache();
+    RebuildRuntimeMaterialCache();
 
     if (TilePlaneMesh)
     {
@@ -357,6 +363,368 @@ FAsciiTileDefinition AAsciiMapBuilderActor::GetDefinitionForSymbol(const TCHAR S
     return { Key, TEXT("unknown"), TEXT("unknown"), NAME_None, NAME_None, EAsciiTileRole::Void, false, 0.0f, 0.0f };
 }
 
+void AAsciiMapBuilderActor::RebuildRuntimeMaterialCache()
+{
+    RuntimeMaterialCache.Empty();
+    RuntimeLoadedTextures.Empty();
+
+    if (!bUseMaterialManifestJson)
+    {
+        UE_LOG(LogTemp, Display, TEXT("D3B: Material manifest loading disabled."));
+        return;
+    }
+
+    UE_LOG(LogTemp, Display, TEXT("D3B: Material manifest loading enabled."));
+
+    if (!RuntimeMaterialMaster)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: RuntimeMaterialMaster is null; falling back to MaterialRegistry."));
+        return;
+    }
+
+    if (!LoadRuntimeMaterialsFromManifest())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: Failed to load runtime material manifest. Falling back to MaterialRegistry."));
+        RuntimeMaterialCache.Empty();
+        RuntimeLoadedTextures.Empty();
+    }
+
+    UE_LOG(LogTemp, Display, TEXT("D3B: Runtime material cache count: %d"), RuntimeMaterialCache.Num());
+}
+
+bool AAsciiMapBuilderActor::LoadRuntimeMaterialsFromManifest()
+{
+    if (MaterialManifestJsonPath.IsEmpty())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: MaterialManifestJsonPath is empty."));
+        return false;
+    }
+
+    FString FullManifestPath = bMaterialManifestJsonPathIsAbsolute
+        ? MaterialManifestJsonPath
+        : FPaths::ProjectContentDir() / MaterialManifestJsonPath;
+
+    FPaths::NormalizeFilename(FullManifestPath);
+    const FString ManifestDir = FPaths::GetPath(FullManifestPath);
+
+    UE_LOG(LogTemp, Display, TEXT("D3B: Attempting to load material manifest: %s"), *FullManifestPath);
+
+    FString FileContent;
+    if (!FFileHelper::LoadFileToString(FileContent, *FullManifestPath))
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: Failed to read material manifest: %s"), *FullManifestPath);
+        return false;
+    }
+
+    TSharedPtr<FJsonObject> RootObject;
+    const TSharedRef<TJsonReader<>> JsonReader = TJsonReaderFactory<>::Create(FileContent);
+    if (!FJsonSerializer::Deserialize(JsonReader, RootObject) || !RootObject.IsValid())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: Failed to parse material manifest: %s"), *FullManifestPath);
+        return false;
+    }
+
+    FString SchemaVersion;
+    if (!RootObject->TryGetStringField(TEXT("schema_version"), SchemaVersion) || SchemaVersion != TEXT("material_manifest_v1"))
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: Unsupported or missing schema_version '%s'. Expected 'material_manifest_v1'."),
+            *SchemaVersion);
+        return false;
+    }
+
+    FString MapId;
+    RootObject->TryGetStringField(TEXT("map_id"), MapId);
+    UE_LOG(LogTemp, Display, TEXT("D3B: Loaded material_manifest_v1 for map_id=%s"),
+        MapId.IsEmpty() ? TEXT("<unknown>") : *MapId);
+
+    const TArray<TSharedPtr<FJsonValue>>* MaterialValues = nullptr;
+    if (!RootObject->TryGetArrayField(TEXT("materials"), MaterialValues) || !MaterialValues)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: material_manifest.json does not contain a valid materials array."));
+        return false;
+    }
+
+    for (int32 MaterialIndex = 0; MaterialIndex < MaterialValues->Num(); ++MaterialIndex)
+    {
+        const TSharedPtr<FJsonValue>& MaterialValue = (*MaterialValues)[MaterialIndex];
+        const TSharedPtr<FJsonObject> MaterialObject = MaterialValue.IsValid() ? MaterialValue->AsObject() : nullptr;
+        if (!MaterialObject.IsValid())
+        {
+            UE_LOG(LogTemp, Warning, TEXT("D3B: Skipping material entry %d because it is not a JSON object."), MaterialIndex);
+            continue;
+        }
+
+        FString MaterialSlotIdString;
+        if (!MaterialObject->TryGetStringField(TEXT("material_slot_id"), MaterialSlotIdString) || MaterialSlotIdString.IsEmpty())
+        {
+            UE_LOG(LogTemp, Warning, TEXT("D3B: Skipping material entry %d because material_slot_id is missing or empty."), MaterialIndex);
+            continue;
+        }
+
+        const TSharedPtr<FJsonObject>* TexturesObjectPtr = nullptr;
+        if (!MaterialObject->TryGetObjectField(TEXT("textures"), TexturesObjectPtr) || !TexturesObjectPtr || !TexturesObjectPtr->IsValid())
+        {
+            UE_LOG(LogTemp, Warning, TEXT("D3B: Missing textures object for slot '%s'; skipping runtime material for this slot."),
+                *MaterialSlotIdString);
+            continue;
+        }
+
+        FString BaseColorTexturePath;
+        FString NormalTexturePath;
+        FString RoughnessTexturePath;
+        FString HeightTexturePath;
+        FString MetallicTexturePath;
+
+        TryGetOptionalJsonStringField(*TexturesObjectPtr, TEXT("basecolor"), BaseColorTexturePath);
+        TryGetOptionalJsonStringField(*TexturesObjectPtr, TEXT("normal"), NormalTexturePath);
+        TryGetOptionalJsonStringField(*TexturesObjectPtr, TEXT("roughness"), RoughnessTexturePath);
+        TryGetOptionalJsonStringField(*TexturesObjectPtr, TEXT("height"), HeightTexturePath);
+        TryGetOptionalJsonStringField(*TexturesObjectPtr, TEXT("metallic"), MetallicTexturePath);
+
+        const FName MaterialSlotId(*MaterialSlotIdString);
+        if (RuntimeMaterialCache.Contains(MaterialSlotId))
+        {
+            UE_LOG(LogTemp, Warning, TEXT("D3B: Duplicate material_slot_id '%s' in manifest; later definition overwrites earlier."),
+                *MaterialSlotIdString);
+        }
+
+        if (UMaterialInstanceDynamic* RuntimeMaterial = CreateRuntimeMaterialFromManifestEntry(
+            MaterialSlotId,
+            ManifestDir,
+            BaseColorTexturePath,
+            NormalTexturePath,
+            RoughnessTexturePath,
+            HeightTexturePath,
+            MetallicTexturePath))
+        {
+            RuntimeMaterialCache.Add(MaterialSlotId, RuntimeMaterial);
+        }
+    }
+
+    return RuntimeMaterialCache.Num() > 0;
+}
+
+UMaterialInstanceDynamic* AAsciiMapBuilderActor::CreateRuntimeMaterialFromManifestEntry(
+    FName MaterialSlotId,
+    const FString& ManifestDir,
+    const FString& BaseColorTexturePath,
+    const FString& NormalTexturePath,
+    const FString& RoughnessTexturePath,
+    const FString& HeightTexturePath,
+    const FString& MetallicTexturePath)
+{
+    if (!RuntimeMaterialMaster)
+    {
+        return nullptr;
+    }
+
+    if (BaseColorTexturePath.IsEmpty())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: Missing basecolor for slot '%s'; skipping runtime material for this slot."),
+            *MaterialSlotId.ToString());
+        return nullptr;
+    }
+
+    TArray<FString> LoadedMapNames;
+
+    UTexture2D* BaseColorTexture = LoadTexture2DFromFile(ResolveManifestTexturePath(ManifestDir, BaseColorTexturePath), true);
+    if (!BaseColorTexture)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: Failed to load basecolor for slot '%s'; skipping runtime material for this slot."),
+            *MaterialSlotId.ToString());
+        return nullptr;
+    }
+
+    RuntimeLoadedTextures.Add(BaseColorTexture);
+    LoadedMapNames.Add(TEXT("basecolor"));
+
+    UMaterialInstanceDynamic* RuntimeMaterial = UMaterialInstanceDynamic::Create(RuntimeMaterialMaster, this);
+    if (!RuntimeMaterial)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: Failed to create dynamic material instance for slot '%s'."),
+            *MaterialSlotId.ToString());
+        return nullptr;
+    }
+
+    RuntimeMaterial->SetTextureParameterValue(TEXT("BaseColorTex"), BaseColorTexture);
+    RuntimeMaterial->SetScalarParameterValue(TEXT("RoughnessValue"), 0.8f);
+    RuntimeMaterial->SetScalarParameterValue(TEXT("MetallicValue"), 0.0f);
+    RuntimeMaterial->SetScalarParameterValue(TEXT("UVTiling"), 1.0f);
+
+    UTexture2D* NormalTexture = nullptr;
+    if (!NormalTexturePath.IsEmpty())
+    {
+        NormalTexture = LoadTexture2DFromFile(ResolveManifestTexturePath(ManifestDir, NormalTexturePath), false);
+        if (NormalTexture)
+        {
+            RuntimeLoadedTextures.Add(NormalTexture);
+            RuntimeMaterial->SetTextureParameterValue(TEXT("NormalTex"), NormalTexture);
+            LoadedMapNames.Add(TEXT("normal"));
+        }
+    }
+
+    UTexture2D* RoughnessTexture = nullptr;
+    if (!RoughnessTexturePath.IsEmpty())
+    {
+        RoughnessTexture = LoadTexture2DFromFile(ResolveManifestTexturePath(ManifestDir, RoughnessTexturePath), false);
+        if (RoughnessTexture)
+        {
+            RuntimeLoadedTextures.Add(RoughnessTexture);
+            RuntimeMaterial->SetTextureParameterValue(TEXT("RoughnessTex"), RoughnessTexture);
+            LoadedMapNames.Add(TEXT("roughness"));
+        }
+    }
+
+    UTexture2D* HeightTexture = nullptr;
+    if (!HeightTexturePath.IsEmpty())
+    {
+        HeightTexture = LoadTexture2DFromFile(ResolveManifestTexturePath(ManifestDir, HeightTexturePath), false);
+        if (HeightTexture)
+        {
+            RuntimeLoadedTextures.Add(HeightTexture);
+            RuntimeMaterial->SetTextureParameterValue(TEXT("HeightTex"), HeightTexture);
+            LoadedMapNames.Add(TEXT("height"));
+        }
+    }
+
+    UTexture2D* MetallicTexture = nullptr;
+    if (!MetallicTexturePath.IsEmpty())
+    {
+        MetallicTexture = LoadTexture2DFromFile(ResolveManifestTexturePath(ManifestDir, MetallicTexturePath), false);
+        if (MetallicTexture)
+        {
+            RuntimeLoadedTextures.Add(MetallicTexture);
+            RuntimeMaterial->SetTextureParameterValue(TEXT("MetallicTex"), MetallicTexture);
+            LoadedMapNames.Add(TEXT("metallic"));
+        }
+    }
+
+    RuntimeMaterial->SetScalarParameterValue(TEXT("bUseNormalMap"), NormalTexture ? 1.0f : 0.0f);
+
+    UE_LOG(LogTemp, Display, TEXT("D3B: Loaded runtime material for slot '%s' with maps: %s"),
+        *MaterialSlotId.ToString(),
+        *FString::Join(LoadedMapNames, TEXT(", ")));
+
+    if (MetallicTexture)
+    {
+        UE_LOG(LogTemp, Display, TEXT("D3B: Metallic texture loaded for slot '%s'; MetallicValue remains 0.0 unless the master material uses MetallicTex."),
+            *MaterialSlotId.ToString());
+    }
+
+    return RuntimeMaterial;
+}
+
+UTexture2D* AAsciiMapBuilderActor::LoadTexture2DFromFile(const FString& FullPath, bool bSRGB)
+{
+    if (FullPath.IsEmpty())
+    {
+        return nullptr;
+    }
+
+    TArray<uint8> FileData;
+    if (!FFileHelper::LoadFileToArray(FileData, *FullPath) || FileData.Num() == 0)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: Failed to read texture file: %s"), *FullPath);
+        return nullptr;
+    }
+
+    IImageWrapperModule& ImageWrapperModule = FModuleManager::LoadModuleChecked<IImageWrapperModule>(TEXT("ImageWrapper"));
+    const EImageFormat ImageFormat = ImageWrapperModule.DetectImageFormat(FileData.GetData(), FileData.Num());
+    if (ImageFormat == EImageFormat::Invalid)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: Unsupported texture image format: %s"), *FullPath);
+        return nullptr;
+    }
+
+    TSharedPtr<IImageWrapper> ImageWrapper = ImageWrapperModule.CreateImageWrapper(ImageFormat);
+    if (!ImageWrapper.IsValid() || !ImageWrapper->SetCompressed(FileData.GetData(), FileData.Num()))
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: Failed to decode compressed texture: %s"), *FullPath);
+        return nullptr;
+    }
+
+    TArray64<uint8> RawData;
+    if (!ImageWrapper->GetRaw(ERGBFormat::BGRA, 8, RawData))
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: Failed to convert texture to BGRA8: %s"), *FullPath);
+        return nullptr;
+    }
+
+    const int32 Width = ImageWrapper->GetWidth();
+    const int32 Height = ImageWrapper->GetHeight();
+    const int64 ExpectedRawDataSize = static_cast<int64>(Width) * static_cast<int64>(Height) * 4;
+    if (RawData.Num() < ExpectedRawDataSize)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: Decoded texture data is smaller than expected: %s"), *FullPath);
+        return nullptr;
+    }
+
+    UTexture2D* Texture = UTexture2D::CreateTransient(Width, Height, PF_B8G8R8A8);
+    if (!Texture || !Texture->GetPlatformData() || Texture->GetPlatformData()->Mips.Num() == 0)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D3B: Failed to create transient texture: %s"), *FullPath);
+        return nullptr;
+    }
+
+    Texture->SRGB = bSRGB;
+    Texture->NeverStream = true;
+
+    void* TextureData = Texture->GetPlatformData()->Mips[0].BulkData.Lock(LOCK_READ_WRITE);
+    if (!TextureData)
+    {
+        Texture->GetPlatformData()->Mips[0].BulkData.Unlock();
+        UE_LOG(LogTemp, Warning, TEXT("D3B: Failed to lock transient texture data: %s"), *FullPath);
+        return nullptr;
+    }
+
+    FMemory::Memcpy(TextureData, RawData.GetData(), static_cast<SIZE_T>(ExpectedRawDataSize));
+    Texture->GetPlatformData()->Mips[0].BulkData.Unlock();
+    Texture->UpdateResource();
+
+    return Texture;
+}
+
+FString AAsciiMapBuilderActor::ResolveManifestTexturePath(const FString& ManifestDir, const FString& TexturePath) const
+{
+    if (TexturePath.IsEmpty())
+    {
+        return FString();
+    }
+
+    FString FullPath = FPaths::IsRelative(TexturePath)
+        ? FPaths::Combine(ManifestDir, TexturePath)
+        : TexturePath;
+
+    FPaths::NormalizeFilename(FullPath);
+    return FullPath;
+}
+
+UMaterialInterface* AAsciiMapBuilderActor::ResolveMaterialForSlot(FName MaterialSlotId, UMaterialInterface* FallbackMaterial) const
+{
+    if (bUseMaterialManifestJson)
+    {
+        if (UMaterialInstanceDynamic* const* RuntimeMaterial = RuntimeMaterialCache.Find(MaterialSlotId))
+        {
+            if (*RuntimeMaterial)
+            {
+                UE_LOG(LogTemp, Verbose, TEXT("D3B: Using RuntimeMaterialCache for slot '%s'."), *MaterialSlotId.ToString());
+                return *RuntimeMaterial;
+            }
+        }
+    }
+
+    if (MaterialRegistry)
+    {
+        if (UMaterialInterface* FoundMaterial = MaterialRegistry->FindMaterialBySlotId(MaterialSlotId))
+        {
+            UE_LOG(LogTemp, Verbose, TEXT("D3B: Falling back to MaterialRegistry for slot '%s'."), *MaterialSlotId.ToString());
+            return FoundMaterial;
+        }
+    }
+
+    return FallbackMaterial;
+}
+
 void AAsciiMapBuilderActor::ApplyMaterialsFromRegistry()
 {
     UMaterialInterface* FloorMat = FindMaterialForSlot(TEXT("stone_floor"), StoneFloorMaterial);
@@ -373,20 +741,12 @@ void AAsciiMapBuilderActor::ApplyMaterialsFromRegistry()
     if (WallMat)  WallInstances->SetMaterial(0, WallMat);
     if (DoorMat)  DoorInstances->SetMaterial(0, DoorMat);
 
-    UE_LOG(LogTemp, Display, TEXT("Applied materials from MaterialRegistry."));
+    UE_LOG(LogTemp, Display, TEXT("Applied materials from runtime cache, MaterialRegistry, or fallback materials."));
 }
 
 UMaterialInterface* AAsciiMapBuilderActor::FindMaterialForSlot(FName SlotId, UMaterialInterface* FallbackMaterial) const
 {
-    if (MaterialRegistry)
-    {
-        if (UMaterialInterface* FoundMaterial = MaterialRegistry->FindMaterialBySlotId(SlotId))
-        {
-            return FoundMaterial;
-        }
-    }
-
-    return FallbackMaterial;
+    return ResolveMaterialForSlot(SlotId, FallbackMaterial);
 }
 
 bool AAsciiMapBuilderActor::LoadMapLines(TArray<FString>& OutLines) const
@@ -493,7 +853,9 @@ UInstancedStaticMeshComponent* AAsciiMapBuilderActor::GetOrCreateInstanceCompone
 void AAsciiMapBuilderActor::GenerateMap()
 {
     RebuildTileDefinitionsCache();
+    RebuildRuntimeMaterialCache();
     ClearGeneratedMap();
+    ApplyMaterialsFromRegistry();
 
     TArray<FString> Lines;
     if (!LoadMapLines(Lines))
@@ -673,12 +1035,6 @@ bool AAsciiMapBuilderActor::TryAddTileInstanceRuntimeResolved(const TCHAR Symbol
         return false;
     }
 
-    if (!MaterialRegistry)
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Runtime resolver fallback for symbol '%s': MaterialRegistry is not assigned."), *SymbolKey);
-        return false;
-    }
-
     const FName MeshId = Def.MeshId;
     const FName MaterialSlotId = Def.MaterialSlotId.IsNone() ? Def.SlotId : Def.MaterialSlotId;
 
@@ -703,10 +1059,10 @@ bool AAsciiMapBuilderActor::TryAddTileInstanceRuntimeResolved(const TCHAR Symbol
         return false;
     }
 
-    UMaterialInterface* Material = MaterialRegistry->FindMaterialBySlotId(MaterialSlotId);
+    UMaterialInterface* Material = ResolveMaterialForSlot(MaterialSlotId, nullptr);
     if (!Material)
     {
-        UE_LOG(LogTemp, Warning, TEXT("Runtime resolver fallback for symbol '%s': MaterialSlotId '%s' was not found."),
+        UE_LOG(LogTemp, Warning, TEXT("Runtime resolver fallback for symbol '%s': MaterialSlotId '%s' was not found in RuntimeMaterialCache or MaterialRegistry."),
             *SymbolKey,
             *MaterialSlotId.ToString());
         return false;

@@ -10,9 +10,11 @@
 class UInstancedStaticMeshComponent;
 class UStaticMesh;
 class UMaterialInterface;
+class UMaterialInstanceDynamic;
 class UAsciiTileSetDataAsset;
 class UMaterialRegistryDataAsset;
 class UGeneratedMeshRegistryDataAsset;
+class UTexture2D;
 
 UCLASS()
 class VISUALOPTIMIZATIONUE_API AAsciiMapBuilderActor : public AActor
@@ -62,6 +64,20 @@ private:
     FAsciiTileDefinition GetDefinitionForSymbol(const TCHAR Symbol) const;
     EAsciiTileRole ConvertResolvedRoleStringToTileRole(const FString& RoleString) const;
 
+    void RebuildRuntimeMaterialCache();
+    bool LoadRuntimeMaterialsFromManifest();
+    UMaterialInstanceDynamic* CreateRuntimeMaterialFromManifestEntry(
+        FName MaterialSlotId,
+        const FString& ManifestDir,
+        const FString& BaseColorTexturePath,
+        const FString& NormalTexturePath,
+        const FString& RoughnessTexturePath,
+        const FString& HeightTexturePath,
+        const FString& MetallicTexturePath);
+    UTexture2D* LoadTexture2DFromFile(const FString& FullPath, bool bSRGB);
+    FString ResolveManifestTexturePath(const FString& ManifestDir, const FString& TexturePath) const;
+    UMaterialInterface* ResolveMaterialForSlot(FName MaterialSlotId, UMaterialInterface* FallbackMaterial) const;
+
     void ApplyMaterialsFromRegistry();
     UMaterialInterface* FindMaterialForSlot(FName SlotId, UMaterialInterface* FallbackMaterial) const;
 
@@ -78,6 +94,24 @@ private:
 
     UPROPERTY(EditAnywhere, Category = "ASCII Map|Resolved TileSet JSON")
     FString ResolvedTileSetJsonPath = TEXT("VisualOptimization/Data/test_map1/resolved_tileset.json");
+
+    UPROPERTY(EditAnywhere, Category = "ASCII Map|Material Manifest JSON")
+    bool bUseMaterialManifestJson = false;
+
+    UPROPERTY(EditAnywhere, Category = "ASCII Map|Material Manifest JSON")
+    bool bMaterialManifestJsonPathIsAbsolute = false;
+
+    UPROPERTY(EditAnywhere, Category = "ASCII Map|Material Manifest JSON")
+    FString MaterialManifestJsonPath = TEXT("VisualOptimization/Generated/test_map1/material_manifest.json");
+
+    UPROPERTY(EditAnywhere, Category = "ASCII Map|Material Manifest JSON")
+    UMaterialInterface* RuntimeMaterialMaster = nullptr;
+
+    UPROPERTY(Transient)
+    TMap<FName, UMaterialInstanceDynamic*> RuntimeMaterialCache;
+
+    UPROPERTY(Transient)
+    TArray<UTexture2D*> RuntimeLoadedTextures;
 
     UPROPERTY(EditAnywhere, Category = "ASCII Map")
     float TileSize = 400.0f;

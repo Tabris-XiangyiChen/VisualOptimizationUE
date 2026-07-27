@@ -1,0 +1,321 @@
+{
+  "schema_version": "material_manifest_v1",
+  "map_id": "test_map1",
+  "asset_package_id": "20260727_220046_test_map1_d3a_ue_ready_export",
+  "created_at": "2026-07-27T22:00:46",
+  "source": {
+    "resolved_tileset_json": "resolved_tileset.json",
+    "material_slots_to_generate_json": "material_slots_to_generate.json",
+    "resolved_tileset_source": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260726_200854_test_map1_d1_tileset_solver_mvp\\02_diagnostics\\resolved_tilesets\\resolved_tileset.json",
+    "material_slots_to_generate_source": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260726_200854_test_map1_d1_tileset_solver_mvp\\02_diagnostics\\resolved_tilesets\\material_slots_to_generate.json",
+    "reused_material_source_run": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure",
+    "source_map_override": {
+      "path": "I:\\Disertation\\VisualOptimization\\data\\ue_asset_catalogs\\test_map1_material_source_map.json",
+      "exists": false,
+      "materials": {}
+    },
+    "llm_calls": 0,
+    "sd_calls": 0,
+    "stablematerials_calls": 0,
+    "new_image_generation": false
+  },
+  "ue_handoff": {
+    "recommended_ue_content_destination": "Content/VisualOptimization/Generated/test_map1",
+    "path_mode": "relative_to_manifest_or_package_root",
+    "intended_loader": "future UE D3A runtime material manifest loader"
+  },
+  "materials": [
+    {
+      "material_slot_id": "grass_ground",
+      "material_family": "organic_ground",
+      "material_families": [
+        "organic_ground"
+      ],
+      "used_by_symbols": [
+        "T",
+        "^",
+        "c",
+        "g"
+      ],
+      "used_by_tile_type_ids": [
+        "organic_ground"
+      ],
+      "textures": {
+        "basecolor": "materials/grass_ground/basecolor.png",
+        "normal": "materials/grass_ground/normal.png",
+        "roughness": "materials/grass_ground/roughness.png",
+        "height": "materials/grass_ground/height.png",
+        "metallic": "materials/grass_ground/metallic.png"
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\grass_ground\\basecolor.png",
+        "normal": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\grass_ground\\normal.png",
+        "roughness": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\grass_ground\\roughness.png",
+        "height": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\grass_ground\\height.png",
+        "metallic": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\grass_ground\\metallic.png"
+      },
+      "available_maps": [
+        "basecolor",
+        "height",
+        "metallic",
+        "normal",
+        "roughness"
+      ],
+      "missing_maps": [],
+      "suggested_prompt_hint": "dark green mossy grass ground material",
+      "source_backend_hint": "stablematerials_lcm_reused",
+      "tile_references": [
+        {
+          "symbol": "g",
+          "tile_type_id": "organic_ground",
+          "role": "grass_surface",
+          "mesh_id": "tile_plane"
+        },
+        {
+          "symbol": "c",
+          "tile_type_id": "organic_ground",
+          "role": "grass_surface",
+          "mesh_id": "tile_plane"
+        },
+        {
+          "symbol": "T",
+          "tile_type_id": "organic_ground",
+          "role": "grass_surface",
+          "mesh_id": "tile_plane"
+        },
+        {
+          "symbol": "^",
+          "tile_type_id": "organic_ground",
+          "role": "grass_surface",
+          "mesh_id": "tile_plane"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "stone_floor",
+      "material_family": "stone",
+      "material_families": [
+        "stone"
+      ],
+      "used_by_symbols": [
+        "."
+      ],
+      "used_by_tile_type_ids": [
+        "stone_floor_basic"
+      ],
+      "textures": {
+        "basecolor": "materials/stone_floor/basecolor.png",
+        "normal": "materials/stone_floor/normal.png",
+        "roughness": "materials/stone_floor/roughness.png",
+        "height": "materials/stone_floor/height.png",
+        "metallic": "materials/stone_floor/metallic.png"
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\stone_floor\\basecolor.png",
+        "normal": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\stone_floor\\normal.png",
+        "roughness": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\stone_floor\\roughness.png",
+        "height": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\stone_floor\\height.png",
+        "metallic": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\stone_floor\\metallic.png"
+      },
+      "available_maps": [
+        "basecolor",
+        "height",
+        "metallic",
+        "normal",
+        "roughness"
+      ],
+      "missing_maps": [],
+      "suggested_prompt_hint": "dark worn stone floor material",
+      "source_backend_hint": "stablematerials_lcm_reused",
+      "tile_references": [
+        {
+          "symbol": ".",
+          "tile_type_id": "stone_floor_basic",
+          "role": "floor_surface",
+          "mesh_id": "tile_plane"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "stone_wall",
+      "material_family": "stone",
+      "material_families": [
+        "stone"
+      ],
+      "used_by_symbols": [
+        "#"
+      ],
+      "used_by_tile_type_ids": [
+        "stone_wall_basic"
+      ],
+      "textures": {
+        "basecolor": "materials/stone_wall/basecolor.png",
+        "normal": "materials/stone_wall/normal.png",
+        "roughness": "materials/stone_wall/roughness.png",
+        "height": "materials/stone_wall/height.png",
+        "metallic": "materials/stone_wall/metallic.png"
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\stone_wall\\basecolor.png",
+        "normal": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\stone_wall\\normal.png",
+        "roughness": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\stone_wall\\roughness.png",
+        "height": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\stone_wall\\height.png",
+        "metallic": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\stone_wall\\metallic.png"
+      },
+      "available_maps": [
+        "basecolor",
+        "height",
+        "metallic",
+        "normal",
+        "roughness"
+      ],
+      "missing_maps": [],
+      "suggested_prompt_hint": "weathered grey stone wall material",
+      "source_backend_hint": "stablematerials_lcm_reused",
+      "tile_references": [
+        {
+          "symbol": "#",
+          "tile_type_id": "stone_wall_basic",
+          "role": "wall_surface",
+          "mesh_id": "wall_block"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "water",
+      "material_family": "water",
+      "material_families": [
+        "water"
+      ],
+      "used_by_symbols": [
+        "~"
+      ],
+      "used_by_tile_type_ids": [
+        "water_surface"
+      ],
+      "textures": {
+        "basecolor": "materials/water/basecolor.png",
+        "normal": "materials/water/normal.png",
+        "roughness": "materials/water/roughness.png",
+        "height": "materials/water/height.png",
+        "metallic": "materials/water/metallic.png"
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\water\\basecolor.png",
+        "normal": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\water\\normal.png",
+        "roughness": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\water\\roughness.png",
+        "height": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\water\\height.png",
+        "metallic": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\water\\metallic.png"
+      },
+      "available_maps": [
+        "basecolor",
+        "height",
+        "metallic",
+        "normal",
+        "roughness"
+      ],
+      "missing_maps": [],
+      "suggested_prompt_hint": "dark blue-green shallow water surface",
+      "source_backend_hint": "stablematerials_lcm_reused",
+      "tile_references": [
+        {
+          "symbol": "~",
+          "tile_type_id": "water_surface",
+          "role": "water_surface",
+          "mesh_id": "water_plane"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "wood_planks",
+      "material_family": "wood",
+      "material_families": [
+        "wood"
+      ],
+      "used_by_symbols": [
+        "="
+      ],
+      "used_by_tile_type_ids": [
+        "wood_planks_floor"
+      ],
+      "textures": {
+        "basecolor": "materials/wood_planks/basecolor.png",
+        "normal": "materials/wood_planks/normal.png",
+        "roughness": "materials/wood_planks/roughness.png",
+        "height": "materials/wood_planks/height.png",
+        "metallic": "materials/wood_planks/metallic.png"
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\wood_planks\\T_WoodPlanks_BaseColor.png",
+        "normal": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\wood_planks\\normal.png",
+        "roughness": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\wood_planks\\roughness.png",
+        "height": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\wood_planks\\height.png",
+        "metallic": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\wood_planks\\metallic.png"
+      },
+      "available_maps": [
+        "basecolor",
+        "height",
+        "metallic",
+        "normal",
+        "roughness"
+      ],
+      "missing_maps": [],
+      "suggested_prompt_hint": "aged brown wooden plank floor material",
+      "source_backend_hint": "stablematerials_lcm_reused",
+      "tile_references": [
+        {
+          "symbol": "=",
+          "tile_type_id": "wood_planks_floor",
+          "role": "floor_surface",
+          "mesh_id": "tile_plane"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "wooden_door",
+      "material_family": "wood",
+      "material_families": [
+        "wood"
+      ],
+      "used_by_symbols": [
+        "D"
+      ],
+      "used_by_tile_type_ids": [
+        "wooden_door_old"
+      ],
+      "textures": {
+        "basecolor": "materials/wooden_door/basecolor.png",
+        "normal": "materials/wooden_door/normal.png",
+        "roughness": "materials/wooden_door/roughness.png",
+        "height": "materials/wooden_door/height.png",
+        "metallic": "materials/wooden_door/metallic.png"
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\wooden_door\\basecolor.png",
+        "normal": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\wooden_door\\normal.png",
+        "roughness": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\wooden_door\\roughness.png",
+        "height": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\wooden_door\\height.png",
+        "metallic": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260720_024444_test_map1_round29_test_map1_material_generation_input_restructure\\01_generated\\stablematerials_lcm\\wooden_door\\metallic.png"
+      },
+      "available_maps": [
+        "basecolor",
+        "height",
+        "metallic",
+        "normal",
+        "roughness"
+      ],
+      "missing_maps": [],
+      "suggested_prompt_hint": "old wooden dungeon door material",
+      "source_backend_hint": "stablematerials_lcm_reused",
+      "tile_references": [
+        {
+          "symbol": "D",
+          "tile_type_id": "wooden_door_old",
+          "role": "door_prop",
+          "mesh_id": "door_proxy"
+        }
+      ]
+    }
+  ],
+  "warnings": []
+}

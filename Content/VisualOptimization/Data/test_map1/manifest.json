@@ -1,0 +1,59 @@
+{
+  "schema_version": "ue_ready_asset_package_v1",
+  "map_id": "test_map1",
+  "package_id": "20260727_220046_test_map1_d3a_ue_ready_export",
+  "created_by": "d3a_ue_ready_export",
+  "created_at": "2026-07-27T22:00:46",
+  "new_image_generation": false,
+  "files": {
+    "resolved_tileset": "resolved_tileset.json",
+    "material_slots_to_generate": "material_slots_to_generate.json",
+    "material_manifest": "material_manifest.json",
+    "readme": "README.md"
+  },
+  "directories": {
+    "materials": "materials"
+  },
+  "ue_copy_recommendation": {
+    "copy_package_to": "I:\\Disertation\\VisualOptimizationUE\\Content\\VisualOptimization\\Generated\\test_map1",
+    "resolved_tileset_path_for_builder": "VisualOptimization/Generated/test_map1/resolved_tileset.json",
+    "material_manifest_path_for_future_loader": "VisualOptimization/Generated/test_map1/material_manifest.json"
+  },
+  "package_files": [
+    "README.md",
+    "manifest.json",
+    "material_manifest.json",
+    "material_slots_to_generate.json",
+    "materials/grass_ground/basecolor.png",
+    "materials/grass_ground/height.png",
+    "materials/grass_ground/metallic.png",
+    "materials/grass_ground/normal.png",
+    "materials/grass_ground/roughness.png",
+    "materials/stone_floor/basecolor.png",
+    "materials/stone_floor/height.png",
+    "materials/stone_floor/metallic.png",
+    "materials/stone_floor/normal.png",
+    "materials/stone_floor/roughness.png",
+    "materials/stone_wall/basecolor.png",
+    "materials/stone_wall/height.png",
+    "materials/stone_wall/metallic.png",
+    "materials/stone_wall/normal.png",
+    "materials/stone_wall/roughness.png",
+    "materials/water/basecolor.png",
+    "materials/water/height.png",
+    "materials/water/metallic.png",
+    "materials/water/normal.png",
+    "materials/water/roughness.png",
+    "materials/wood_planks/basecolor.png",
+    "materials/wood_planks/height.png",
+    "materials/wood_planks/metallic.png",
+    "materials/wood_planks/normal.png",
+    "materials/wood_planks/roughness.png",
+    "materials/wooden_door/basecolor.png",
+    "materials/wooden_door/height.png",
+    "materials/wooden_door/metallic.png",
+    "materials/wooden_door/normal.png",
+    "materials/wooden_door/roughness.png",
+    "resolved_tileset.json"
+  ]
+}
