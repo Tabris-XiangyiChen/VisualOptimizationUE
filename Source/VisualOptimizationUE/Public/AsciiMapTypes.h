@@ -21,21 +21,30 @@ struct FAsciiTileDefinition
 {
     GENERATED_BODY()
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ASCII Tile")
     FString Symbol;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ASCII Tile")
     FName SlotId;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ASCII Tile")
+    FName TileTypeId;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ASCII Tile")
+    FName MeshId;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ASCII Tile")
+    FName MaterialSlotId;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ASCII Tile")
     EAsciiTileRole Role = EAsciiTileRole::Void;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ASCII Tile")
     bool bGenerate = true;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ASCII Tile")
     float ZOffset = 0.0f;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ASCII Tile")
     float Height = 0.0f;
 };

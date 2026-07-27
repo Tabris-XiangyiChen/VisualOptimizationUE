@@ -11,6 +11,8 @@ class UInstancedStaticMeshComponent;
 class UStaticMesh;
 class UMaterialInterface;
 class UAsciiTileSetDataAsset;
+class UMaterialRegistryDataAsset;
+class UGeneratedMeshRegistryDataAsset;
 
 UCLASS()
 class VISUALOPTIMIZATIONUE_API AAsciiMapBuilderActor : public AActor
@@ -35,16 +37,47 @@ protected:
     UPROPERTY(EditAnywhere, Category = "ASCII Map")
     UAsciiTileSetDataAsset* TileSet = nullptr;
 
+    UPROPERTY(EditAnywhere, Category = "ASCII Map")
+    UMaterialRegistryDataAsset* MaterialRegistry = nullptr;
+
+    UPROPERTY(EditAnywhere, Category = "ASCII Map")
+    UGeneratedMeshRegistryDataAsset* MeshRegistry = nullptr;
+
+    UPROPERTY(EditAnywhere, Category = "ASCII Map|Runtime Resolver")
+    bool bUseRuntimeAssetResolver = true;
+
+    UPROPERTY()
+    TMap<FName, UInstancedStaticMeshComponent*> RuntimeInstanceComponents;
+
 private:
     bool LoadMapLines(TArray<FString>& OutLines) const;
     FVector GridToWorld(int32 Column, int32 Row, int32 Width, int32 Height) const;
     void AddTileInstance(const TCHAR Symbol, const FVector& WorldLocation);
+    bool TryAddTileInstanceRuntimeResolved(const TCHAR Symbol, const FVector& WorldLocation, const FAsciiTileDefinition& Def);
+    void RebuildTileDefinitionsCache();
+    bool LoadTileDefinitionsFromResolvedJson();
+    bool LoadTileDefinitionsFromTileSetDataAsset();
+    void LoadBuiltInFallbackTileDefinitions();
     void CreateDefaultTileDefinitions();
     FAsciiTileDefinition GetDefinitionForSymbol(const TCHAR Symbol) const;
+    EAsciiTileRole ConvertResolvedRoleStringToTileRole(const FString& RoleString) const;
 
+    void ApplyMaterialsFromRegistry();
+    UMaterialInterface* FindMaterialForSlot(FName SlotId, UMaterialInterface* FallbackMaterial) const;
+
+    UInstancedStaticMeshComponent* GetOrCreateInstanceComponent(FName ComponentKey, UStaticMesh* Mesh, UMaterialInterface* Material);
 private:
     UPROPERTY(EditAnywhere, Category = "ASCII Map")
     FString RelativeMapPath = TEXT("VisualOptimization/Data/test_map1/map.txt");
+
+    UPROPERTY(EditAnywhere, Category = "ASCII Map|Resolved TileSet JSON")
+    bool bUseResolvedTileSetJson = false;
+
+    UPROPERTY(EditAnywhere, Category = "ASCII Map|Resolved TileSet JSON")
+    bool bResolvedTileSetJsonPathIsAbsolute = false;
+
+    UPROPERTY(EditAnywhere, Category = "ASCII Map|Resolved TileSet JSON")
+    FString ResolvedTileSetJsonPath = TEXT("VisualOptimization/Data/test_map1/resolved_tileset.json");
 
     UPROPERTY(EditAnywhere, Category = "ASCII Map")
     float TileSize = 400.0f;
