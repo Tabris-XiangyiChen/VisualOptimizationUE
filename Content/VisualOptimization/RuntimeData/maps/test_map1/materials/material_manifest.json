@@ -1,0 +1,509 @@
+{
+  "schema_version": "material_manifest_v1",
+  "map_id": "test_map1",
+  "created_at": "2026-07-28T20:23:08",
+  "source": {
+    "semantic_plan": "04_resolved_semantics/test_map1/resolved_semantic_plan.json",
+    "compiled_sd15_prompts": "06_compiled_prompts/test_map1/compiled_sd15_prompts.json",
+    "compiled_stablematerials_prompts": "06_compiled_prompts/test_map1/compiled_stablematerials_prompts.json",
+    "material_backend_dispatch": "08_material_dispatch/test_map1/material_backend_dispatch_report.json",
+    "material_mode": "generate-missing",
+    "runtime_source_backend": "stablematerials_lcm",
+    "llm_calls": 1,
+    "sd_calls": 6,
+    "stablematerials_calls": 6,
+    "new_image_generation": true
+  },
+  "materials": [
+    {
+      "material_slot_id": "grass_ground",
+      "material_family": "organic_ground",
+      "semantic_material_family": "ground_organic",
+      "material_families": [
+        "organic_ground"
+      ],
+      "used_by_symbols": [
+        "T",
+        "^",
+        "c",
+        "g"
+      ],
+      "used_by_tile_type_ids": [
+        "organic_ground"
+      ],
+      "tile_references": [
+        {
+          "symbol": "T",
+          "tile_type_id": "organic_ground",
+          "role": "grass_surface",
+          "mesh_id": "tile_plane",
+          "material_family": "organic_ground",
+          "tile_count_in_map": 54
+        },
+        {
+          "symbol": "^",
+          "tile_type_id": "organic_ground",
+          "role": "grass_surface",
+          "mesh_id": "tile_plane",
+          "material_family": "organic_ground",
+          "tile_count_in_map": 1
+        },
+        {
+          "symbol": "c",
+          "tile_type_id": "organic_ground",
+          "role": "grass_surface",
+          "mesh_id": "tile_plane",
+          "material_family": "organic_ground",
+          "tile_count_in_map": 2
+        },
+        {
+          "symbol": "g",
+          "tile_type_id": "organic_ground",
+          "role": "grass_surface",
+          "mesh_id": "tile_plane",
+          "material_family": "organic_ground",
+          "tile_count_in_map": 71
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/grass_ground/basecolor.png",
+        "normal": "textures/grass_ground/normal.png",
+        "roughness": "textures/grass_ground/roughness.png",
+        "height": "textures/grass_ground/height.png",
+        "metallic": "textures/grass_ground/metallic.png"
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\grass_ground\\basecolor.png",
+        "normal": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\grass_ground\\normal.png",
+        "roughness": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\grass_ground\\roughness.png",
+        "height": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\grass_ground\\height.png",
+        "metallic": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\grass_ground\\metallic.png"
+      },
+      "available_maps": [
+        "basecolor",
+        "height",
+        "metallic",
+        "normal",
+        "roughness"
+      ],
+      "missing_maps": [],
+      "source_backend_hint": "stablematerials_lcm",
+      "reuse_decision": "generated_new_textures",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\sd15\\grass_ground\\basecolor.png",
+      "semantic_brief": {
+        "identity": "mossy grass ground material",
+        "macro_structure": "low organic ground cover",
+        "surface_detail": "soft moss and uneven grass blades",
+        "color_palette": "dark green with earthy shadow",
+        "condition": "wet natural growth",
+        "material_family": "ground_organic"
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "sd15_compiler_v3_rule_based",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "photorealistic material texture, mossy grass ground material, low organic ground cover, soft moss and uneven grass blades, dark green with earthy shadow, wet natural growth",
+          "negative_prompt": "",
+          "strategy": "photorealistic_anchor_non_water"
+        },
+        "stablematerials_lcm": {
+          "compiler": "stablematerials_compiler_v1_rule_based",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "mossy grass ground material, low organic ground cover, soft moss and uneven grass blades, dark green with earthy shadow, wet natural growth",
+          "negative_prompt": null,
+          "strategy": "raw_semantic_no_extra_anchor"
+        }
+      }
+    },
+    {
+      "material_slot_id": "stone_floor",
+      "material_family": "stone",
+      "semantic_material_family": "solid_stone",
+      "material_families": [
+        "stone"
+      ],
+      "used_by_symbols": [
+        "."
+      ],
+      "used_by_tile_type_ids": [
+        "stone_floor_basic"
+      ],
+      "tile_references": [
+        {
+          "symbol": ".",
+          "tile_type_id": "stone_floor_basic",
+          "role": "floor_surface",
+          "mesh_id": "tile_plane",
+          "material_family": "stone",
+          "tile_count_in_map": 94
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/stone_floor/basecolor.png",
+        "normal": "textures/stone_floor/normal.png",
+        "roughness": "textures/stone_floor/roughness.png",
+        "height": "textures/stone_floor/height.png",
+        "metallic": "textures/stone_floor/metallic.png"
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\stone_floor\\basecolor.png",
+        "normal": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\stone_floor\\normal.png",
+        "roughness": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\stone_floor\\roughness.png",
+        "height": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\stone_floor\\height.png",
+        "metallic": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\stone_floor\\metallic.png"
+      },
+      "available_maps": [
+        "basecolor",
+        "height",
+        "metallic",
+        "normal",
+        "roughness"
+      ],
+      "missing_maps": [],
+      "source_backend_hint": "stablematerials_lcm",
+      "reuse_decision": "generated_new_textures",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\sd15\\stone_floor\\basecolor.png",
+      "semantic_brief": {
+        "identity": "worn stone floor material",
+        "macro_structure": "old utilitarian floor slabs",
+        "surface_detail": "abraded stone grain and shallow cracks",
+        "color_palette": "dark grey with desaturated green",
+        "condition": "damp weathered",
+        "material_family": "solid_stone"
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "sd15_compiler_v3_rule_based",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "photorealistic material texture, worn stone floor material, old utilitarian floor slabs, abraded stone grain and shallow cracks, dark grey with desaturated green, damp weathered",
+          "negative_prompt": "",
+          "strategy": "photorealistic_anchor_non_water"
+        },
+        "stablematerials_lcm": {
+          "compiler": "stablematerials_compiler_v1_rule_based",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "worn stone floor material, old utilitarian floor slabs, abraded stone grain and shallow cracks, dark grey with desaturated green, damp weathered",
+          "negative_prompt": null,
+          "strategy": "raw_semantic_no_extra_anchor"
+        }
+      }
+    },
+    {
+      "material_slot_id": "stone_wall",
+      "material_family": "stone",
+      "semantic_material_family": "solid_stone",
+      "material_families": [
+        "stone"
+      ],
+      "used_by_symbols": [
+        "#"
+      ],
+      "used_by_tile_type_ids": [
+        "stone_wall_basic"
+      ],
+      "tile_references": [
+        {
+          "symbol": "#",
+          "tile_type_id": "stone_wall_basic",
+          "role": "wall_surface",
+          "mesh_id": "wall_block",
+          "material_family": "stone",
+          "tile_count_in_map": 76
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/stone_wall/basecolor.png",
+        "normal": "textures/stone_wall/normal.png",
+        "roughness": "textures/stone_wall/roughness.png",
+        "height": "textures/stone_wall/height.png",
+        "metallic": "textures/stone_wall/metallic.png"
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\stone_wall\\basecolor.png",
+        "normal": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\stone_wall\\normal.png",
+        "roughness": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\stone_wall\\roughness.png",
+        "height": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\stone_wall\\height.png",
+        "metallic": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\stone_wall\\metallic.png"
+      },
+      "available_maps": [
+        "basecolor",
+        "height",
+        "metallic",
+        "normal",
+        "roughness"
+      ],
+      "missing_maps": [],
+      "source_backend_hint": "stablematerials_lcm",
+      "reuse_decision": "generated_new_textures",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\sd15\\stone_wall\\basecolor.png",
+      "semantic_brief": {
+        "identity": "weathered stone wall material",
+        "macro_structure": "solid natural stone masonry",
+        "surface_detail": "rough mineral chips and dark joints",
+        "color_palette": "muted grey with moss green hints",
+        "condition": "damp weathered",
+        "material_family": "solid_stone"
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "sd15_compiler_v3_rule_based",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "photorealistic material texture, weathered stone wall material, solid natural stone masonry, rough mineral chips and dark joints, muted grey with moss green hints, damp weathered",
+          "negative_prompt": "",
+          "strategy": "photorealistic_anchor_non_water"
+        },
+        "stablematerials_lcm": {
+          "compiler": "stablematerials_compiler_v1_rule_based",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "weathered stone wall material, solid natural stone masonry, rough mineral chips and dark joints, muted grey with moss green hints, damp weathered",
+          "negative_prompt": null,
+          "strategy": "raw_semantic_no_extra_anchor"
+        }
+      }
+    },
+    {
+      "material_slot_id": "water",
+      "material_family": "water",
+      "semantic_material_family": "water_like",
+      "material_families": [
+        "water"
+      ],
+      "used_by_symbols": [
+        "~"
+      ],
+      "used_by_tile_type_ids": [
+        "water_surface"
+      ],
+      "tile_references": [
+        {
+          "symbol": "~",
+          "tile_type_id": "water_surface",
+          "role": "water_surface",
+          "mesh_id": "water_plane",
+          "material_family": "water",
+          "tile_count_in_map": 54
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/water/basecolor.png",
+        "normal": "textures/water/normal.png",
+        "roughness": "textures/water/roughness.png",
+        "height": "textures/water/height.png",
+        "metallic": "textures/water/metallic.png"
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\water\\basecolor.png",
+        "normal": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\water\\normal.png",
+        "roughness": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\water\\roughness.png",
+        "height": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\water\\height.png",
+        "metallic": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\water\\metallic.png"
+      },
+      "available_maps": [
+        "basecolor",
+        "height",
+        "metallic",
+        "normal",
+        "roughness"
+      ],
+      "missing_maps": [],
+      "source_backend_hint": "stablematerials_lcm",
+      "reuse_decision": "generated_new_textures",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\sd15\\water\\basecolor.png",
+      "semantic_brief": {
+        "identity": "dark shallow water surface",
+        "macro_structure": "calm low ripple surface",
+        "surface_detail": "soft turbidity and subtle reflection",
+        "color_palette": "blue green with dark depth",
+        "condition": "still damp ruin water",
+        "material_family": "water_like"
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "sd15_compiler_v3_rule_based",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "dark shallow water surface, calm low ripple surface, soft turbidity and subtle reflection, blue green with dark depth, still damp ruin water",
+          "negative_prompt": "",
+          "strategy": "raw_concise_water_like"
+        },
+        "stablematerials_lcm": {
+          "compiler": "stablematerials_compiler_v1_rule_based",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "dark shallow water surface, calm low ripple surface, soft turbidity and subtle reflection, blue green with dark depth, still damp ruin water",
+          "negative_prompt": null,
+          "strategy": "raw_semantic_no_extra_anchor"
+        }
+      }
+    },
+    {
+      "material_slot_id": "wood_planks",
+      "material_family": "wood",
+      "semantic_material_family": "wood",
+      "material_families": [
+        "wood"
+      ],
+      "used_by_symbols": [
+        "="
+      ],
+      "used_by_tile_type_ids": [
+        "wood_planks_floor"
+      ],
+      "tile_references": [
+        {
+          "symbol": "=",
+          "tile_type_id": "wood_planks_floor",
+          "role": "floor_surface",
+          "mesh_id": "tile_plane",
+          "material_family": "wood",
+          "tile_count_in_map": 38
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/wood_planks/basecolor.png",
+        "normal": "textures/wood_planks/normal.png",
+        "roughness": "textures/wood_planks/roughness.png",
+        "height": "textures/wood_planks/height.png",
+        "metallic": "textures/wood_planks/metallic.png"
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\wood_planks\\basecolor.png",
+        "normal": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\wood_planks\\normal.png",
+        "roughness": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\wood_planks\\roughness.png",
+        "height": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\wood_planks\\height.png",
+        "metallic": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\wood_planks\\metallic.png"
+      },
+      "available_maps": [
+        "basecolor",
+        "height",
+        "metallic",
+        "normal",
+        "roughness"
+      ],
+      "missing_maps": [],
+      "source_backend_hint": "stablematerials_lcm",
+      "reuse_decision": "generated_new_textures",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\sd15\\wood_planks\\basecolor.png",
+      "semantic_brief": {
+        "identity": "aged wooden plank material",
+        "macro_structure": "parallel worn timber boards",
+        "surface_detail": "dark grain splits and softened edges",
+        "color_palette": "aged brown with grey rot",
+        "condition": "damp old wood",
+        "material_family": "wood"
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "sd15_compiler_v3_rule_based",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "photorealistic material texture, aged wooden plank material, parallel worn timber boards, dark grain splits and softened edges, aged brown with grey rot, damp old wood",
+          "negative_prompt": "",
+          "strategy": "photorealistic_anchor_non_water"
+        },
+        "stablematerials_lcm": {
+          "compiler": "stablematerials_compiler_v1_rule_based",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "aged wooden plank material, parallel worn timber boards, dark grain splits and softened edges, aged brown with grey rot, damp old wood",
+          "negative_prompt": null,
+          "strategy": "raw_semantic_no_extra_anchor"
+        }
+      }
+    },
+    {
+      "material_slot_id": "wooden_door",
+      "material_family": "wood",
+      "semantic_material_family": "wood",
+      "material_families": [
+        "wood"
+      ],
+      "used_by_symbols": [
+        "D"
+      ],
+      "used_by_tile_type_ids": [
+        "wooden_door_old"
+      ],
+      "tile_references": [
+        {
+          "symbol": "D",
+          "tile_type_id": "wooden_door_old",
+          "role": "door_prop",
+          "mesh_id": "door_proxy",
+          "material_family": "wood",
+          "tile_count_in_map": 8
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/wooden_door/basecolor.png",
+        "normal": "textures/wooden_door/normal.png",
+        "roughness": "textures/wooden_door/roughness.png",
+        "height": "textures/wooden_door/height.png",
+        "metallic": "textures/wooden_door/metallic.png"
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\wooden_door\\basecolor.png",
+        "normal": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\wooden_door\\normal.png",
+        "roughness": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\wooden_door\\roughness.png",
+        "height": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\wooden_door\\height.png",
+        "metallic": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\stablematerials_lcm\\wooden_door\\metallic.png"
+      },
+      "available_maps": [
+        "basecolor",
+        "height",
+        "metallic",
+        "normal",
+        "roughness"
+      ],
+      "missing_maps": [],
+      "source_backend_hint": "stablematerials_lcm",
+      "reuse_decision": "generated_new_textures",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimization\\outputs\\runs\\20260728_202032_test_map1_d6c_full_pipeline_material_regen\\07_generation\\test_map1\\sd15\\wooden_door\\basecolor.png",
+      "semantic_brief": {
+        "identity": "old wooden door material",
+        "macro_structure": "vertical heavy wooden boards",
+        "surface_detail": "worn grain and dark seams",
+        "color_palette": "deep brown and muted umber",
+        "condition": "aged dungeon wood",
+        "material_family": "wood"
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "sd15_compiler_v3_rule_based",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "photorealistic material texture, old wooden door material, vertical heavy wooden boards, worn grain and dark seams, deep brown and muted umber, aged dungeon wood",
+          "negative_prompt": "",
+          "strategy": "photorealistic_anchor_non_water"
+        },
+        "stablematerials_lcm": {
+          "compiler": "stablematerials_compiler_v1_rule_based",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "old wooden door material, vertical heavy wooden boards, worn grain and dark seams, deep brown and muted umber, aged dungeon wood",
+          "negative_prompt": null,
+          "strategy": "raw_semantic_no_extra_anchor"
+        }
+      }
+    }
+  ],
+  "warnings": []
+}

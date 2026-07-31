@@ -1,0 +1,28 @@
+{
+  "schema_version": "runtime_map_package_v1",
+  "map_id": "test_map1",
+  "display_name": "test_map1",
+  "package_dir": "maps/test_map1",
+  "files": {
+    "layout": "layout/map.txt",
+    "resolved_tileset": "rules/resolved_tileset.json",
+    "material_manifest": "materials/material_manifest.json"
+  },
+  "directories": {
+    "material_textures": "materials/textures"
+  },
+  "generation": {
+    "type": "deterministic_grid_builder",
+    "coordinate_system": "tile_grid",
+    "tile_size": 100
+  },
+  "source": {
+    "authoring_map_package": "I:\\Disertation\\VisualOptimization\\data\\maps\\test_map1",
+    "project_root": "I:\\Disertation\\VisualOptimization",
+    "llm_calls": 1,
+    "sd_calls": 6,
+    "stablematerials_calls": 6,
+    "new_image_generation": true
+  },
+  "warnings": []
+}

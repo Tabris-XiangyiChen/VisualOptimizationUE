@@ -1,0 +1,21 @@
+{
+  "schema_version": "map_package_index_v1",
+  "created_at": "2026-07-28T20:23:08",
+  "created_by": "d6c_full_pipeline_material_regen",
+  "runtime_root": "VisualOptimization/RuntimeData",
+  "runtime_root_absolute": "I:\\Disertation\\VisualOptimization\\generated\\ue_ready\\runtime_data",
+  "ue_copy_destination": "I:\\Disertation\\VisualOptimizationUE\\Content\\VisualOptimization\\RuntimeData",
+  "maps": [
+    {
+      "map_id": "test_map1",
+      "display_name": "test_map1",
+      "package_dir": "maps/test_map1",
+      "manifest": "maps/test_map1/manifest.json",
+      "layout": "maps/test_map1/layout/map.txt",
+      "resolved_tileset": "maps/test_map1/rules/resolved_tileset.json",
+      "material_manifest": "maps/test_map1/materials/material_manifest.json",
+      "material_textures_dir": "maps/test_map1/materials/textures"
+    }
+  ],
+  "warnings": []
+}

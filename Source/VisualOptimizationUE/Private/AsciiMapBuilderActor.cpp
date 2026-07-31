@@ -351,6 +351,250 @@ EAsciiTileRole AAsciiMapBuilderActor::ConvertResolvedRoleStringToTileRole(const 
     return EAsciiTileRole::Void;
 }
 
+bool AAsciiMapBuilderActor::ResolveSelectedMapPackageFromIndex()
+{
+    TSharedPtr<FJsonObject> RootObject;
+    FString FullIndexPath;
+    if (!LoadMapPackageIndexJson(RootObject, FullIndexPath))
+    {
+        return false;
+    }
+
+    TSharedPtr<FJsonObject> MapEntry;
+    if (!TryFindMapEntryInIndex(RootObject, SelectedMapId, MapEntry))
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D4B: Selected map not found. Falling back to manual paths."));
+        return false;
+    }
+
+    if (!ApplyMapEntryRuntimePaths(MapEntry, FullIndexPath))
+    {
+        return false;
+    }
+
+    UE_LOG(LogTemp, Display, TEXT("D4B: Runtime map package resolved for SelectedMapId=%s"), *SelectedMapId.ToString());
+    return true;
+}
+
+bool AAsciiMapBuilderActor::LoadMapPackageIndexJson(TSharedPtr<FJsonObject>& OutRootObject, FString& OutFullIndexPath) const
+{
+    OutRootObject.Reset();
+    OutFullIndexPath.Empty();
+
+    if (MapPackageIndexPath.IsEmpty())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D4B: MapPackageIndexPath is empty."));
+        return false;
+    }
+
+    OutFullIndexPath = bMapPackageIndexPathIsAbsolute
+        ? MapPackageIndexPath
+        : FPaths::ProjectContentDir() / MapPackageIndexPath;
+
+    FPaths::NormalizeFilename(OutFullIndexPath);
+    UE_LOG(LogTemp, Display, TEXT("D4B: Attempting to load map package index: %s"), *OutFullIndexPath);
+
+    FString FileContent;
+    if (!FFileHelper::LoadFileToString(FileContent, *OutFullIndexPath))
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D4B: Failed to read map package index: %s"), *OutFullIndexPath);
+        return false;
+    }
+
+    const TSharedRef<TJsonReader<>> JsonReader = TJsonReaderFactory<>::Create(FileContent);
+    if (!FJsonSerializer::Deserialize(JsonReader, OutRootObject) || !OutRootObject.IsValid())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D4B: Failed to parse map package index: %s"), *OutFullIndexPath);
+        return false;
+    }
+
+    FString SchemaVersion;
+    if (!OutRootObject->TryGetStringField(TEXT("schema_version"), SchemaVersion) || SchemaVersion != TEXT("map_package_index_v1"))
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D4B: Unsupported or missing schema_version '%s'. Expected 'map_package_index_v1'."),
+            *SchemaVersion);
+        return false;
+    }
+
+    UE_LOG(LogTemp, Display, TEXT("D4B: Loaded map_package_index_v1"));
+    return true;
+}
+
+bool AAsciiMapBuilderActor::TryFindMapEntryInIndex(const TSharedPtr<FJsonObject>& RootObject, FName InSelectedMapId, TSharedPtr<FJsonObject>& OutMapEntry) const
+{
+    OutMapEntry.Reset();
+
+    if (!RootObject.IsValid())
+    {
+        return false;
+    }
+
+    UE_LOG(LogTemp, Display, TEXT("D4B: SelectedMapId = %s"), *InSelectedMapId.ToString());
+
+    const TArray<TSharedPtr<FJsonValue>>* MapValues = nullptr;
+    if (!RootObject->TryGetArrayField(TEXT("maps"), MapValues) || !MapValues)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D4B: map_package_index.json does not contain a valid maps array."));
+        return false;
+    }
+
+    const FString SelectedMapIdString = InSelectedMapId.ToString();
+    for (const TSharedPtr<FJsonValue>& MapValue : *MapValues)
+    {
+        const TSharedPtr<FJsonObject> MapObject = MapValue.IsValid() ? MapValue->AsObject() : nullptr;
+        if (!MapObject.IsValid())
+        {
+            continue;
+        }
+
+        FString MapIdString;
+        if (MapObject->TryGetStringField(TEXT("map_id"), MapIdString) && MapIdString == SelectedMapIdString)
+        {
+            OutMapEntry = MapObject;
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool AAsciiMapBuilderActor::ApplyMapEntryRuntimePaths(const TSharedPtr<FJsonObject>& MapEntry, const FString& FullIndexPath)
+{
+    if (!MapEntry.IsValid())
+    {
+        return false;
+    }
+
+    FString MapIdString;
+    FString PackageDirRelativePath;
+    FString LayoutRelativePath;
+    FString ResolvedTileSetRelativePath;
+    FString MaterialManifestRelativePath;
+    FString ManifestRelativePath;
+
+    MapEntry->TryGetStringField(TEXT("map_id"), MapIdString);
+    MapEntry->TryGetStringField(TEXT("package_dir"), PackageDirRelativePath);
+    MapEntry->TryGetStringField(TEXT("manifest"), ManifestRelativePath);
+
+    if (!MapEntry->TryGetStringField(TEXT("layout"), LayoutRelativePath) || LayoutRelativePath.IsEmpty())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D4B: Selected map entry is missing layout path."));
+        return false;
+    }
+
+    if (!MapEntry->TryGetStringField(TEXT("resolved_tileset"), ResolvedTileSetRelativePath) || ResolvedTileSetRelativePath.IsEmpty())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D4B: Selected map entry is missing resolved_tileset path."));
+        return false;
+    }
+
+    if (!MapEntry->TryGetStringField(TEXT("material_manifest"), MaterialManifestRelativePath) || MaterialManifestRelativePath.IsEmpty())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D4B: Selected map entry is missing material_manifest path."));
+        return false;
+    }
+
+    CurrentRuntimeMapId = MapIdString.IsEmpty() ? SelectedMapId.ToString() : MapIdString;
+    CurrentRuntimePackageDir = PackageDirRelativePath.IsEmpty()
+        ? FPaths::GetPath(ResolveRuntimeDataRelativePath(FullIndexPath, LayoutRelativePath))
+        : ResolveRuntimeDataRelativePath(FullIndexPath, PackageDirRelativePath);
+    CurrentRuntimeMapFilePath = ResolveRuntimeDataRelativePath(FullIndexPath, LayoutRelativePath);
+    CurrentRuntimeResolvedTileSetJsonPath = ResolveRuntimeDataRelativePath(FullIndexPath, ResolvedTileSetRelativePath);
+    CurrentRuntimeMaterialManifestJsonPath = ResolveRuntimeDataRelativePath(FullIndexPath, MaterialManifestRelativePath);
+    bUseRuntimeResolvedMapFilePath = true;
+
+    UE_LOG(LogTemp, Display, TEXT("D4B: Found map package: %s"),
+        PackageDirRelativePath.IsEmpty() ? *CurrentRuntimeMapId : *PackageDirRelativePath);
+    UE_LOG(LogTemp, Display, TEXT("D4B: Resolved layout map: %s"), *CurrentRuntimeMapFilePath);
+    UE_LOG(LogTemp, Display, TEXT("D4B: Resolved tileset JSON: %s"), *CurrentRuntimeResolvedTileSetJsonPath);
+    UE_LOG(LogTemp, Display, TEXT("D4B: Resolved material manifest: %s"), *CurrentRuntimeMaterialManifestJsonPath);
+
+    if (!ManifestRelativePath.IsEmpty())
+    {
+        const FString FullManifestPath = ResolveRuntimeDataRelativePath(FullIndexPath, ManifestRelativePath);
+        FString ManifestContent;
+        if (FFileHelper::LoadFileToString(ManifestContent, *FullManifestPath))
+        {
+            TSharedPtr<FJsonObject> ManifestRootObject;
+            const TSharedRef<TJsonReader<>> ManifestReader = TJsonReaderFactory<>::Create(ManifestContent);
+            if (FJsonSerializer::Deserialize(ManifestReader, ManifestRootObject) && ManifestRootObject.IsValid())
+            {
+                FString ManifestSchemaVersion;
+                if (!ManifestRootObject->TryGetStringField(TEXT("schema_version"), ManifestSchemaVersion) || ManifestSchemaVersion != TEXT("runtime_map_package_v1"))
+                {
+                    UE_LOG(LogTemp, Warning, TEXT("D4B: Optional runtime map manifest has schema_version '%s', expected 'runtime_map_package_v1'."),
+                        *ManifestSchemaVersion);
+                }
+            }
+        }
+        else
+        {
+            UE_LOG(LogTemp, Warning, TEXT("D4B: Optional runtime map manifest could not be read: %s"), *FullManifestPath);
+        }
+    }
+
+    return true;
+}
+
+FString AAsciiMapBuilderActor::ResolveRuntimeDataRelativePath(const FString& IndexFullPath, const FString& RelativePath) const
+{
+    if (RelativePath.IsEmpty())
+    {
+        return FString();
+    }
+
+    const FString RuntimeDataRoot = FPaths::GetPath(IndexFullPath);
+    FString FullPath = FPaths::IsRelative(RelativePath)
+        ? FPaths::Combine(RuntimeDataRoot, RelativePath)
+        : RelativePath;
+
+    FPaths::NormalizeFilename(FullPath);
+    return FullPath;
+}
+
+void AAsciiMapBuilderActor::ClearRuntimeMapPackageState()
+{
+    CurrentRuntimeMapId.Empty();
+    CurrentRuntimePackageDir.Empty();
+    CurrentRuntimeMapFilePath.Empty();
+    CurrentRuntimeResolvedTileSetJsonPath.Empty();
+    CurrentRuntimeMaterialManifestJsonPath.Empty();
+    bUseRuntimeResolvedMapFilePath = false;
+}
+
+void AAsciiMapBuilderActor::CaptureManualJsonPathSettingsForMapPackageOverride()
+{
+    if (bHasMapPackageJsonPathSnapshot)
+    {
+        return;
+    }
+
+    bManualUseResolvedTileSetJsonSnapshot = bUseResolvedTileSetJson;
+    bManualResolvedTileSetJsonPathIsAbsoluteSnapshot = bResolvedTileSetJsonPathIsAbsolute;
+    ManualResolvedTileSetJsonPathSnapshot = ResolvedTileSetJsonPath;
+    bManualUseMaterialManifestJsonSnapshot = bUseMaterialManifestJson;
+    bManualMaterialManifestJsonPathIsAbsoluteSnapshot = bMaterialManifestJsonPathIsAbsolute;
+    ManualMaterialManifestJsonPathSnapshot = MaterialManifestJsonPath;
+    bHasMapPackageJsonPathSnapshot = true;
+}
+
+void AAsciiMapBuilderActor::RestoreManualJsonPathSettingsIfNeeded()
+{
+    if (!bHasMapPackageJsonPathSnapshot)
+    {
+        return;
+    }
+
+    bUseResolvedTileSetJson = bManualUseResolvedTileSetJsonSnapshot;
+    bResolvedTileSetJsonPathIsAbsolute = bManualResolvedTileSetJsonPathIsAbsoluteSnapshot;
+    ResolvedTileSetJsonPath = ManualResolvedTileSetJsonPathSnapshot;
+    bUseMaterialManifestJson = bManualUseMaterialManifestJsonSnapshot;
+    bMaterialManifestJsonPathIsAbsolute = bManualMaterialManifestJsonPathIsAbsoluteSnapshot;
+    MaterialManifestJsonPath = ManualMaterialManifestJsonPathSnapshot;
+
+    bHasMapPackageJsonPathSnapshot = false;
+}
+
 FAsciiTileDefinition AAsciiMapBuilderActor::GetDefinitionForSymbol(const TCHAR Symbol) const
 {
     const FString Key = FString::Chr(Symbol);
@@ -751,7 +995,11 @@ UMaterialInterface* AAsciiMapBuilderActor::FindMaterialForSlot(FName SlotId, UMa
 
 bool AAsciiMapBuilderActor::LoadMapLines(TArray<FString>& OutLines) const
 {
-    const FString FullPath = FPaths::ProjectContentDir() / RelativeMapPath;
+    FString FullPath = bUseRuntimeResolvedMapFilePath && !CurrentRuntimeMapFilePath.IsEmpty()
+        ? CurrentRuntimeMapFilePath
+        : FPaths::ProjectContentDir() / RelativeMapPath;
+
+    FPaths::NormalizeFilename(FullPath);
 
     FString FileContent;
     if (!FFileHelper::LoadFileToString(FileContent, *FullPath))
@@ -852,6 +1100,46 @@ UInstancedStaticMeshComponent* AAsciiMapBuilderActor::GetOrCreateInstanceCompone
 
 void AAsciiMapBuilderActor::GenerateMap()
 {
+    if (bUseMapPackageIndex)
+    {
+        if (ResolveSelectedMapPackageFromIndex())
+        {
+            if (bAutoEnableJsonLoadersFromMapPackage)
+            {
+                CaptureManualJsonPathSettingsForMapPackageOverride();
+
+                bUseResolvedTileSetJson = true;
+                bResolvedTileSetJsonPathIsAbsolute = true;
+                ResolvedTileSetJsonPath = CurrentRuntimeResolvedTileSetJsonPath;
+
+                bUseMaterialManifestJson = true;
+                bMaterialManifestJsonPathIsAbsolute = true;
+                MaterialManifestJsonPath = CurrentRuntimeMaterialManifestJsonPath;
+
+                UE_LOG(LogTemp, Display, TEXT("D4B: Auto-enabled D2A/D3B JSON loaders from selected map package."));
+            }
+            else
+            {
+                RestoreManualJsonPathSettingsIfNeeded();
+                UE_LOG(LogTemp, Display, TEXT("D4B: Auto-enable JSON loaders is disabled; D2A/D3B manual settings remain active."));
+            }
+
+            UE_LOG(LogTemp, Display, TEXT("D4B: Runtime map switch completed."));
+        }
+        else
+        {
+            ClearRuntimeMapPackageState();
+            RestoreManualJsonPathSettingsIfNeeded();
+            UE_LOG(LogTemp, Warning, TEXT("D4B: Failed to resolve map package. Falling back to manually configured paths."));
+        }
+    }
+    else
+    {
+        ClearRuntimeMapPackageState();
+        RestoreManualJsonPathSettingsIfNeeded();
+        UE_LOG(LogTemp, Display, TEXT("D4B: MapPackageIndex loading disabled."));
+    }
+
     RebuildTileDefinitionsCache();
     RebuildRuntimeMaterialCache();
     ClearGeneratedMap();

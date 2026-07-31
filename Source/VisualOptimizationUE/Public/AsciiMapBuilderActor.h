@@ -15,6 +15,7 @@ class UAsciiTileSetDataAsset;
 class UMaterialRegistryDataAsset;
 class UGeneratedMeshRegistryDataAsset;
 class UTexture2D;
+class FJsonObject;
 
 UCLASS()
 class VISUALOPTIMIZATIONUE_API AAsciiMapBuilderActor : public AActor
@@ -64,6 +65,15 @@ private:
     FAsciiTileDefinition GetDefinitionForSymbol(const TCHAR Symbol) const;
     EAsciiTileRole ConvertResolvedRoleStringToTileRole(const FString& RoleString) const;
 
+    bool ResolveSelectedMapPackageFromIndex();
+    bool LoadMapPackageIndexJson(TSharedPtr<FJsonObject>& OutRootObject, FString& OutFullIndexPath) const;
+    bool TryFindMapEntryInIndex(const TSharedPtr<FJsonObject>& RootObject, FName InSelectedMapId, TSharedPtr<FJsonObject>& OutMapEntry) const;
+    bool ApplyMapEntryRuntimePaths(const TSharedPtr<FJsonObject>& MapEntry, const FString& FullIndexPath);
+    FString ResolveRuntimeDataRelativePath(const FString& IndexFullPath, const FString& RelativePath) const;
+    void ClearRuntimeMapPackageState();
+    void CaptureManualJsonPathSettingsForMapPackageOverride();
+    void RestoreManualJsonPathSettingsIfNeeded();
+
     void RebuildRuntimeMaterialCache();
     bool LoadRuntimeMaterialsFromManifest();
     UMaterialInstanceDynamic* CreateRuntimeMaterialFromManifestEntry(
@@ -85,6 +95,60 @@ private:
 private:
     UPROPERTY(EditAnywhere, Category = "ASCII Map")
     FString RelativeMapPath = TEXT("VisualOptimization/Data/test_map1/map.txt");
+
+    UPROPERTY(EditAnywhere, Category = "ASCII Map|RuntimeData Package")
+    bool bUseMapPackageIndex = false;
+
+    UPROPERTY(EditAnywhere, Category = "ASCII Map|RuntimeData Package")
+    bool bMapPackageIndexPathIsAbsolute = false;
+
+    UPROPERTY(EditAnywhere, Category = "ASCII Map|RuntimeData Package")
+    FString MapPackageIndexPath = TEXT("VisualOptimization/RuntimeData/map_package_index.json");
+
+    UPROPERTY(EditAnywhere, Category = "ASCII Map|RuntimeData Package")
+    FName SelectedMapId = FName(TEXT("test_map1"));
+
+    UPROPERTY(EditAnywhere, Category = "ASCII Map|RuntimeData Package")
+    bool bAutoEnableJsonLoadersFromMapPackage = true;
+
+    UPROPERTY(Transient)
+    FString CurrentRuntimeMapId;
+
+    UPROPERTY(Transient)
+    FString CurrentRuntimePackageDir;
+
+    UPROPERTY(Transient)
+    FString CurrentRuntimeMapFilePath;
+
+    UPROPERTY(Transient)
+    FString CurrentRuntimeResolvedTileSetJsonPath;
+
+    UPROPERTY(Transient)
+    FString CurrentRuntimeMaterialManifestJsonPath;
+
+    UPROPERTY(Transient)
+    bool bUseRuntimeResolvedMapFilePath = false;
+
+    UPROPERTY(Transient)
+    bool bHasMapPackageJsonPathSnapshot = false;
+
+    UPROPERTY(Transient)
+    bool bManualUseResolvedTileSetJsonSnapshot = false;
+
+    UPROPERTY(Transient)
+    bool bManualResolvedTileSetJsonPathIsAbsoluteSnapshot = false;
+
+    UPROPERTY(Transient)
+    FString ManualResolvedTileSetJsonPathSnapshot;
+
+    UPROPERTY(Transient)
+    bool bManualUseMaterialManifestJsonSnapshot = false;
+
+    UPROPERTY(Transient)
+    bool bManualMaterialManifestJsonPathIsAbsoluteSnapshot = false;
+
+    UPROPERTY(Transient)
+    FString ManualMaterialManifestJsonPathSnapshot;
 
     UPROPERTY(EditAnywhere, Category = "ASCII Map|Resolved TileSet JSON")
     bool bUseResolvedTileSetJson = false;
