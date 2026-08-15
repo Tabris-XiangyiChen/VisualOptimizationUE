@@ -1,20 +1,40 @@
 {
   "schema_version": "map_package_index_v1",
-  "created_at": "2026-07-28T20:23:08",
-  "created_by": "d6c_full_pipeline_material_regen",
+  "created_at": "2026-08-15T17:53:24",
+  "created_by": "runtime_export",
   "runtime_root": "VisualOptimization/RuntimeData",
-  "runtime_root_absolute": "I:\\Disertation\\VisualOptimization\\generated\\ue_ready\\runtime_data",
+  "runtime_root_absolute": "I:\\Disertation\\VisualOptimise\\generated\\ue_ready\\runtime_data",
   "ue_copy_destination": "I:\\Disertation\\VisualOptimizationUE\\Content\\VisualOptimization\\RuntimeData",
   "maps": [
     {
-      "map_id": "test_map1",
-      "display_name": "test_map1",
-      "package_dir": "maps/test_map1",
-      "manifest": "maps/test_map1/manifest.json",
-      "layout": "maps/test_map1/layout/map.txt",
-      "resolved_tileset": "maps/test_map1/rules/resolved_tileset.json",
-      "material_manifest": "maps/test_map1/materials/material_manifest.json",
-      "material_textures_dir": "maps/test_map1/materials/textures"
+      "map_id": "test_map1_clean",
+      "display_name": "test_map1_clean",
+      "package_dir": "maps/test_map1_clean",
+      "manifest": "maps/test_map1_clean/manifest.json",
+      "layout": "maps/test_map1_clean/layout/map.txt",
+      "resolved_tileset": "maps/test_map1_clean/rules/resolved_tileset.json",
+      "material_manifest": "maps/test_map1_clean/materials/material_manifest.json",
+      "material_textures_dir": "maps/test_map1_clean/materials/textures"
+    },
+    {
+      "map_id": "test_map2",
+      "display_name": "test_map2",
+      "package_dir": "maps/test_map2",
+      "manifest": "maps/test_map2/manifest.json",
+      "layout": "maps/test_map2/layout/map.txt",
+      "resolved_tileset": "maps/test_map2/rules/resolved_tileset.json",
+      "material_manifest": "maps/test_map2/materials/material_manifest.json",
+      "material_textures_dir": "maps/test_map2/materials/textures"
+    },
+    {
+      "map_id": "test_map3",
+      "display_name": "test_map3",
+      "package_dir": "maps/test_map3",
+      "manifest": "maps/test_map3/manifest.json",
+      "layout": "maps/test_map3/layout/map.txt",
+      "resolved_tileset": "maps/test_map3/rules/resolved_tileset.json",
+      "material_manifest": "maps/test_map3/materials/material_manifest.json",
+      "material_textures_dir": "maps/test_map3/materials/textures"
     }
   ],
   "warnings": []

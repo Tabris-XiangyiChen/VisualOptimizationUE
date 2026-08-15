@@ -27,6 +27,8 @@ public:
 	// Sets default values for this actor's properties
 	AAsciiMapBuilderActor();
 
+    UFUNCTION()
+    TArray<FString> GetAvailableMapIdOptions() const;
 
 	UFUNCTION(CallInEditor, BlueprintCallable, Category = "ASCII Map")
 	void GenerateMap();
@@ -52,6 +54,9 @@ protected:
     UPROPERTY()
     TMap<FName, UInstancedStaticMeshComponent*> RuntimeInstanceComponents;
 
+    UPROPERTY(Transient)
+    TArray<AActor*> RuntimeSpawnedActors;
+
 private:
     bool LoadMapLines(TArray<FString>& OutLines) const;
     FVector GridToWorld(int32 Column, int32 Row, int32 Width, int32 Height) const;
@@ -67,7 +72,13 @@ private:
 
     bool ResolveSelectedMapPackageFromIndex();
     bool LoadMapPackageIndexJson(TSharedPtr<FJsonObject>& OutRootObject, FString& OutFullIndexPath) const;
-    bool TryFindMapEntryInIndex(const TSharedPtr<FJsonObject>& RootObject, FName InSelectedMapId, TSharedPtr<FJsonObject>& OutMapEntry) const;
+    bool TryFindMapEntryInIndex(
+        const TSharedPtr<FJsonObject>& RootObject,
+        FName InSelectedMapId,
+        TSharedPtr<FJsonObject>& OutMapEntry,
+        FString& OutResolvedMapId,
+        bool& bOutUsedFirstMapFallback,
+        int32& OutAvailableMapCount) const;
     bool ApplyMapEntryRuntimePaths(const TSharedPtr<FJsonObject>& MapEntry, const FString& FullIndexPath);
     FString ResolveRuntimeDataRelativePath(const FString& IndexFullPath, const FString& RelativePath) const;
     void ClearRuntimeMapPackageState();
@@ -92,12 +103,17 @@ private:
     UMaterialInterface* FindMaterialForSlot(FName SlotId, UMaterialInterface* FallbackMaterial) const;
 
     UInstancedStaticMeshComponent* GetOrCreateInstanceComponent(FName ComponentKey, UStaticMesh* Mesh, UMaterialInterface* Material);
+    void ApplyResolvedMaterialToSpawnedActor(AActor* SpawnedActor, UMaterialInterface* Material, FName MaterialSlotId) const;
+    void ResetGenerationStats();
+    void RecordMissingMeshId(FName MeshId, const FString& SymbolKey, const FString& Reason);
+    void RecordMissingMaterialSlot(FName MaterialSlotId, const FString& SymbolKey, const FString& Reason);
+    void LogGenerationStats(int32 Width, int32 Height) const;
 private:
     UPROPERTY(EditAnywhere, Category = "ASCII Map")
     FString RelativeMapPath = TEXT("VisualOptimization/Data/test_map1/map.txt");
 
     UPROPERTY(EditAnywhere, Category = "ASCII Map|RuntimeData Package")
-    bool bUseMapPackageIndex = false;
+    bool bUseMapPackageIndex = true;
 
     UPROPERTY(EditAnywhere, Category = "ASCII Map|RuntimeData Package")
     bool bMapPackageIndexPathIsAbsolute = false;
@@ -105,8 +121,8 @@ private:
     UPROPERTY(EditAnywhere, Category = "ASCII Map|RuntimeData Package")
     FString MapPackageIndexPath = TEXT("VisualOptimization/RuntimeData/map_package_index.json");
 
-    UPROPERTY(EditAnywhere, Category = "ASCII Map|RuntimeData Package")
-    FName SelectedMapId = FName(TEXT("test_map1"));
+    UPROPERTY(EditAnywhere, Category = "ASCII Map|RuntimeData Package", meta = (GetOptions = "GetAvailableMapIdOptions"))
+    FName SelectedMapId = NAME_None;
 
     UPROPERTY(EditAnywhere, Category = "ASCII Map|RuntimeData Package")
     bool bAutoEnableJsonLoadersFromMapPackage = true;
@@ -232,6 +248,26 @@ private:
     UInstancedStaticMeshComponent* DoorInstances;
 
     TMap<FString, FAsciiTileDefinition> TileDefinitions;
+
+    int32 LastRuntimeDataAvailableMapCount = 0;
+    FString LastRuntimeDataRequestedMapId;
+    FString LastRuntimeDataResolvedMapId;
+    bool bLastRuntimeDataUsedFirstMapFallback = false;
+    FString LastRuntimeDataIndexFullPath;
+
+    int32 GenerationTotalCells = 0;
+    int32 GenerationGeneratedCells = 0;
+    int32 GenerationSkippedCells = 0;
+    int32 GenerationUnknownSymbols = 0;
+    int32 GenerationRegistryTransformInstances = 0;
+    int32 GenerationRoleFallbackInstances = 0;
+    int32 GenerationSpawnedActors = 0;
+    TMap<FString, int32> GenerationSymbolCounts;
+    TSet<FName> GenerationMeshIdsUsed;
+    TSet<FName> GenerationMissingMeshIds;
+    TSet<FName> GenerationMaterialSlotsUsed;
+    TSet<FName> GenerationMissingMaterialSlots;
+    TSet<FString> GenerationWarningKeys;
 
 protected:
 	// Called when the game starts or when spawned

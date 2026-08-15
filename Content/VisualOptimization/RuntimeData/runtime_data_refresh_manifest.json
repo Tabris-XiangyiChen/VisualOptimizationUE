@@ -1,0 +1,12 @@
+{
+  "schema_version": "runtime_data_refresh_manifest_v1",
+  "created_at": "2026-08-15T17:53:24",
+  "mode": "merge_or_update_map_packages",
+  "source_runtime_package": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_175322_test_map1_clean_runtime_export\\03_runtime_data_package",
+  "target_runtime_data": "I:\\Disertation\\VisualOptimise\\generated\\ue_ready\\runtime_data",
+  "maps": [
+    "test_map1_clean",
+    "test_map2",
+    "test_map3"
+  ]
+}

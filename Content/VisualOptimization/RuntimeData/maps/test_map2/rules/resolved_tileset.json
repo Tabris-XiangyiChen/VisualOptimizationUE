@@ -1,0 +1,271 @@
+{
+  "schema_version": "resolved_tileset_v1",
+  "map_id": "test_map2",
+  "source_map_package": "data\\maps\\test_map2",
+  "solver": {
+    "name": "d6g_a2_dynamic_tileset_runtime_adapter",
+    "version": "d6g_a2_v1",
+    "source_schema": "resolved_tileset_v2",
+    "llm_calls": 0,
+    "sd_calls": 0,
+    "stablematerials_calls": 0
+  },
+  "ue_registry_expectations": {
+    "mesh_registry": "DA_GlobalMeshRegistry",
+    "material_registry": "runtime_material_manifest_json",
+    "dynamic_material_slots": true
+  },
+  "map_summary": {
+    "width": 30,
+    "height": 20,
+    "symbol_counts": {
+      ",": 155,
+      "H": 10,
+      "X": 134,
+      "_": 204,
+      "b": 26,
+      "m": 24,
+      "r": 7,
+      "w": 40
+    },
+    "style_excerpt": "A semi-realistic fantasy roguelike sunken courtyard ruin from the same game world as test_map1.\nThe scene contains ancient grey stone walls, worn stone floors, rotting wooden bridges, mossy grass patches, wet reeds, and dark blue-green canal water.\nCompared with test_map1, this map feels more flooded and enclosed, but it should share the same muted natural colour palette, damp mossy surfaces, and readable tile-based material language.\nThe purpose of this map is to test cross-map visual consistency: similar semantic materials should reuse the same material_slot_id and the same visual texture identity even when the ASCII symbols are different.\nGenerate flat, tileable material surfaces suitable for later UE5 deterministic modular tile reconstruction."
+  },
+  "tiles": [
+    {
+      "symbol": ",",
+      "legend_name": "worn_stone_floor",
+      "tile_type_id": "tile_test_map2_comma_worn_stone_floor",
+      "role": "floor_surface",
+      "mesh_id": "tile_plane",
+      "material_slot_id": "mat_worn_stone_floor",
+      "slot_id_compat": "mat_worn_stone_floor",
+      "material_family": "floor",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": 0,
+      "generate": true,
+      "generate_material": true,
+      "shape_type": "flat_tile",
+      "selected_mesh_role_tags": [
+        "floor_surface",
+        "flat_surface",
+        "walkable"
+      ],
+      "tile_count_in_map": 155,
+      "inference": {
+        "source": "d6f_a4_resolved_tileset_v2",
+        "tile_semantics": "flat walkable stone floor surface",
+        "canonical_material_id": "worn_stone_floor",
+        "material_identity_coarse": "stone",
+        "material_category": "floor"
+      }
+    },
+    {
+      "symbol": "H",
+      "legend_name": "old_wooden_gate",
+      "tile_type_id": "tile_test_map2_h_old_wooden_gate",
+      "role": "door_prop",
+      "mesh_id": "door_proxy",
+      "material_slot_id": "mat_old_wooden_gate",
+      "slot_id_compat": "mat_old_wooden_gate",
+      "material_family": "door",
+      "height_class": "medium",
+      "height": 250,
+      "z_offset": 0,
+      "generate": true,
+      "generate_material": true,
+      "shape_type": "vertical_prop",
+      "selected_mesh_role_tags": [
+        "door_prop",
+        "gate_prop",
+        "vertical_prop",
+        "interactive"
+      ],
+      "tile_count_in_map": 10,
+      "inference": {
+        "source": "d6f_a4_resolved_tileset_v2",
+        "tile_semantics": "vertical wooden door or gate set into stone walls",
+        "canonical_material_id": "old_wooden_gate",
+        "material_identity_coarse": "wood",
+        "material_category": "door"
+      }
+    },
+    {
+      "symbol": "X",
+      "legend_name": "ancient_stone_wall",
+      "tile_type_id": "tile_test_map2_x_ancient_stone_wall",
+      "role": "wall_surface",
+      "mesh_id": "wall_block",
+      "material_slot_id": "mat_ancient_stone_wall",
+      "slot_id_compat": "mat_ancient_stone_wall",
+      "material_family": "wall",
+      "height_class": "high",
+      "height": 300,
+      "z_offset": 0,
+      "generate": true,
+      "generate_material": true,
+      "shape_type": "vertical_block",
+      "selected_mesh_role_tags": [
+        "wall_surface",
+        "blocking",
+        "vertical_structure"
+      ],
+      "tile_count_in_map": 134,
+      "inference": {
+        "source": "d6f_a4_resolved_tileset_v2",
+        "tile_semantics": "vertical stone wall or ruined boundary block",
+        "canonical_material_id": "ancient_stone_wall",
+        "material_identity_coarse": "stone",
+        "material_category": "wall"
+      }
+    },
+    {
+      "symbol": "_",
+      "legend_name": "void",
+      "tile_type_id": "tile_test_map2_underscore_no_geometry",
+      "role": "void",
+      "mesh_id": null,
+      "material_slot_id": null,
+      "slot_id_compat": null,
+      "material_family": null,
+      "height_class": null,
+      "height": 0,
+      "z_offset": 0,
+      "generate": false,
+      "generate_material": false,
+      "shape_type": null,
+      "selected_mesh_role_tags": [],
+      "tile_count_in_map": 204,
+      "inference": {
+        "source": "d6f_a4_resolved_tileset_v2",
+        "tile_semantics": "empty outside-play-area void, no visible surface",
+        "canonical_material_id": null,
+        "material_identity_coarse": null,
+        "material_category": null
+      }
+    },
+    {
+      "symbol": "b",
+      "legend_name": "rotting_wood_planks",
+      "tile_type_id": "tile_test_map2_b_rotting_wood_planks",
+      "role": "floor_surface",
+      "mesh_id": "tile_plane",
+      "material_slot_id": "mat_rotting_wood_planks",
+      "slot_id_compat": "mat_rotting_wood_planks",
+      "material_family": "floor",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": 0,
+      "generate": true,
+      "generate_material": true,
+      "shape_type": "flat_tile",
+      "selected_mesh_role_tags": [
+        "floor_surface",
+        "wood_surface",
+        "flat_surface",
+        "walkable"
+      ],
+      "tile_count_in_map": 26,
+      "inference": {
+        "source": "d6f_a4_resolved_tileset_v2",
+        "tile_semantics": "flat wooden plank bridge or walkway surface",
+        "canonical_material_id": "rotting_wood_planks",
+        "material_identity_coarse": "wood",
+        "material_category": "floor"
+      }
+    },
+    {
+      "symbol": "m",
+      "legend_name": "mossy_grass_ground",
+      "tile_type_id": "tile_test_map2_m_mossy_grass_ground",
+      "role": "floor_surface",
+      "mesh_id": "tile_plane",
+      "material_slot_id": "mat_mossy_grass_ground",
+      "slot_id_compat": "mat_mossy_grass_ground",
+      "material_family": "ground",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": 0,
+      "generate": true,
+      "generate_material": true,
+      "shape_type": "flat_tile",
+      "selected_mesh_role_tags": [
+        "floor_surface",
+        "grass_surface",
+        "flat_surface",
+        "walkable"
+      ],
+      "tile_count_in_map": 24,
+      "inference": {
+        "source": "d6f_a4_resolved_tileset_v2",
+        "tile_semantics": "flat mossy grass ground over damp ruined stone",
+        "canonical_material_id": "mossy_grass_ground",
+        "material_identity_coarse": "organic_ground",
+        "material_category": "ground"
+      }
+    },
+    {
+      "symbol": "r",
+      "legend_name": "wet_reeds_and_grass",
+      "tile_type_id": "tile_test_map2_r_wet_reeds_and_grass",
+      "role": "floor_surface",
+      "mesh_id": "tile_plane",
+      "material_slot_id": "mat_wet_reeds_and_grass",
+      "slot_id_compat": "mat_wet_reeds_and_grass",
+      "material_family": "vegetation",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": 0,
+      "generate": true,
+      "generate_material": true,
+      "shape_type": "flat_tile",
+      "selected_mesh_role_tags": [
+        "floor_surface",
+        "grass_surface",
+        "flat_surface",
+        "walkable"
+      ],
+      "tile_count_in_map": 7,
+      "inference": {
+        "source": "d6f_a4_resolved_tileset_v2",
+        "tile_semantics": "flat wet reeds and grass vegetation near water",
+        "canonical_material_id": "wet_reeds_and_grass",
+        "material_identity_coarse": "organic_ground",
+        "material_category": "vegetation"
+      }
+    },
+    {
+      "symbol": "w",
+      "legend_name": "shallow_canal_water",
+      "tile_type_id": "tile_test_map2_w_shallow_canal_water",
+      "role": "water_surface",
+      "mesh_id": "water_plane",
+      "material_slot_id": "mat_shallow_canal_water",
+      "slot_id_compat": "mat_shallow_canal_water",
+      "material_family": "water",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": -20,
+      "generate": true,
+      "generate_material": true,
+      "shape_type": "flat_tile",
+      "selected_mesh_role_tags": [
+        "water_surface",
+        "flat_surface"
+      ],
+      "tile_count_in_map": 40,
+      "inference": {
+        "source": "d6f_a4_resolved_tileset_v2",
+        "tile_semantics": "flat shallow water surface in canal or flooded passage",
+        "canonical_material_id": "shallow_canal_water",
+        "material_identity_coarse": "water",
+        "material_category": "water"
+      }
+    }
+  ],
+  "source_files": {
+    "authoring_map_package": "I:\\Disertation\\VisualOptimise\\data\\maps\\test_map2",
+    "resolved_tileset_v2": "source_run/03_python_resolver/resolved_tileset_v2.json",
+    "resolved_materials_v2": "source_run/03_python_resolver/resolved_materials_v2.json"
+  }
+}

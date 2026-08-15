@@ -6,6 +6,7 @@
 #include "Engine/DataAsset.h"
 #include "GeneratedMeshRegistryDataAsset.generated.h"
 
+class AActor;
 class UStaticMesh;
 
 USTRUCT(BlueprintType)
@@ -23,7 +24,31 @@ struct FGeneratedMeshEntry
     FVector DefaultScale = FVector(1.0f, 1.0f, 1.0f);
 
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Generated Mesh")
+    FVector LocationOffset = FVector::ZeroVector;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Generated Mesh")
+    FRotator RotationOffset = FRotator::ZeroRotator;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Generated Mesh")
+    bool bUseRegistryTransform = true;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Generated Mesh")
+    bool bFitXYToTileSize = true;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Generated Mesh")
+    bool bFitZToTileSize = false;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Generated Mesh")
+    bool bBottomAlignToTileBase = true;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Generated Mesh")
     bool bUseInstancing = true;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Generated Mesh|Actor")
+    bool bSpawnActorInsteadOfStaticMesh = false;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Generated Mesh|Actor", meta = (EditCondition = "bSpawnActorInsteadOfStaticMesh"))
+    TSubclassOf<AActor> ActorClass = nullptr;
 };
 
 /**

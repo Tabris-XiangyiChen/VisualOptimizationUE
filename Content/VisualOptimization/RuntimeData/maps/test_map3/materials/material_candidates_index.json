@@ -1,0 +1,369 @@
+{
+  "schema_version": "d6g_a2_material_candidates_index_v1",
+  "source_run": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview",
+  "selection_policy": "first_available_seed",
+  "runtime_texture_backend": "sd15",
+  "include_backend_candidates": true,
+  "materials": [
+    {
+      "material_slot_id": "mat_stone_wall_material",
+      "display_label": "stone_wall",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 111,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_stone_wall_material\\seed_111.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_stone_wall_material\\seed_111_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_stone_wall_material\\seed_111.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_stone_wall_material\\seed_111_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_stone_wall_material_seed_111\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_stone_wall_material_seed_111\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_stone_wall_material_seed_111\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_stone_wall_material_seed_111\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_stone_wall_material_seed_111\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_stone_wall_material_seed_111\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_stone_floor_material",
+      "display_label": "stone_floor",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 111,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_stone_floor_material\\seed_111.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_stone_floor_material\\seed_111_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_stone_floor_material\\seed_111.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_stone_floor_material\\seed_111_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_stone_floor_material_seed_111\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_stone_floor_material_seed_111\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_stone_floor_material_seed_111\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_stone_floor_material_seed_111\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_stone_floor_material_seed_111\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_stone_floor_material_seed_111\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_wood_planks_material",
+      "display_label": "wood_planks",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 111,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_wood_planks_material\\seed_111.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_wood_planks_material\\seed_111_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_wood_planks_material\\seed_111.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_wood_planks_material\\seed_111_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wood_planks_material_seed_111\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wood_planks_material_seed_111\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wood_planks_material_seed_111\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wood_planks_material_seed_111\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wood_planks_material_seed_111\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wood_planks_material_seed_111\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_wooden_door_material",
+      "display_label": "wooden_door",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 111,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_wooden_door_material\\seed_111.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_wooden_door_material\\seed_111_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_wooden_door_material\\seed_111.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_wooden_door_material\\seed_111_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wooden_door_material_seed_111\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wooden_door_material_seed_111\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wooden_door_material_seed_111\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wooden_door_material_seed_111\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wooden_door_material_seed_111\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wooden_door_material_seed_111\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_tree_foliage_material",
+      "display_label": "tree_foliage",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 111,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_tree_foliage_material\\seed_111.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_tree_foliage_material\\seed_111_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_tree_foliage_material\\seed_111.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_tree_foliage_material\\seed_111_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_tree_foliage_material_seed_111\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_tree_foliage_material_seed_111\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_tree_foliage_material_seed_111\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_tree_foliage_material_seed_111\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_tree_foliage_material_seed_111\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_tree_foliage_material_seed_111\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_tall_grass_material",
+      "display_label": "tall_grass",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 111,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_tall_grass_material\\seed_111.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_tall_grass_material\\seed_111_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_tall_grass_material\\seed_111.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_tall_grass_material\\seed_111_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_tall_grass_material_seed_111\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_tall_grass_material_seed_111\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_tall_grass_material_seed_111\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_tall_grass_material_seed_111\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_tall_grass_material_seed_111\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_tall_grass_material_seed_111\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_clover_patch_material",
+      "display_label": "clover_patch",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 111,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_clover_patch_material\\seed_111.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_clover_patch_material\\seed_111_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_clover_patch_material\\seed_111.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_clover_patch_material\\seed_111_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_clover_patch_material_seed_111\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_clover_patch_material_seed_111\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_clover_patch_material_seed_111\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_clover_patch_material_seed_111\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_clover_patch_material_seed_111\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_clover_patch_material_seed_111\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_grass_ground_material",
+      "display_label": "grass_ground",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 111,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_grass_ground_material\\seed_111.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_grass_ground_material\\seed_111_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_grass_ground_material\\seed_111.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_grass_ground_material\\seed_111_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_grass_ground_material_seed_111\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_grass_ground_material_seed_111\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_grass_ground_material_seed_111\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_grass_ground_material_seed_111\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_grass_ground_material_seed_111\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_grass_ground_material_seed_111\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_water_material",
+      "display_label": "water",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 111,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_water_material\\seed_111.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_water_material\\seed_111_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_water_material\\seed_111.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_water_material\\seed_111_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 111,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_water_material_seed_111\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_water_material_seed_111\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_water_material_seed_111\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_water_material_seed_111\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_water_material_seed_111\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160733_test_map3_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_water_material_seed_111\\metadata.json"
+        }
+      ]
+    }
+  ]
+}

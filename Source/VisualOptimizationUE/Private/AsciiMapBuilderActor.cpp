@@ -3,8 +3,10 @@
 
 #include "AsciiMapBuilderActor.h"
 #include "Components/InstancedStaticMeshComponent.h"
+#include "Components/MeshComponent.h"
 #include "Engine/StaticMesh.h"
 #include "Engine/Texture2D.h"
+#include "Engine/World.h"
 #include "IImageWrapper.h"
 #include "IImageWrapperModule.h"
 #include "Materials/MaterialInterface.h"
@@ -31,6 +33,67 @@ namespace
     {
         OutValue.Empty();
         return JsonObject.IsValid() && JsonObject->TryGetStringField(FieldName, OutValue);
+    }
+
+    bool CollectValidMapEntries(const TSharedPtr<FJsonObject>& RootObject, TArray<TSharedPtr<FJsonObject>>& OutMapEntries, TArray<FString>* OutMapIds = nullptr)
+    {
+        OutMapEntries.Empty();
+        if (OutMapIds)
+        {
+            OutMapIds->Empty();
+        }
+
+        if (!RootObject.IsValid())
+        {
+            return false;
+        }
+
+        const TArray<TSharedPtr<FJsonValue>>* MapValues = nullptr;
+        if (!RootObject->TryGetArrayField(TEXT("maps"), MapValues) || !MapValues)
+        {
+            return false;
+        }
+
+        for (const TSharedPtr<FJsonValue>& MapValue : *MapValues)
+        {
+            const TSharedPtr<FJsonObject> MapObject = MapValue.IsValid() ? MapValue->AsObject() : nullptr;
+            if (!MapObject.IsValid())
+            {
+                continue;
+            }
+
+            FString MapIdString;
+            if (!MapObject->TryGetStringField(TEXT("map_id"), MapIdString) || MapIdString.IsEmpty())
+            {
+                continue;
+            }
+
+            OutMapEntries.Add(MapObject);
+            if (OutMapIds)
+            {
+                OutMapIds->Add(MapIdString);
+            }
+        }
+
+        return OutMapEntries.Num() > 0;
+    }
+
+    FString FormatNameSetForLog(const TSet<FName>& Names)
+    {
+        if (Names.Num() == 0)
+        {
+            return TEXT("<none>");
+        }
+
+        TArray<FString> Values;
+        Values.Reserve(Names.Num());
+        for (const FName& Name : Names)
+        {
+            Values.Add(Name.IsNone() ? TEXT("<empty>") : Name.ToString());
+        }
+
+        Values.Sort();
+        return FString::Join(Values, TEXT(", "));
     }
 }
 
@@ -60,6 +123,22 @@ AAsciiMapBuilderActor::AAsciiMapBuilderActor()
     DoorInstances->SetupAttachment(RootComponent);
 
     RebuildTileDefinitionsCache();
+}
+
+TArray<FString> AAsciiMapBuilderActor::GetAvailableMapIdOptions() const
+{
+    TArray<FString> MapIds;
+
+    TSharedPtr<FJsonObject> RootObject;
+    FString FullIndexPath;
+    if (!LoadMapPackageIndexJson(RootObject, FullIndexPath))
+    {
+        return MapIds;
+    }
+
+    TArray<TSharedPtr<FJsonObject>> MapEntries;
+    CollectValidMapEntries(RootObject, MapEntries, &MapIds);
+    return MapIds;
 }
 
 void AAsciiMapBuilderActor::OnConstruction(const FTransform& Transform)
@@ -353,6 +432,12 @@ EAsciiTileRole AAsciiMapBuilderActor::ConvertResolvedRoleStringToTileRole(const 
 
 bool AAsciiMapBuilderActor::ResolveSelectedMapPackageFromIndex()
 {
+    LastRuntimeDataAvailableMapCount = 0;
+    LastRuntimeDataRequestedMapId = SelectedMapId.IsNone() ? TEXT("<empty>") : SelectedMapId.ToString();
+    LastRuntimeDataResolvedMapId.Empty();
+    bLastRuntimeDataUsedFirstMapFallback = false;
+    LastRuntimeDataIndexFullPath.Empty();
+
     TSharedPtr<FJsonObject> RootObject;
     FString FullIndexPath;
     if (!LoadMapPackageIndexJson(RootObject, FullIndexPath))
@@ -360,11 +445,26 @@ bool AAsciiMapBuilderActor::ResolveSelectedMapPackageFromIndex()
         return false;
     }
 
+    LastRuntimeDataIndexFullPath = FullIndexPath;
+
     TSharedPtr<FJsonObject> MapEntry;
-    if (!TryFindMapEntryInIndex(RootObject, SelectedMapId, MapEntry))
+    FString ResolvedMapId;
+    bool bUsedFirstMapFallback = false;
+    int32 AvailableMapCount = 0;
+    if (!TryFindMapEntryInIndex(RootObject, SelectedMapId, MapEntry, ResolvedMapId, bUsedFirstMapFallback, AvailableMapCount))
     {
-        UE_LOG(LogTemp, Warning, TEXT("D4B: Selected map not found. Falling back to manual paths."));
+        LastRuntimeDataAvailableMapCount = AvailableMapCount;
+        UE_LOG(LogTemp, Warning, TEXT("D4B: No usable selected map could be resolved from the package index. Falling back to manual paths."));
         return false;
+    }
+
+    LastRuntimeDataAvailableMapCount = AvailableMapCount;
+    LastRuntimeDataResolvedMapId = ResolvedMapId;
+    bLastRuntimeDataUsedFirstMapFallback = bUsedFirstMapFallback;
+
+    if (!ResolvedMapId.IsEmpty())
+    {
+        SelectedMapId = FName(*ResolvedMapId);
     }
 
     if (!ApplyMapEntryRuntimePaths(MapEntry, FullIndexPath))
@@ -372,7 +472,11 @@ bool AAsciiMapBuilderActor::ResolveSelectedMapPackageFromIndex()
         return false;
     }
 
-    UE_LOG(LogTemp, Display, TEXT("D4B: Runtime map package resolved for SelectedMapId=%s"), *SelectedMapId.ToString());
+    UE_LOG(LogTemp, Display, TEXT("D4B: Runtime map package resolved. RequestedMapId=%s ResolvedMapId=%s AvailableMaps=%d UsedFirstMapFallback=%s"),
+        *LastRuntimeDataRequestedMapId,
+        *LastRuntimeDataResolvedMapId,
+        LastRuntimeDataAvailableMapCount,
+        bLastRuntimeDataUsedFirstMapFallback ? TEXT("true") : TEXT("false"));
     return true;
 }
 
@@ -420,42 +524,68 @@ bool AAsciiMapBuilderActor::LoadMapPackageIndexJson(TSharedPtr<FJsonObject>& Out
     return true;
 }
 
-bool AAsciiMapBuilderActor::TryFindMapEntryInIndex(const TSharedPtr<FJsonObject>& RootObject, FName InSelectedMapId, TSharedPtr<FJsonObject>& OutMapEntry) const
+bool AAsciiMapBuilderActor::TryFindMapEntryInIndex(
+    const TSharedPtr<FJsonObject>& RootObject,
+    FName InSelectedMapId,
+    TSharedPtr<FJsonObject>& OutMapEntry,
+    FString& OutResolvedMapId,
+    bool& bOutUsedFirstMapFallback,
+    int32& OutAvailableMapCount) const
 {
     OutMapEntry.Reset();
+    OutResolvedMapId.Empty();
+    bOutUsedFirstMapFallback = false;
+    OutAvailableMapCount = 0;
 
     if (!RootObject.IsValid())
     {
         return false;
     }
 
-    UE_LOG(LogTemp, Display, TEXT("D4B: SelectedMapId = %s"), *InSelectedMapId.ToString());
+    UE_LOG(LogTemp, Display, TEXT("D4B: Requested SelectedMapId = %s"),
+        InSelectedMapId.IsNone() ? TEXT("<empty>") : *InSelectedMapId.ToString());
 
-    const TArray<TSharedPtr<FJsonValue>>* MapValues = nullptr;
-    if (!RootObject->TryGetArrayField(TEXT("maps"), MapValues) || !MapValues)
+    TArray<TSharedPtr<FJsonObject>> MapEntries;
+    TArray<FString> MapIds;
+    if (!CollectValidMapEntries(RootObject, MapEntries, &MapIds))
     {
-        UE_LOG(LogTemp, Warning, TEXT("D4B: map_package_index.json does not contain a valid maps array."));
+        UE_LOG(LogTemp, Warning, TEXT("D4B: map_package_index.json does not contain any valid maps[].map_id entries."));
         return false;
     }
 
-    const FString SelectedMapIdString = InSelectedMapId.ToString();
-    for (const TSharedPtr<FJsonValue>& MapValue : *MapValues)
-    {
-        const TSharedPtr<FJsonObject> MapObject = MapValue.IsValid() ? MapValue->AsObject() : nullptr;
-        if (!MapObject.IsValid())
-        {
-            continue;
-        }
+    OutAvailableMapCount = MapEntries.Num();
+    UE_LOG(LogTemp, Display, TEXT("D4B: Available RuntimeData map count = %d"), OutAvailableMapCount);
 
-        FString MapIdString;
-        if (MapObject->TryGetStringField(TEXT("map_id"), MapIdString) && MapIdString == SelectedMapIdString)
+    const FString SelectedMapIdString = InSelectedMapId.IsNone() ? FString() : InSelectedMapId.ToString();
+    if (!SelectedMapIdString.IsEmpty())
+    {
+        for (int32 MapIndex = 0; MapIndex < MapEntries.Num(); ++MapIndex)
         {
-            OutMapEntry = MapObject;
-            return true;
+            if (MapIds.IsValidIndex(MapIndex) && MapIds[MapIndex] == SelectedMapIdString)
+            {
+                OutMapEntry = MapEntries[MapIndex];
+                OutResolvedMapId = MapIds[MapIndex];
+                return true;
+            }
         }
     }
 
-    return false;
+    OutMapEntry = MapEntries[0];
+    OutResolvedMapId = MapIds[0];
+    bOutUsedFirstMapFallback = true;
+
+    if (SelectedMapIdString.IsEmpty())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D4B: SelectedMapId is empty. Auto-selecting first map from index: %s"), *OutResolvedMapId);
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D4B: SelectedMapId '%s' was not found. Auto-selecting first map from index: %s"),
+            *SelectedMapIdString,
+            *OutResolvedMapId);
+    }
+
+    return true;
 }
 
 bool AAsciiMapBuilderActor::ApplyMapEntryRuntimePaths(const TSharedPtr<FJsonObject>& MapEntry, const FString& FullIndexPath)
@@ -1051,6 +1181,15 @@ FVector AAsciiMapBuilderActor::GridToWorld(int32 Column, int32 Row, int32 Width,
 
 void AAsciiMapBuilderActor::ClearGeneratedMap()
 {
+    for (AActor* SpawnedActor : RuntimeSpawnedActors)
+    {
+        if (IsValid(SpawnedActor))
+        {
+            SpawnedActor->Destroy();
+        }
+    }
+    RuntimeSpawnedActors.Empty();
+
     for (TPair<FName, UInstancedStaticMeshComponent*>& Pair : RuntimeInstanceComponents)
     {
         if (Pair.Value)
@@ -1098,6 +1237,138 @@ UInstancedStaticMeshComponent* AAsciiMapBuilderActor::GetOrCreateInstanceCompone
     return NewComp;
 }
 
+void AAsciiMapBuilderActor::ApplyResolvedMaterialToSpawnedActor(AActor* SpawnedActor, UMaterialInterface* Material, FName MaterialSlotId) const
+{
+    if (!SpawnedActor || !Material)
+    {
+        return;
+    }
+
+    TArray<UMeshComponent*> MeshComponents;
+    SpawnedActor->GetComponents<UMeshComponent>(MeshComponents);
+    if (MeshComponents.Num() == 0)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("D6G: Spawned actor '%s' has no mesh components; material slot '%s' was not applied."),
+            *SpawnedActor->GetName(),
+            *MaterialSlotId.ToString());
+        return;
+    }
+
+    for (UMeshComponent* MeshComponent : MeshComponents)
+    {
+        if (MeshComponent)
+        {
+            MeshComponent->SetMaterial(0, Material);
+        }
+    }
+}
+
+void AAsciiMapBuilderActor::ResetGenerationStats()
+{
+    GenerationTotalCells = 0;
+    GenerationGeneratedCells = 0;
+    GenerationSkippedCells = 0;
+    GenerationUnknownSymbols = 0;
+    GenerationRegistryTransformInstances = 0;
+    GenerationRoleFallbackInstances = 0;
+    GenerationSpawnedActors = 0;
+    GenerationSymbolCounts.Empty();
+    GenerationMeshIdsUsed.Empty();
+    GenerationMissingMeshIds.Empty();
+    GenerationMaterialSlotsUsed.Empty();
+    GenerationMissingMaterialSlots.Empty();
+    GenerationWarningKeys.Empty();
+}
+
+void AAsciiMapBuilderActor::RecordMissingMeshId(FName MeshId, const FString& SymbolKey, const FString& Reason)
+{
+    GenerationMissingMeshIds.Add(MeshId);
+
+    const FString WarningKey = FString::Printf(TEXT("mesh:%s:%s"), *MeshId.ToString(), *Reason);
+    if (!GenerationWarningKeys.Contains(WarningKey))
+    {
+        GenerationWarningKeys.Add(WarningKey);
+        UE_LOG(LogTemp, Warning, TEXT("Runtime resolver fallback for symbol '%s': MeshId '%s' %s."),
+            *SymbolKey,
+            MeshId.IsNone() ? TEXT("<empty>") : *MeshId.ToString(),
+            *Reason);
+    }
+}
+
+void AAsciiMapBuilderActor::RecordMissingMaterialSlot(FName MaterialSlotId, const FString& SymbolKey, const FString& Reason)
+{
+    GenerationMissingMaterialSlots.Add(MaterialSlotId);
+
+    const FString WarningKey = FString::Printf(TEXT("material:%s:%s"), *MaterialSlotId.ToString(), *Reason);
+    if (!GenerationWarningKeys.Contains(WarningKey))
+    {
+        GenerationWarningKeys.Add(WarningKey);
+        UE_LOG(LogTemp, Warning, TEXT("Runtime resolver fallback for symbol '%s': MaterialSlotId '%s' %s."),
+            *SymbolKey,
+            MaterialSlotId.IsNone() ? TEXT("<empty>") : *MaterialSlotId.ToString(),
+            *Reason);
+    }
+}
+
+void AAsciiMapBuilderActor::LogGenerationStats(int32 Width, int32 Height) const
+{
+    UE_LOG(LogTemp, Display, TEXT("D6G: ASCII map generation finished."));
+    UE_LOG(LogTemp, Display, TEXT("D6G: RuntimeData mode = %s"), bUseMapPackageIndex ? TEXT("enabled") : TEXT("disabled"));
+    UE_LOG(LogTemp, Display, TEXT("D6G: MapPackageIndexPath = %s"), LastRuntimeDataIndexFullPath.IsEmpty() ? TEXT("<manual/unused>") : *LastRuntimeDataIndexFullPath);
+    UE_LOG(LogTemp, Display, TEXT("D6G: Available map count = %d"), LastRuntimeDataAvailableMapCount);
+    UE_LOG(LogTemp, Display, TEXT("D6G: Requested SelectedMapId = %s"), LastRuntimeDataRequestedMapId.IsEmpty() ? TEXT("<none>") : *LastRuntimeDataRequestedMapId);
+    UE_LOG(LogTemp, Display, TEXT("D6G: Resolved SelectedMapId = %s"), LastRuntimeDataResolvedMapId.IsEmpty() ? TEXT("<manual/none>") : *LastRuntimeDataResolvedMapId);
+    UE_LOG(LogTemp, Display, TEXT("D6G: Fallback to first map = %s"), bLastRuntimeDataUsedFirstMapFallback ? TEXT("true") : TEXT("false"));
+    UE_LOG(LogTemp, Display, TEXT("D6G: Runtime layout path = %s"), CurrentRuntimeMapFilePath.IsEmpty() ? TEXT("<manual>") : *CurrentRuntimeMapFilePath);
+    UE_LOG(LogTemp, Display, TEXT("D6G: Runtime resolved_tileset path = %s"), CurrentRuntimeResolvedTileSetJsonPath.IsEmpty() ? TEXT("<manual>") : *CurrentRuntimeResolvedTileSetJsonPath);
+    UE_LOG(LogTemp, Display, TEXT("D6G: Runtime material_manifest path = %s"), CurrentRuntimeMaterialManifestJsonPath.IsEmpty() ? TEXT("<manual>") : *CurrentRuntimeMaterialManifestJsonPath);
+    UE_LOG(LogTemp, Display, TEXT("D6G: Map size = %d x %d = %d cells"), Width, Height, GenerationTotalCells);
+    UE_LOG(LogTemp, Display, TEXT("D6G: Generated cells = %d"), GenerationGeneratedCells);
+    UE_LOG(LogTemp, Display, TEXT("D6G: Skipped cells = %d"), GenerationSkippedCells);
+    UE_LOG(LogTemp, Display, TEXT("D6G: Unknown symbols = %d"), GenerationUnknownSymbols);
+    UE_LOG(LogTemp, Display, TEXT("D6G: Mesh IDs used = %s"), *FormatNameSetForLog(GenerationMeshIdsUsed));
+    UE_LOG(LogTemp, Display, TEXT("D6G: Missing mesh IDs = %s"), *FormatNameSetForLog(GenerationMissingMeshIds));
+    UE_LOG(LogTemp, Display, TEXT("D6G: Material slots used = %s"), *FormatNameSetForLog(GenerationMaterialSlotsUsed));
+    UE_LOG(LogTemp, Display, TEXT("D6G: Missing material slots = %s"), *FormatNameSetForLog(GenerationMissingMaterialSlots));
+    UE_LOG(LogTemp, Display, TEXT("D6G: Registry-transform instances = %d"), GenerationRegistryTransformInstances);
+    UE_LOG(LogTemp, Display, TEXT("D6G: Role-fallback instances = %d"), GenerationRoleFallbackInstances);
+    UE_LOG(LogTemp, Display, TEXT("D6G: Spawned actor count = %d"), GenerationSpawnedActors);
+
+    for (const TPair<FString, int32>& Pair : GenerationSymbolCounts)
+    {
+        const FAsciiTileDefinition Def = GetDefinitionForSymbol(Pair.Key[0]);
+        const FName ResolvedMaterialSlotId = Def.MaterialSlotId.IsNone() ? Def.SlotId : Def.MaterialSlotId;
+        UE_LOG(LogTemp, Display, TEXT("D6G: Symbol '%s' | Count=%d | TileTypeId=%s | MeshId=%s | MaterialSlotId=%s | SlotId=%s | Role=%d | Generate=%s"),
+            *Pair.Key,
+            Pair.Value,
+            *Def.TileTypeId.ToString(),
+            *Def.MeshId.ToString(),
+            *ResolvedMaterialSlotId.ToString(),
+            *Def.SlotId.ToString(),
+            static_cast<int32>(Def.Role),
+            Def.bGenerate ? TEXT("true") : TEXT("false"));
+    }
+
+    UE_LOG(LogTemp, Display, TEXT("D6G: Legacy instance counts | Floor=%d Grass=%d Wood=%d Water=%d Wall=%d Door=%d"),
+        FloorInstances->GetInstanceCount(),
+        GrassInstances->GetInstanceCount(),
+        WoodInstances->GetInstanceCount(),
+        WaterInstances->GetInstanceCount(),
+        WallInstances->GetInstanceCount(),
+        DoorInstances->GetInstanceCount());
+
+    UE_LOG(LogTemp, Display, TEXT("D6G: Runtime dynamic component count = %d"), RuntimeInstanceComponents.Num());
+    for (const TPair<FName, UInstancedStaticMeshComponent*>& Pair : RuntimeInstanceComponents)
+    {
+        if (Pair.Value)
+        {
+            UE_LOG(LogTemp, Display, TEXT("D6G: Component '%s' instance count = %d"),
+                *Pair.Key.ToString(),
+                Pair.Value->GetInstanceCount());
+        }
+    }
+}
+
 void AAsciiMapBuilderActor::GenerateMap()
 {
     if (bUseMapPackageIndex)
@@ -1137,6 +1408,11 @@ void AAsciiMapBuilderActor::GenerateMap()
     {
         ClearRuntimeMapPackageState();
         RestoreManualJsonPathSettingsIfNeeded();
+        LastRuntimeDataAvailableMapCount = 0;
+        LastRuntimeDataRequestedMapId = SelectedMapId.IsNone() ? TEXT("<empty>") : SelectedMapId.ToString();
+        LastRuntimeDataResolvedMapId.Empty();
+        bLastRuntimeDataUsedFirstMapFallback = false;
+        LastRuntimeDataIndexFullPath.Empty();
         UE_LOG(LogTemp, Display, TEXT("D4B: MapPackageIndex loading disabled."));
     }
 
@@ -1156,10 +1432,7 @@ void AAsciiMapBuilderActor::GenerateMap()
 
     UE_LOG(LogTemp, Display, TEXT("Generating ASCII map: %d x %d"), Width, Height);
 
-    TMap<FString, int32> SymbolCounts;
-    int32 GeneratedTileCount = 0;
-    int32 SkippedTileCount = 0;
-    int32 UnknownSymbolCount = 0;
+    ResetGenerationStats();
 
     for (int32 Row = 0; Row < Height; ++Row)
     {
@@ -1168,23 +1441,28 @@ void AAsciiMapBuilderActor::GenerateMap()
             const TCHAR Symbol = Lines[Row][Column];
             const FString SymbolKey = FString::Chr(Symbol);
 
-            SymbolCounts.FindOrAdd(SymbolKey)++;
+            GenerationTotalCells++;
+            int32& SymbolCount = GenerationSymbolCounts.FindOrAdd(SymbolKey);
+            SymbolCount++;
 
             const FAsciiTileDefinition Def = GetDefinitionForSymbol(Symbol);
             if (!TileDefinitions.Contains(SymbolKey))
             {
-                UnknownSymbolCount++;
-                UE_LOG(LogTemp, Warning, TEXT("Unknown map symbol '%s' at row=%d column=%d"),
-                    *SymbolKey, Row, Column);
+                GenerationUnknownSymbols++;
+                if (SymbolCount == 1)
+                {
+                    UE_LOG(LogTemp, Warning, TEXT("Unknown map symbol '%s' first seen at row=%d column=%d"),
+                        *SymbolKey, Row, Column);
+                }
             }
 
             if (Def.bGenerate)
             {
-                GeneratedTileCount++;
+                GenerationGeneratedCells++;
             }
             else
             {
-                SkippedTileCount++;
+                GenerationSkippedCells++;
             }
 
             const FVector WorldLocation = GridToWorld(Column, Row, Width, Height);
@@ -1192,45 +1470,7 @@ void AAsciiMapBuilderActor::GenerateMap()
         }
     }
 
-    UE_LOG(LogTemp, Display, TEXT("ASCII map generation finished."));
-    UE_LOG(LogTemp, Display, TEXT("Map size: %d x %d = %d cells"), Width, Height, Width * Height);
-    UE_LOG(LogTemp, Display, TEXT("Generated tiles: %d"), GeneratedTileCount);
-    UE_LOG(LogTemp, Display, TEXT("Skipped tiles: %d"), SkippedTileCount);
-    UE_LOG(LogTemp, Display, TEXT("Unknown symbols: %d"), UnknownSymbolCount);
-
-    for (const TPair<FString, int32>& Pair : SymbolCounts)
-    {
-        const FAsciiTileDefinition Def = GetDefinitionForSymbol(Pair.Key[0]);
-        const FName ResolvedMaterialSlotId = Def.MaterialSlotId.IsNone() ? Def.SlotId : Def.MaterialSlotId;
-        UE_LOG(LogTemp, Display, TEXT("Symbol '%s' | Count=%d | TileTypeId=%s | MeshId=%s | MaterialSlotId=%s | SlotId=%s | Role=%d | Generate=%s"),
-            *Pair.Key,
-            Pair.Value,
-            *Def.TileTypeId.ToString(),
-            *Def.MeshId.ToString(),
-            *ResolvedMaterialSlotId.ToString(),
-            *Def.SlotId.ToString(),
-            static_cast<int32>(Def.Role),
-            Def.bGenerate ? TEXT("true") : TEXT("false"));
-    }
-
-    UE_LOG(LogTemp, Display, TEXT("Instance counts | Floor=%d Grass=%d Wood=%d Water=%d Wall=%d Door=%d"),
-        FloorInstances->GetInstanceCount(),
-        GrassInstances->GetInstanceCount(),
-        WoodInstances->GetInstanceCount(),
-        WaterInstances->GetInstanceCount(),
-        WallInstances->GetInstanceCount(),
-        DoorInstances->GetInstanceCount());
-
-    UE_LOG(LogTemp, Display, TEXT("Runtime dynamic component count: %d"), RuntimeInstanceComponents.Num());
-    for (const TPair<FName, UInstancedStaticMeshComponent*>& Pair : RuntimeInstanceComponents)
-    {
-        if (Pair.Value)
-        {
-            UE_LOG(LogTemp, Display, TEXT("Component '%s' instance count = %d"),
-                *Pair.Key.ToString(),
-                Pair.Value->GetInstanceCount());
-        }
-    }
+    LogGenerationStats(Width, Height);
 }
 
 void AAsciiMapBuilderActor::AddTileInstance(const TCHAR Symbol, const FVector& WorldLocation)
@@ -1259,36 +1499,42 @@ void AAsciiMapBuilderActor::AddTileInstance(const TCHAR Symbol, const FVector& W
         Transform.SetLocation(WorldLocation + FVector(0, 0, Def.ZOffset));
         Transform.SetScale3D(FVector(PlaneScale, PlaneScale, 1.0f));
         FloorInstances->AddInstance(Transform);
+        GenerationRoleFallbackInstances++;
         break;
 
     case EAsciiTileRole::Grass:
         Transform.SetLocation(WorldLocation + FVector(0, 0, Def.ZOffset));
         Transform.SetScale3D(FVector(PlaneScale, PlaneScale, 1.0f));
         GrassInstances->AddInstance(Transform);
+        GenerationRoleFallbackInstances++;
         break;
 
     case EAsciiTileRole::Wood:
         Transform.SetLocation(WorldLocation + FVector(0, 0, Def.ZOffset));
         Transform.SetScale3D(FVector(PlaneScale, PlaneScale, 1.0f));
         WoodInstances->AddInstance(Transform);
+        GenerationRoleFallbackInstances++;
         break;
 
     case EAsciiTileRole::Water:
         Transform.SetLocation(WorldLocation + FVector(0, 0, Def.ZOffset));
         Transform.SetScale3D(FVector(PlaneScale, PlaneScale, 1.0f));
         WaterInstances->AddInstance(Transform);
+        GenerationRoleFallbackInstances++;
         break;
 
     case EAsciiTileRole::Wall:
         Transform.SetLocation(WorldLocation + FVector(0, 0, Def.Height * 0.5f));
         Transform.SetScale3D(FVector(CubeXYScale, CubeXYScale, Def.Height / 100.0f));
         WallInstances->AddInstance(Transform);
+        GenerationRoleFallbackInstances++;
         break;
 
     case EAsciiTileRole::Door:
         Transform.SetLocation(WorldLocation + FVector(0, 0, Def.Height * 0.5f));
         Transform.SetScale3D(FVector(CubeXYScale * 0.8f, CubeXYScale * 0.2f, Def.Height / 100.0f));
         DoorInstances->AddInstance(Transform);
+        GenerationRoleFallbackInstances++;
         break;
 
     case EAsciiTileRole::Foliage:
@@ -1296,6 +1542,7 @@ void AAsciiMapBuilderActor::AddTileInstance(const TCHAR Symbol, const FVector& W
         Transform.SetLocation(WorldLocation + FVector(0, 0, Def.Height * 0.5f));
         Transform.SetScale3D(FVector(CubeXYScale * 0.7f, CubeXYScale * 0.7f, Def.Height / 100.0f));
         DoorInstances->AddInstance(Transform);
+        GenerationRoleFallbackInstances++;
         break;
 
     default:
@@ -1317,42 +1564,147 @@ bool AAsciiMapBuilderActor::TryAddTileInstanceRuntimeResolved(const TCHAR Symbol
 
     const FString SymbolKey = FString::Chr(Symbol);
 
-    if (!MeshRegistry)
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Runtime resolver fallback for symbol '%s': MeshRegistry is not assigned."), *SymbolKey);
-        return false;
-    }
-
     const FName MeshId = Def.MeshId;
     const FName MaterialSlotId = Def.MaterialSlotId.IsNone() ? Def.SlotId : Def.MaterialSlotId;
 
     if (MeshId.IsNone())
     {
-        UE_LOG(LogTemp, Warning, TEXT("Runtime resolver fallback for symbol '%s': MeshId is empty."), *SymbolKey);
+        RecordMissingMeshId(MeshId, SymbolKey, TEXT("is empty"));
         return false;
     }
 
+    GenerationMeshIdsUsed.Add(MeshId);
+
     if (MaterialSlotId.IsNone())
     {
-        UE_LOG(LogTemp, Warning, TEXT("Runtime resolver fallback for symbol '%s': MaterialSlotId and SlotId are empty."), *SymbolKey);
+        RecordMissingMaterialSlot(MaterialSlotId, SymbolKey, TEXT("and SlotId are empty"));
+        return false;
+    }
+
+    GenerationMaterialSlotsUsed.Add(MaterialSlotId);
+
+    if (!MeshRegistry)
+    {
+        RecordMissingMeshId(MeshId, SymbolKey, TEXT("could not be resolved because MeshRegistry is not assigned"));
         return false;
     }
 
     FGeneratedMeshEntry MeshEntry;
-    if (!MeshRegistry->FindMeshById(MeshId, MeshEntry) || !MeshEntry.Mesh)
+    if (!MeshRegistry->FindMeshById(MeshId, MeshEntry))
     {
-        UE_LOG(LogTemp, Warning, TEXT("Runtime resolver fallback for symbol '%s': MeshId '%s' was not found or has no mesh."),
-            *SymbolKey,
-            *MeshId.ToString());
+        RecordMissingMeshId(MeshId, SymbolKey, TEXT("was not found in MeshRegistry"));
         return false;
     }
 
     UMaterialInterface* Material = ResolveMaterialForSlot(MaterialSlotId, nullptr);
     if (!Material)
     {
-        UE_LOG(LogTemp, Warning, TEXT("Runtime resolver fallback for symbol '%s': MaterialSlotId '%s' was not found in RuntimeMaterialCache or MaterialRegistry."),
-            *SymbolKey,
-            *MaterialSlotId.ToString());
+        RecordMissingMaterialSlot(MaterialSlotId, SymbolKey, TEXT("was not found in RuntimeMaterialCache or MaterialRegistry"));
+        return false;
+    }
+
+    const bool bCanSpawnActor = MeshEntry.bSpawnActorInsteadOfStaticMesh && MeshEntry.ActorClass != nullptr;
+    if (MeshEntry.bUseRegistryTransform)
+    {
+        FVector FinalLocation = WorldLocation + MeshEntry.LocationOffset + FVector(0.0f, 0.0f, Def.ZOffset);
+        FVector FinalScale = MeshEntry.DefaultScale;
+
+        if (MeshEntry.Mesh)
+        {
+            const FBoxSphereBounds MeshBounds = MeshEntry.Mesh->GetBounds();
+            const FVector MeshSize = MeshBounds.BoxExtent * 2.0f;
+
+            if (MeshEntry.bFitXYToTileSize)
+            {
+                if (MeshSize.X > KINDA_SMALL_NUMBER)
+                {
+                    FinalScale.X = (TileSize * MeshEntry.DefaultScale.X) / MeshSize.X;
+                }
+
+                if (MeshSize.Y > KINDA_SMALL_NUMBER)
+                {
+                    FinalScale.Y = (TileSize * MeshEntry.DefaultScale.Y) / MeshSize.Y;
+                }
+            }
+
+            if (MeshEntry.bFitZToTileSize && MeshSize.Z > KINDA_SMALL_NUMBER)
+            {
+                FinalScale.Z = (TileSize * MeshEntry.DefaultScale.Z) / MeshSize.Z;
+            }
+
+            if (MeshEntry.bBottomAlignToTileBase)
+            {
+                const float LocalBottomZ = MeshBounds.Origin.Z - MeshBounds.BoxExtent.Z;
+                FinalLocation.Z -= LocalBottomZ * FinalScale.Z;
+            }
+        }
+
+        FTransform Transform;
+        Transform.SetLocation(FinalLocation);
+        Transform.SetRotation(MeshEntry.RotationOffset.Quaternion());
+        Transform.SetScale3D(FinalScale);
+
+        if (bCanSpawnActor)
+        {
+            UWorld* World = GetWorld();
+            if (!World)
+            {
+                UE_LOG(LogTemp, Warning, TEXT("Runtime resolver fallback for symbol '%s': cannot spawn ActorClass for MeshId '%s' because World is null."),
+                    *SymbolKey,
+                    *MeshId.ToString());
+                return false;
+            }
+
+            FActorSpawnParameters SpawnParams;
+            SpawnParams.Owner = this;
+            SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+            AActor* SpawnedActor = World->SpawnActor<AActor>(MeshEntry.ActorClass, Transform.GetLocation(), Transform.GetRotation().Rotator(), SpawnParams);
+            if (SpawnedActor)
+            {
+                SpawnedActor->SetActorScale3D(Transform.GetScale3D());
+                RuntimeSpawnedActors.Add(SpawnedActor);
+                ApplyResolvedMaterialToSpawnedActor(SpawnedActor, Material, MaterialSlotId);
+                GenerationRegistryTransformInstances++;
+                GenerationSpawnedActors++;
+                return true;
+            }
+
+            UE_LOG(LogTemp, Warning, TEXT("Runtime resolver fallback for symbol '%s': failed to spawn ActorClass for MeshId '%s'."),
+                *SymbolKey,
+                *MeshId.ToString());
+
+            if (!MeshEntry.Mesh)
+            {
+                RecordMissingMeshId(MeshId, SymbolKey, TEXT("has no StaticMesh fallback after actor spawn failed"));
+                return false;
+            }
+        }
+
+        if (!MeshEntry.Mesh)
+        {
+            RecordMissingMeshId(MeshId, SymbolKey, TEXT("has no StaticMesh assigned"));
+            return false;
+        }
+
+        const FName ComponentKey(*FString::Printf(TEXT("%s__%s"), *MeshId.ToString(), *MaterialSlotId.ToString()));
+        UInstancedStaticMeshComponent* RuntimeComponent = GetOrCreateInstanceComponent(ComponentKey, MeshEntry.Mesh, Material);
+        if (!RuntimeComponent)
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Runtime resolver fallback for symbol '%s': failed to create component '%s'."),
+                *SymbolKey,
+                *ComponentKey.ToString());
+            return false;
+        }
+
+        RuntimeComponent->AddInstance(Transform);
+        GenerationRegistryTransformInstances++;
+        return true;
+    }
+
+    if (!MeshEntry.Mesh)
+    {
+        RecordMissingMeshId(MeshId, SymbolKey, TEXT("has no StaticMesh assigned for role-based fallback"));
         return false;
     }
 
@@ -1410,7 +1762,7 @@ bool AAsciiMapBuilderActor::TryAddTileInstanceRuntimeResolved(const TCHAR Symbol
         break;
 
     default:
-        UE_LOG(LogTemp, Warning, TEXT("Runtime resolver fallback for symbol '%s': role %d is not generated by C3."),
+        UE_LOG(LogTemp, Warning, TEXT("Runtime resolver fallback for symbol '%s': role %d is not generated by legacy role geometry."),
             *SymbolKey,
             static_cast<int32>(Def.Role));
         return false;
@@ -1422,6 +1774,7 @@ bool AAsciiMapBuilderActor::TryAddTileInstanceRuntimeResolved(const TCHAR Symbol
         Scale.Z * MeshEntry.DefaultScale.Z));
 
     RuntimeComponent->AddInstance(Transform);
+    GenerationRoleFallbackInstances++;
     return true;
 }
 
