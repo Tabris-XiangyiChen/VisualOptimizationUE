@@ -1,11 +1,41 @@
 {
   "schema_version": "map_package_index_v1",
-  "created_at": "2026-08-15T17:53:24",
+  "created_at": "2026-08-16T16:58:08",
   "created_by": "runtime_export",
   "runtime_root": "VisualOptimization/RuntimeData",
   "runtime_root_absolute": "I:\\Disertation\\VisualOptimise\\generated\\ue_ready\\runtime_data",
   "ue_copy_destination": "I:\\Disertation\\VisualOptimizationUE\\Content\\VisualOptimization\\RuntimeData",
   "maps": [
+    {
+      "map_id": "deep_shrine_vault_level",
+      "display_name": "deep_shrine_vault_level",
+      "package_dir": "maps/deep_shrine_vault_level",
+      "manifest": "maps/deep_shrine_vault_level/manifest.json",
+      "layout": "maps/deep_shrine_vault_level/layout/map.txt",
+      "resolved_tileset": "maps/deep_shrine_vault_level/rules/resolved_tileset.json",
+      "material_manifest": "maps/deep_shrine_vault_level/materials/material_manifest.json",
+      "material_textures_dir": "maps/deep_shrine_vault_level/materials/textures"
+    },
+    {
+      "map_id": "dungeon_chamber_level",
+      "display_name": "dungeon_chamber_level",
+      "package_dir": "maps/dungeon_chamber_level",
+      "manifest": "maps/dungeon_chamber_level/manifest.json",
+      "layout": "maps/dungeon_chamber_level/layout/map.txt",
+      "resolved_tileset": "maps/dungeon_chamber_level/rules/resolved_tileset.json",
+      "material_manifest": "maps/dungeon_chamber_level/materials/material_manifest.json",
+      "material_textures_dir": "maps/dungeon_chamber_level/materials/textures"
+    },
+    {
+      "map_id": "overworld_ruins_level_files",
+      "display_name": "overworld_ruins_level_files",
+      "package_dir": "maps/overworld_ruins_level_files",
+      "manifest": "maps/overworld_ruins_level_files/manifest.json",
+      "layout": "maps/overworld_ruins_level_files/layout/map.txt",
+      "resolved_tileset": "maps/overworld_ruins_level_files/rules/resolved_tileset.json",
+      "material_manifest": "maps/overworld_ruins_level_files/materials/material_manifest.json",
+      "material_textures_dir": "maps/overworld_ruins_level_files/materials/textures"
+    },
     {
       "map_id": "test_map1_clean",
       "display_name": "test_map1_clean",
