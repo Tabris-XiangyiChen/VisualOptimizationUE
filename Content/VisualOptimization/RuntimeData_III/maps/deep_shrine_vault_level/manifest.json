@@ -1,0 +1,30 @@
+{
+  "schema_version": "runtime_map_package_v1",
+  "map_id": "deep_shrine_vault_level",
+  "display_name": "deep_shrine_vault_level",
+  "package_dir": "maps/deep_shrine_vault_level",
+  "files": {
+    "layout": "layout/map.txt",
+    "resolved_tileset": "rules/resolved_tileset.json",
+    "material_manifest": "materials/material_manifest.json"
+  },
+  "directories": {
+    "material_textures": "materials/textures",
+    "backend_candidates": "materials/backend_candidates"
+  },
+  "generation": {
+    "type": "deterministic_grid_builder",
+    "coordinate_system": "tile_grid",
+    "tile_size": 100
+  },
+  "source": {
+    "authoring_map_package": "I:\\Disertation\\VisualOptimise\\data\\maps\\deep_shrine_vault_level",
+    "source_material_generation_run": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_130016_deep_shrine_vault_level_material_generation",
+    "project_root": "I:\\Disertation\\VisualOptimise",
+    "llm_calls": 0,
+    "sd_calls": 0,
+    "stablematerials_calls": 0,
+    "new_image_generation": false
+  },
+  "warnings": []
+}

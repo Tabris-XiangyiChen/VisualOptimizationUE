@@ -1,0 +1,16 @@
+{
+  "schema_version": "runtime_data_refresh_manifest_v1",
+  "created_at": "2026-08-17T04:54:15",
+  "mode": "merge_or_update_map_packages",
+  "source_runtime_package": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_045409_overworld_ruins_level_files_runtime_export\\03_runtime_data_package",
+  "target_runtime_data": "I:\\Disertation\\VisualOptimise\\generated\\ue_ready\\runtime_data",
+  "maps": [
+    "deep_shrine_vault_level",
+    "dungeon_chamber_level",
+    "kaykit_v2_mesh_test",
+    "overworld_ruins_level_files",
+    "test_map1_clean",
+    "test_map2",
+    "test_map3"
+  ]
+}

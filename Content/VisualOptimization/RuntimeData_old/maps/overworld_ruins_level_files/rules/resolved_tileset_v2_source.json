@@ -1,0 +1,149 @@
+{
+  "schema_version": "resolved_tileset_v2",
+  "map_id": "overworld_ruins_level_files",
+  "id_policy": "tile_type_id = tile_<map_id>_<symbol_alias>_<normalized_canonical_material_id>",
+  "tiles": [
+    {
+      "symbol": "#",
+      "legend_name": "surface_ruin_stone",
+      "tile_type_id": "tile_overworld_ruins_level_files_hash_ruin_stone_wall",
+      "tile_semantics": "ruin stone wall blocks and broken masonry forming vertical structures",
+      "mesh_id": "wall_block",
+      "selected_mesh_role_tags": [
+        "wall_surface",
+        "blocking",
+        "vertical_structure"
+      ],
+      "shape_type": "vertical_block",
+      "height_class": "high",
+      "height": 300,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "ruin_stone_wall",
+      "material_slot_id": "mat_ruin_stone_wall"
+    },
+    {
+      "symbol": ".",
+      "legend_name": "worn_stone_path",
+      "tile_type_id": "tile_overworld_ruins_level_files_dot_worn_stone_path",
+      "tile_semantics": "flat worn stone path leading to the ruin entrance",
+      "mesh_id": "tile_plane",
+      "selected_mesh_role_tags": [
+        "floor_surface",
+        "grass_surface",
+        "wood_surface",
+        "flat_surface",
+        "walkable"
+      ],
+      "shape_type": "flat_tile",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "worn_stone_path",
+      "material_slot_id": "mat_worn_stone_path"
+    },
+    {
+      "symbol": "0",
+      "legend_name": "void",
+      "tile_type_id": "tile_overworld_ruins_level_files_zero_no_geometry",
+      "tile_semantics": "empty outside-play-area space with no visible surface",
+      "mesh_id": null,
+      "selected_mesh_role_tags": [],
+      "shape_type": null,
+      "height_class": null,
+      "height": null,
+      "z_offset": null,
+      "generate_geometry": false,
+      "generate_material": false,
+      "canonical_material_id": null,
+      "material_slot_id": null
+    },
+    {
+      "symbol": "=",
+      "legend_name": "wooden_bridge",
+      "tile_type_id": "tile_overworld_ruins_level_files_equals_aged_wood_bridge",
+      "tile_semantics": "flat wooden bridge planks crossing the river",
+      "mesh_id": "tile_plane",
+      "selected_mesh_role_tags": [
+        "floor_surface",
+        "grass_surface",
+        "wood_surface",
+        "flat_surface",
+        "walkable"
+      ],
+      "shape_type": "flat_tile",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "aged_wood_bridge",
+      "material_slot_id": "mat_aged_wood_bridge"
+    },
+    {
+      "symbol": "D",
+      "legend_name": "dungeon_entrance_door",
+      "tile_type_id": "tile_overworld_ruins_level_files_d_dungeon_wood_door",
+      "tile_semantics": "vertical wooden door or gate set into the ruin wall",
+      "mesh_id": "door_proxy",
+      "selected_mesh_role_tags": [
+        "door_prop",
+        "gate_prop",
+        "vertical_prop",
+        "interactive"
+      ],
+      "shape_type": "vertical_prop",
+      "height_class": "medium",
+      "height": 250,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "dungeon_wood_door",
+      "material_slot_id": "mat_dungeon_wood_door"
+    },
+    {
+      "symbol": "g",
+      "legend_name": "mossy_grass_ground",
+      "tile_type_id": "tile_overworld_ruins_level_files_g_mossy_grass_ground",
+      "tile_semantics": "flat mossy grass ground surrounding the ruin",
+      "mesh_id": "tile_plane",
+      "selected_mesh_role_tags": [
+        "floor_surface",
+        "grass_surface",
+        "wood_surface",
+        "flat_surface",
+        "walkable"
+      ],
+      "shape_type": "flat_tile",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "mossy_grass_ground",
+      "material_slot_id": "mat_mossy_grass_ground"
+    },
+    {
+      "symbol": "~",
+      "legend_name": "shallow_river_water",
+      "tile_type_id": "tile_overworld_ruins_level_files_tilde_shallow_river_water",
+      "tile_semantics": "flat shallow river water surface",
+      "mesh_id": "water_plane",
+      "selected_mesh_role_tags": [
+        "water_surface",
+        "flat_surface"
+      ],
+      "shape_type": "flat_tile",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": -20,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "shallow_river_water",
+      "material_slot_id": "mat_shallow_river_water"
+    }
+  ]
+}

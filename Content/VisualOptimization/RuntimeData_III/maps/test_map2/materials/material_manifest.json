@@ -1,0 +1,1015 @@
+{
+  "schema_version": "material_manifest_v1",
+  "map_id": "test_map2",
+  "created_at": "2026-08-15T16:07:31",
+  "source": {
+    "source_run": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview",
+    "resolved_materials_v2": "03_python_resolver/resolved_materials_v2.json",
+    "compiled_sd15_prompts": "06_compiled_prompts/compiled_sd15_prompts_v4.json",
+    "compiled_stablematerials_prompts": "06_compiled_prompts/compiled_stablematerials_prompts_v4.json",
+    "material_mode": "export-only",
+    "runtime_source_backend": "sd15",
+    "selection_policy": "first_available_seed",
+    "llm_calls": 0,
+    "sd_calls": 0,
+    "stablematerials_calls": 0,
+    "new_image_generation": false
+  },
+  "materials": [
+    {
+      "material_slot_id": "mat_ancient_stone_wall",
+      "canonical_material_id": "ancient_stone_wall",
+      "display_label": "ancient_stone_wall",
+      "material_family": "wall",
+      "semantic_material_family": "wall",
+      "used_by_symbols": [
+        "X"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "X",
+          "material_slot_id": "mat_ancient_stone_wall",
+          "canonical_material_id": "ancient_stone_wall",
+          "expected_mesh_ids": [
+            "wall_block"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_ancient_stone_wall/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 111,
+        "textures": {
+          "basecolor": "textures/mat_ancient_stone_wall/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 111,
+          "candidates": [
+            {
+              "seed": 111,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_ancient_stone_wall/seed_111/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_ancient_stone_wall\\seed_111.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 111,
+          "candidates": [
+            {
+              "seed": 111,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_ancient_stone_wall/seed_111/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_ancient_stone_wall/seed_111/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_ancient_stone_wall/seed_111/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_ancient_stone_wall/seed_111/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_ancient_stone_wall/seed_111/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_ancient_stone_wall_seed_111\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_ancient_stone_wall_seed_111\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_ancient_stone_wall_seed_111\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_ancient_stone_wall_seed_111\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_ancient_stone_wall_seed_111\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_ancient_stone_wall\\seed_111.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_ancient_stone_wall\\seed_111.png",
+      "semantic_brief": {
+        "canonical_material_id": "ancient_stone_wall",
+        "identity": "stone",
+        "material_family": "wall",
+        "raw_material_clues": [
+          {
+            "text": "ancient_stone_wall",
+            "source_symbol": "X",
+            "source_field": "legend.name"
+          },
+          {
+            "text": "large grey stone wall and ruined boundary blocks made of solid stone",
+            "source_symbol": "X",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "stone wall",
+            "reason": "object_shape",
+            "source_symbol": "X"
+          },
+          {
+            "term": "ruined boundary",
+            "reason": "usage_context",
+            "source_symbol": "X"
+          },
+          {
+            "term": "solid stone",
+            "reason": "material_identity",
+            "source_symbol": "X"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "front facing closeup ancient stone wall, large grey stone blocks, solid stone masonry, weathered cracked surface, rough stone texture, aged mortar joints, tileable stone wall, muted grey color variation",
+          "negative_prompt": "wood, grass, water, metal",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "ancient grey stone wall with large blocks and weathered cracked surface, rough stone blocks with aged mortar joints, grey and muted brown",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_mossy_grass_ground",
+      "canonical_material_id": "mossy_grass_ground",
+      "display_label": "mossy_grass_ground",
+      "material_family": "ground",
+      "semantic_material_family": "ground",
+      "used_by_symbols": [
+        "m"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "m",
+          "material_slot_id": "mat_mossy_grass_ground",
+          "canonical_material_id": "mossy_grass_ground",
+          "expected_mesh_ids": [
+            "tile_plane"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_mossy_grass_ground/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 111,
+        "textures": {
+          "basecolor": "textures/mat_mossy_grass_ground/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 111,
+          "candidates": [
+            {
+              "seed": 111,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_mossy_grass_ground/seed_111/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_mossy_grass_ground\\seed_111.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 111,
+          "candidates": [
+            {
+              "seed": 111,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_mossy_grass_ground/seed_111/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_mossy_grass_ground/seed_111/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_mossy_grass_ground/seed_111/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_mossy_grass_ground/seed_111/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_mossy_grass_ground/seed_111/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_mossy_grass_ground_seed_111\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_mossy_grass_ground_seed_111\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_mossy_grass_ground_seed_111\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_mossy_grass_ground_seed_111\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_mossy_grass_ground_seed_111\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_mossy_grass_ground\\seed_111.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_mossy_grass_ground\\seed_111.png",
+      "semantic_brief": {
+        "canonical_material_id": "mossy_grass_ground",
+        "identity": "organic_ground",
+        "material_family": "ground",
+        "raw_material_clues": [
+          {
+            "text": "mossy_grass_ground",
+            "source_symbol": "m",
+            "source_field": "legend.name"
+          },
+          {
+            "text": "dark green mossy grass ground growing over damp ruined stone",
+            "source_symbol": "m",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "grass ground",
+            "reason": "landform_context",
+            "source_symbol": "m"
+          },
+          {
+            "term": "mossy",
+            "reason": "material_identity",
+            "source_symbol": "m"
+          },
+          {
+            "term": "ruined stone",
+            "reason": "landform_context",
+            "source_symbol": "m"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top down closeup mossy grass ground, dark green grass texture, damp mossy patches, ruined stone fragments, organic ground cover, uneven grass blades, tileable grass ground, muted green color variation",
+          "negative_prompt": "stone, wood, water, metal",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "mossy dark green grass ground with damp patches and stone fragments, uneven grass blades with mossy patches, dark green and brown",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_old_wooden_gate",
+      "canonical_material_id": "old_wooden_gate",
+      "display_label": "old_wooden_gate",
+      "material_family": "door",
+      "semantic_material_family": "door",
+      "used_by_symbols": [
+        "H"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "H",
+          "material_slot_id": "mat_old_wooden_gate",
+          "canonical_material_id": "old_wooden_gate",
+          "expected_mesh_ids": [
+            "door_proxy"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_old_wooden_gate/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 111,
+        "textures": {
+          "basecolor": "textures/mat_old_wooden_gate/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 111,
+          "candidates": [
+            {
+              "seed": 111,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_old_wooden_gate/seed_111/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_old_wooden_gate\\seed_111.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 111,
+          "candidates": [
+            {
+              "seed": 111,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_old_wooden_gate/seed_111/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_old_wooden_gate/seed_111/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_old_wooden_gate/seed_111/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_old_wooden_gate/seed_111/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_old_wooden_gate/seed_111/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_old_wooden_gate_seed_111\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_old_wooden_gate_seed_111\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_old_wooden_gate_seed_111\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_old_wooden_gate_seed_111\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_old_wooden_gate_seed_111\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_old_wooden_gate\\seed_111.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_old_wooden_gate\\seed_111.png",
+      "semantic_brief": {
+        "canonical_material_id": "old_wooden_gate",
+        "identity": "wood",
+        "material_family": "door",
+        "raw_material_clues": [
+          {
+            "text": "old_wooden_gate",
+            "source_symbol": "H",
+            "source_field": "legend.name"
+          },
+          {
+            "text": "old wooden dungeon door or gate set into stone walls",
+            "source_symbol": "H",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "dungeon door",
+            "reason": "usage_context",
+            "source_symbol": "H"
+          },
+          {
+            "term": "gate",
+            "reason": "object_shape",
+            "source_symbol": "H"
+          },
+          {
+            "term": "wooden",
+            "reason": "material_identity",
+            "source_symbol": "H"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "front facing panel old wooden gate, aged wood planks, weathered worn surface, dark brown wood grain, cracked wood texture, rustic iron hinges, tileable wood panel, muted brown color variation",
+          "negative_prompt": "stone, grass, water, metal",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "old wooden gate with aged planks and weathered worn surface, cracked wood planks with visible grain, dark brown and muted grey",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_rotting_wood_planks",
+      "canonical_material_id": "rotting_wood_planks",
+      "display_label": "rotting_wood_planks",
+      "material_family": "floor",
+      "semantic_material_family": "floor",
+      "used_by_symbols": [
+        "b"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "b",
+          "material_slot_id": "mat_rotting_wood_planks",
+          "canonical_material_id": "rotting_wood_planks",
+          "expected_mesh_ids": [
+            "tile_plane"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_rotting_wood_planks/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 111,
+        "textures": {
+          "basecolor": "textures/mat_rotting_wood_planks/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 111,
+          "candidates": [
+            {
+              "seed": 111,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_rotting_wood_planks/seed_111/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_rotting_wood_planks\\seed_111.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 111,
+          "candidates": [
+            {
+              "seed": 111,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_rotting_wood_planks/seed_111/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_rotting_wood_planks/seed_111/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_rotting_wood_planks/seed_111/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_rotting_wood_planks/seed_111/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_rotting_wood_planks/seed_111/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_rotting_wood_planks_seed_111\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_rotting_wood_planks_seed_111\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_rotting_wood_planks_seed_111\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_rotting_wood_planks_seed_111\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_rotting_wood_planks_seed_111\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_rotting_wood_planks\\seed_111.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_rotting_wood_planks\\seed_111.png",
+      "semantic_brief": {
+        "canonical_material_id": "rotting_wood_planks",
+        "identity": "wood",
+        "material_family": "floor",
+        "raw_material_clues": [
+          {
+            "text": "rotting_wood_planks",
+            "source_symbol": "b",
+            "source_field": "legend.name"
+          },
+          {
+            "text": "aged brown wooden plank bridge or walkway surface crossing damp ruins",
+            "source_symbol": "b",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "wooden bridge",
+            "reason": "usage_context",
+            "source_symbol": "b"
+          },
+          {
+            "term": "planks",
+            "reason": "object_shape",
+            "source_symbol": "b"
+          },
+          {
+            "term": "walkway",
+            "reason": "usage_context",
+            "source_symbol": "b"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top down closeup rotting wood planks, aged brown wood planks, damp weathered wood, cracked wood surface, worn plank edges, mossy patches, tileable wood planks, muted brown color variation",
+          "negative_prompt": "stone, grass, water, metal",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "rotting brown wood planks with damp cracks and mossy patches, worn plank edges with visible grain, brown and dark green",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_shallow_canal_water",
+      "canonical_material_id": "shallow_canal_water",
+      "display_label": "shallow_canal_water",
+      "material_family": "water",
+      "semantic_material_family": "water",
+      "used_by_symbols": [
+        "w"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "w",
+          "material_slot_id": "mat_shallow_canal_water",
+          "canonical_material_id": "shallow_canal_water",
+          "expected_mesh_ids": [
+            "water_plane"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_shallow_canal_water/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 111,
+        "textures": {
+          "basecolor": "textures/mat_shallow_canal_water/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 111,
+          "candidates": [
+            {
+              "seed": 111,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_shallow_canal_water/seed_111/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_shallow_canal_water\\seed_111.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 111,
+          "candidates": [
+            {
+              "seed": 111,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_shallow_canal_water/seed_111/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_shallow_canal_water/seed_111/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_shallow_canal_water/seed_111/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_shallow_canal_water/seed_111/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_shallow_canal_water/seed_111/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_shallow_canal_water_seed_111\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_shallow_canal_water_seed_111\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_shallow_canal_water_seed_111\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_shallow_canal_water_seed_111\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_shallow_canal_water_seed_111\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_shallow_canal_water\\seed_111.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_shallow_canal_water\\seed_111.png",
+      "semantic_brief": {
+        "canonical_material_id": "shallow_canal_water",
+        "identity": "water",
+        "material_family": "water",
+        "raw_material_clues": [
+          {
+            "text": "shallow_canal_water",
+            "source_symbol": "w",
+            "source_field": "legend.name"
+          },
+          {
+            "text": "dark blue-green shallow water in a ruined canal or flooded passage",
+            "source_symbol": "w",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "canal water",
+            "reason": "landform_context",
+            "source_symbol": "w"
+          },
+          {
+            "term": "shallow water",
+            "reason": "landform_context",
+            "source_symbol": "w"
+          },
+          {
+            "term": "flooded passage",
+            "reason": "usage_context",
+            "source_symbol": "w"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top down closeup shallow canal water, dark blue-green water surface, gentle ripples, muddy bottom visible, reflective water texture, damp organic debris, tileable water surface, muted blue-green color variation",
+          "negative_prompt": "stone, wood, grass, metal",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "shallow dark blue-green canal water with gentle ripples and muddy bottom, reflective water surface with ripples, blue-green and brown",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_wet_reeds_and_grass",
+      "canonical_material_id": "wet_reeds_and_grass",
+      "display_label": "wet_reeds_and_grass",
+      "material_family": "vegetation",
+      "semantic_material_family": "vegetation",
+      "used_by_symbols": [
+        "r"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "r",
+          "material_slot_id": "mat_wet_reeds_and_grass",
+          "canonical_material_id": "wet_reeds_and_grass",
+          "expected_mesh_ids": [
+            "tile_plane"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_wet_reeds_and_grass/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 111,
+        "textures": {
+          "basecolor": "textures/mat_wet_reeds_and_grass/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 111,
+          "candidates": [
+            {
+              "seed": 111,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_wet_reeds_and_grass/seed_111/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_wet_reeds_and_grass\\seed_111.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 111,
+          "candidates": [
+            {
+              "seed": 111,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_wet_reeds_and_grass/seed_111/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_wet_reeds_and_grass/seed_111/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_wet_reeds_and_grass/seed_111/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_wet_reeds_and_grass/seed_111/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_wet_reeds_and_grass/seed_111/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wet_reeds_and_grass_seed_111\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wet_reeds_and_grass_seed_111\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wet_reeds_and_grass_seed_111\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wet_reeds_and_grass_seed_111\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_wet_reeds_and_grass_seed_111\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_wet_reeds_and_grass\\seed_111.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_wet_reeds_and_grass\\seed_111.png",
+      "semantic_brief": {
+        "canonical_material_id": "wet_reeds_and_grass",
+        "identity": "organic_ground",
+        "material_family": "vegetation",
+        "raw_material_clues": [
+          {
+            "text": "wet_reeds_and_grass",
+            "source_symbol": "r",
+            "source_field": "legend.name"
+          },
+          {
+            "text": "thin reeds, tall grass, and wet organic vegetation growing near water",
+            "source_symbol": "r",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "reeds",
+            "reason": "object_shape",
+            "source_symbol": "r"
+          },
+          {
+            "term": "tall grass",
+            "reason": "object_shape",
+            "source_symbol": "r"
+          },
+          {
+            "term": "near water",
+            "reason": "landform_context",
+            "source_symbol": "r"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top down closeup wet reeds and grass, thin reeds texture, tall grass blades, wet organic vegetation, damp green leaves, dense reed clusters, tileable reeds grass, muted green color variation",
+          "negative_prompt": "stone, wood, water surface, metal",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "wet reeds and grass with thin blades and damp organic vegetation, dense reed clusters with tall grass, green and brown",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_worn_stone_floor",
+      "canonical_material_id": "worn_stone_floor",
+      "display_label": "worn_stone_floor",
+      "material_family": "floor",
+      "semantic_material_family": "floor",
+      "used_by_symbols": [
+        ","
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": ",",
+          "material_slot_id": "mat_worn_stone_floor",
+          "canonical_material_id": "worn_stone_floor",
+          "expected_mesh_ids": [
+            "tile_plane"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_worn_stone_floor/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 111,
+        "textures": {
+          "basecolor": "textures/mat_worn_stone_floor/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 111,
+          "candidates": [
+            {
+              "seed": 111,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_worn_stone_floor/seed_111/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_worn_stone_floor\\seed_111.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 111,
+          "candidates": [
+            {
+              "seed": 111,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_worn_stone_floor/seed_111/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_worn_stone_floor/seed_111/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_worn_stone_floor/seed_111/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_worn_stone_floor/seed_111/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_worn_stone_floor/seed_111/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_worn_stone_floor_seed_111\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_worn_stone_floor_seed_111\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_worn_stone_floor_seed_111\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_worn_stone_floor_seed_111\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\stablematerials\\stablematerials_mat_worn_stone_floor_seed_111\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_worn_stone_floor\\seed_111.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260815_160436_test_map2_d6f_a4_full_two_llm_material_generation_preview\\07_generation\\sd15\\plan_a\\mat_worn_stone_floor\\seed_111.png",
+      "semantic_brief": {
+        "canonical_material_id": "worn_stone_floor",
+        "identity": "stone",
+        "material_family": "floor",
+        "raw_material_clues": [
+          {
+            "text": "worn_stone_floor",
+            "source_symbol": ",",
+            "source_field": "legend.name"
+          },
+          {
+            "text": "dark worn stone floor slabs and compacted grey dungeon ground",
+            "source_symbol": ",",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "dungeon floor",
+            "reason": "usage_context",
+            "source_symbol": ","
+          },
+          {
+            "term": "stone slabs",
+            "reason": "object_shape",
+            "source_symbol": ","
+          },
+          {
+            "term": "compacted ground",
+            "reason": "landform_context",
+            "source_symbol": ","
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top down closeup worn stone floor, dark grey stone slabs, compacted ground texture, cracked stone surface, damp weathered stone, aged worn edges, tileable stone floor, muted grey color variation",
+          "negative_prompt": "wood, grass, water, metal",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "worn dark grey stone floor slabs with compacted ground and damp cracks, cracked stone slabs with worn edges, dark grey and muted brown",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    }
+  ],
+  "warnings": []
+}

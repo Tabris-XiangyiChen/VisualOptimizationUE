@@ -156,6 +156,20 @@ bool FAsciiGeometryEmitterV2::EmitPrimary(FResolvedMapCellV2& Cell, const TCHAR*
 
 bool FAsciiGeometryEmitterV2::EmitUnderlay(const FResolvedMapCellV2& Cell)
 {
+    if (Cell.bGenerateUnderlay && Cell.ResolvedUnderlayMaterialSlotId.IsNone())
+    {
+        ++Owner.UnresolvedUnderlayCount;
+        UE_LOG(
+            LogTemp,
+            Warning,
+            TEXT("MapBuilderV2: underlay material unresolved: map=%s row=%d column=%d primaryMesh=%s resolutionSource=%s"),
+            *Owner.CurrentRuntimeMapId,
+            Cell.Row,
+            Cell.Column,
+            *Cell.TileDefinition.MeshId.ToString(),
+            *Cell.UnderlayResolutionSource);
+    }
+
     const FGeneratedMeshEntryV2* UnderlayEntry = MeshRegistry.FindMeshById(Cell.ResolvedUnderlayMeshId);
     if (!UnderlayEntry)
     {

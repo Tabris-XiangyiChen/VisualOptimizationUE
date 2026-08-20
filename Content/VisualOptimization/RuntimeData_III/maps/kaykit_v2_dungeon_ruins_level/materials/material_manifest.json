@@ -1,0 +1,1458 @@
+{
+  "schema_version": "material_manifest_v1",
+  "map_id": "kaykit_v2_dungeon_ruins_level",
+  "created_at": "2026-08-17T13:36:45",
+  "source": {
+    "source_run": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation",
+    "resolved_materials_v2": "03_python_resolver/resolved_materials_v2.json",
+    "compiled_sd15_prompts": "06_compiled_prompts/compiled_sd15_prompts_v4.json",
+    "material_mode": "export-only",
+    "runtime_source_backend": "sd15",
+    "selection_policy": "first_available_seed",
+    "llm_calls": 0,
+    "sd_calls": 0,
+    "stablematerials_calls": 0,
+    "new_image_generation": false,
+    "compiled_stablematerials_prompts": "06_compiled_prompts/compiled_stablematerials_prompts_v4.json"
+  },
+  "materials": [
+    {
+      "material_slot_id": "mat_aged_wood_bridge",
+      "canonical_material_id": "aged_wood_bridge",
+      "display_label": "sunken_wood_bridge",
+      "material_family": "wood",
+      "semantic_material_family": "wood",
+      "used_by_symbols": [
+        "="
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "=",
+          "material_slot_id": "mat_aged_wood_bridge",
+          "canonical_material_id": "aged_wood_bridge",
+          "expected_mesh_ids": [
+            "tile_plane"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_aged_wood_bridge/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1940888782,
+        "textures": {
+          "basecolor": "textures/mat_aged_wood_bridge/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_aged_wood_bridge/seed_1940888782/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_aged_wood_bridge\\seed_1940888782.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_aged_wood_bridge/seed_1940888782/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_aged_wood_bridge/seed_1940888782/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_aged_wood_bridge/seed_1940888782/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_aged_wood_bridge/seed_1940888782/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_aged_wood_bridge/seed_1940888782/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_aged_wood_bridge_seed_1940888782\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_aged_wood_bridge_seed_1940888782\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_aged_wood_bridge_seed_1940888782\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_aged_wood_bridge_seed_1940888782\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_aged_wood_bridge_seed_1940888782\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_aged_wood_bridge\\seed_1940888782.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_aged_wood_bridge\\seed_1940888782.png",
+      "semantic_brief": {
+        "canonical_material_id": "aged_wood_bridge",
+        "identity": "wood",
+        "material_family": "wood",
+        "raw_material_clues": [
+          {
+            "text": "aged wooden plank bridges crossing the narrow water channels around the inner shrine",
+            "source_symbol": "=",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "wooden bridge",
+            "reason": "object_shape",
+            "source_symbol": "="
+          },
+          {
+            "term": "water channel",
+            "reason": "landform_context",
+            "source_symbol": "="
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top-down close-up aged wood plank surface, weathered grey-brown planks, visible wood grain, worn rough texture, cracked splits, dark moisture stains, subtle color variation, tileable seamless texture",
+          "negative_prompt": "polished shiny, bright colorful, dense noisy pattern",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "aged wood planks, planks with visible grain and cracks, grey-brown with dark stains",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_aged_wood_door",
+      "canonical_material_id": "aged_wood_door",
+      "display_label": "kaykit_wooden_dungeon_door",
+      "material_family": "wood",
+      "semantic_material_family": "wood",
+      "used_by_symbols": [
+        "D",
+        "P"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "D",
+          "material_slot_id": "mat_aged_wood_door",
+          "canonical_material_id": "aged_wood_door",
+          "expected_mesh_ids": [
+            "door_a",
+            "door_proxy"
+          ]
+        },
+        {
+          "symbol": "P",
+          "material_slot_id": "mat_aged_wood_door",
+          "canonical_material_id": "aged_wood_door",
+          "expected_mesh_ids": [
+            "door_a",
+            "door_proxy"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_aged_wood_door/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1940888782,
+        "textures": {
+          "basecolor": "textures/mat_aged_wood_door/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_aged_wood_door/seed_1940888782/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_aged_wood_door\\seed_1940888782.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_aged_wood_door/seed_1940888782/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_aged_wood_door/seed_1940888782/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_aged_wood_door/seed_1940888782/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_aged_wood_door/seed_1940888782/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_aged_wood_door/seed_1940888782/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_aged_wood_door_seed_1940888782\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_aged_wood_door_seed_1940888782\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_aged_wood_door_seed_1940888782\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_aged_wood_door_seed_1940888782\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_aged_wood_door_seed_1940888782\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_aged_wood_door\\seed_1940888782.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_aged_wood_door\\seed_1940888782.png",
+      "semantic_brief": {
+        "canonical_material_id": "aged_wood_door",
+        "identity": "wood",
+        "material_family": "wood",
+        "raw_material_clues": [
+          {
+            "text": "old KayKit wooden door placed at the main north and south entrances",
+            "source_symbol": "D",
+            "source_field": "legend.description"
+          },
+          {
+            "text": "simple proxy gate used at the inner side entrance for comparison with the KayKit door",
+            "source_symbol": "P",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "wooden door",
+            "reason": "object_shape",
+            "source_symbol": "D"
+          },
+          {
+            "term": "entrance",
+            "reason": "usage_context",
+            "source_symbol": "D"
+          },
+          {
+            "term": "gate proxy",
+            "reason": "object_shape",
+            "source_symbol": "P"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "front-facing close-up aged wood panel surface, dark brown wood panels, visible wood grain, worn rough texture, cracked splits, dark moisture stains, subtle color variation, tileable seamless texture",
+          "negative_prompt": "polished shiny, bright colorful, dense noisy pattern",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "aged wood panels, panels with visible grain and cracks, dark brown with dark stains",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_deep_cold_water",
+      "canonical_material_id": "deep_cold_water",
+      "display_label": "deep_cold_water",
+      "material_family": "water_like",
+      "semantic_material_family": "water_like",
+      "used_by_symbols": [
+        "~"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "~",
+          "material_slot_id": "mat_deep_cold_water",
+          "canonical_material_id": "deep_cold_water",
+          "expected_mesh_ids": [
+            "water_plane"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_deep_cold_water/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1940888782,
+        "textures": {
+          "basecolor": "textures/mat_deep_cold_water/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_deep_cold_water/seed_1940888782/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_deep_cold_water\\seed_1940888782.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_deep_cold_water/seed_1940888782/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_deep_cold_water/seed_1940888782/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_deep_cold_water/seed_1940888782/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_deep_cold_water/seed_1940888782/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_deep_cold_water/seed_1940888782/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_deep_cold_water_seed_1940888782\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_deep_cold_water_seed_1940888782\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_deep_cold_water_seed_1940888782\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_deep_cold_water_seed_1940888782\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_deep_cold_water_seed_1940888782\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_deep_cold_water\\seed_1940888782.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_deep_cold_water\\seed_1940888782.png",
+      "semantic_brief": {
+        "canonical_material_id": "deep_cold_water",
+        "identity": "water",
+        "material_family": "water_like",
+        "raw_material_clues": [
+          {
+            "text": "dark blue-green water channels surrounding the central shrine and wooden crossings",
+            "source_symbol": "~",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "water",
+            "reason": "object_shape",
+            "source_symbol": "~"
+          },
+          {
+            "term": "shrine",
+            "reason": "map_setting",
+            "source_symbol": "~"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top-down close-up dark blue-green water surface, deep cold water, subtle ripples, dark translucent depth, muted blue-green color, fine surface detail, soft reflections, tileable seamless texture",
+          "negative_prompt": "bright turquoise, foamy, dense noisy pattern",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "dark blue-green water, subtle ripples with translucent depth, muted blue-green",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_dirt_threshold",
+      "canonical_material_id": "dirt_threshold",
+      "display_label": "kaykit_dirt_threshold",
+      "material_family": "dirt",
+      "semantic_material_family": "dirt",
+      "used_by_symbols": [
+        "d"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "d",
+          "material_slot_id": "mat_dirt_threshold",
+          "canonical_material_id": "dirt_threshold",
+          "expected_mesh_ids": [
+            "floor_dirt_kaykit"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_dirt_threshold/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1940888782,
+        "textures": {
+          "basecolor": "textures/mat_dirt_threshold/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_dirt_threshold/seed_1940888782/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dirt_threshold\\seed_1940888782.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_dirt_threshold/seed_1940888782/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_dirt_threshold/seed_1940888782/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_dirt_threshold/seed_1940888782/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_dirt_threshold/seed_1940888782/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_dirt_threshold/seed_1940888782/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dirt_threshold_seed_1940888782\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dirt_threshold_seed_1940888782\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dirt_threshold_seed_1940888782\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dirt_threshold_seed_1940888782\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dirt_threshold_seed_1940888782\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dirt_threshold\\seed_1940888782.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dirt_threshold\\seed_1940888782.png",
+      "semantic_brief": {
+        "canonical_material_id": "dirt_threshold",
+        "identity": "dirt",
+        "material_family": "dirt",
+        "raw_material_clues": [
+          {
+            "text": "small dirt patch where the underground ruin connects to a damp natural entrance",
+            "source_symbol": "d",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "dirt",
+            "reason": "object_shape",
+            "source_symbol": "d"
+          },
+          {
+            "term": "natural entrance",
+            "reason": "usage_context",
+            "source_symbol": "d"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top-down close-up dark dirt ground surface, dark earthy soil, damp rough texture, small pebbles, organic debris, subtle color variation, fine surface detail, tileable seamless texture",
+          "negative_prompt": "polished shiny, bright colorful, dense noisy pattern",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "dark dirt ground, rough soil with pebbles, dark brown with organic debris",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_dungeon_stone_wall",
+      "canonical_material_id": "dungeon_stone_wall",
+      "display_label": "connectable_dungeon_stone_wall",
+      "material_family": "solid_stone",
+      "semantic_material_family": "solid_stone",
+      "used_by_symbols": [
+        "#",
+        "A",
+        "H",
+        "K",
+        "W"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "#",
+          "material_slot_id": "mat_dungeon_stone_wall",
+          "canonical_material_id": "dungeon_stone_wall",
+          "expected_mesh_ids": [
+            "wall_segment",
+            "wall_doorway",
+            "wall_half_kaykit",
+            "wall_block",
+            "wall_full_kaykit"
+          ]
+        },
+        {
+          "symbol": "A",
+          "material_slot_id": "mat_dungeon_stone_wall",
+          "canonical_material_id": "dungeon_stone_wall",
+          "expected_mesh_ids": [
+            "wall_segment",
+            "wall_doorway",
+            "wall_half_kaykit",
+            "wall_block",
+            "wall_full_kaykit"
+          ]
+        },
+        {
+          "symbol": "H",
+          "material_slot_id": "mat_dungeon_stone_wall",
+          "canonical_material_id": "dungeon_stone_wall",
+          "expected_mesh_ids": [
+            "wall_segment",
+            "wall_doorway",
+            "wall_half_kaykit",
+            "wall_block",
+            "wall_full_kaykit"
+          ]
+        },
+        {
+          "symbol": "K",
+          "material_slot_id": "mat_dungeon_stone_wall",
+          "canonical_material_id": "dungeon_stone_wall",
+          "expected_mesh_ids": [
+            "wall_segment",
+            "wall_doorway",
+            "wall_half_kaykit",
+            "wall_block",
+            "wall_full_kaykit"
+          ]
+        },
+        {
+          "symbol": "W",
+          "material_slot_id": "mat_dungeon_stone_wall",
+          "canonical_material_id": "dungeon_stone_wall",
+          "expected_mesh_ids": [
+            "wall_segment",
+            "wall_doorway",
+            "wall_half_kaykit",
+            "wall_block",
+            "wall_full_kaykit"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_dungeon_stone_wall/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1940888782,
+        "textures": {
+          "basecolor": "textures/mat_dungeon_stone_wall/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_dungeon_stone_wall/seed_1940888782/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dungeon_stone_wall\\seed_1940888782.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_dungeon_stone_wall/seed_1940888782/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_dungeon_stone_wall/seed_1940888782/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_dungeon_stone_wall/seed_1940888782/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_dungeon_stone_wall/seed_1940888782/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_dungeon_stone_wall/seed_1940888782/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dungeon_stone_wall_seed_1940888782\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dungeon_stone_wall_seed_1940888782\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dungeon_stone_wall_seed_1940888782\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dungeon_stone_wall_seed_1940888782\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dungeon_stone_wall_seed_1940888782\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dungeon_stone_wall\\seed_1940888782.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dungeon_stone_wall\\seed_1940888782.png",
+      "semantic_brief": {
+        "canonical_material_id": "dungeon_stone_wall",
+        "identity": "stone",
+        "material_family": "solid_stone",
+        "raw_material_clues": [
+          {
+            "text": "simple grey stone wall segments forming the main room borders, corners, T junctions, and cross junctions",
+            "source_symbol": "#",
+            "source_field": "legend.description"
+          },
+          {
+            "text": "fixed stone wall doorway structure in the northern ruin entrance, not a movable door actor",
+            "source_symbol": "A",
+            "source_field": "legend.description"
+          },
+          {
+            "text": "low half-wall partitions placed beside the lower shrine approach to test small structure underlay",
+            "source_symbol": "H",
+            "source_field": "legend.description"
+          },
+          {
+            "text": "baseline cube wall blocks used as a small comparison section inside the ruin",
+            "source_symbol": "K",
+            "source_field": "legend.description"
+          },
+          {
+            "text": "complete KayKit stone wall sections used on the outer ruin boundary and the southern gate wall",
+            "source_symbol": "W",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "stone wall",
+            "reason": "object_shape",
+            "source_symbol": "#"
+          },
+          {
+            "term": "dungeon",
+            "reason": "map_setting",
+            "source_symbol": "#"
+          },
+          {
+            "term": "ruin",
+            "reason": "map_setting",
+            "source_symbol": "A"
+          },
+          {
+            "term": "half wall",
+            "reason": "object_shape",
+            "source_symbol": "H"
+          },
+          {
+            "term": "block wall",
+            "reason": "object_shape",
+            "source_symbol": "K"
+          },
+          {
+            "term": "outer boundary",
+            "reason": "usage_context",
+            "source_symbol": "W"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "front-facing close-up grey stone wall surface, rough hewn stone blocks, worn chipped edges, cracked mortar joints, damp dark patches, mossy green growth, subtle mineral variation, tileable seamless texture",
+          "negative_prompt": "smooth polished surface, bright colorful, dense noisy pattern",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "grey stone wall, rough hewn blocks with mortar joints, muted grey with dark damp patches",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_primitive_stone_floor",
+      "canonical_material_id": "primitive_stone_floor",
+      "display_label": "kaykit_primitive_stone_floor",
+      "material_family": "solid_stone",
+      "semantic_material_family": "solid_stone",
+      "used_by_symbols": [
+        "F"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "F",
+          "material_slot_id": "mat_primitive_stone_floor",
+          "canonical_material_id": "primitive_stone_floor",
+          "expected_mesh_ids": [
+            "primitive_floor_kaykit"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_primitive_stone_floor/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1940888782,
+        "textures": {
+          "basecolor": "textures/mat_primitive_stone_floor/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_primitive_stone_floor/seed_1940888782/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_primitive_stone_floor\\seed_1940888782.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_primitive_stone_floor/seed_1940888782/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_primitive_stone_floor/seed_1940888782/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_primitive_stone_floor/seed_1940888782/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_primitive_stone_floor/seed_1940888782/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_primitive_stone_floor/seed_1940888782/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_primitive_stone_floor_seed_1940888782\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_primitive_stone_floor_seed_1940888782\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_primitive_stone_floor_seed_1940888782\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_primitive_stone_floor_seed_1940888782\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_primitive_stone_floor_seed_1940888782\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_primitive_stone_floor\\seed_1940888782.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_primitive_stone_floor\\seed_1940888782.png",
+      "semantic_brief": {
+        "canonical_material_id": "primitive_stone_floor",
+        "identity": "stone",
+        "material_family": "solid_stone",
+        "raw_material_clues": [
+          {
+            "text": "simple primitive stone floor tiles marking the northern entrance landing",
+            "source_symbol": "F",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "stone floor",
+            "reason": "object_shape",
+            "source_symbol": "F"
+          },
+          {
+            "term": "entrance landing",
+            "reason": "usage_context",
+            "source_symbol": "F"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top-down close-up simple stone floor surface, flat stone tiles, worn edges, cracked surfaces, muted grey color, subtle mineral variation, fine surface detail, tileable seamless texture",
+          "negative_prompt": "polished shiny, bright colorful, dense noisy pattern",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "simple stone floor, flat tiles with worn edges, muted grey",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_stone_shrine_stairs",
+      "canonical_material_id": "stone_shrine_stairs",
+      "display_label": "stone_shrine_stairs",
+      "material_family": "solid_stone",
+      "semantic_material_family": "solid_stone",
+      "used_by_symbols": [
+        "S"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "S",
+          "material_slot_id": "mat_stone_shrine_stairs",
+          "canonical_material_id": "stone_shrine_stairs",
+          "expected_mesh_ids": [
+            "stairs_full"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_stone_shrine_stairs/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1940888782,
+        "textures": {
+          "basecolor": "textures/mat_stone_shrine_stairs/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_stone_shrine_stairs/seed_1940888782/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_shrine_stairs\\seed_1940888782.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_stone_shrine_stairs/seed_1940888782/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_stone_shrine_stairs/seed_1940888782/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_stone_shrine_stairs/seed_1940888782/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_stone_shrine_stairs/seed_1940888782/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_stone_shrine_stairs/seed_1940888782/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_shrine_stairs_seed_1940888782\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_shrine_stairs_seed_1940888782\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_shrine_stairs_seed_1940888782\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_shrine_stairs_seed_1940888782\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_shrine_stairs_seed_1940888782\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_shrine_stairs\\seed_1940888782.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_shrine_stairs\\seed_1940888782.png",
+      "semantic_brief": {
+        "canonical_material_id": "stone_shrine_stairs",
+        "identity": "stone",
+        "material_family": "solid_stone",
+        "raw_material_clues": [
+          {
+            "text": "full-tile stone stairs leading through the central shrine approach with manually selected direction",
+            "source_symbol": "S",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "stone stairs",
+            "reason": "object_shape",
+            "source_symbol": "S"
+          },
+          {
+            "term": "shrine approach",
+            "reason": "usage_context",
+            "source_symbol": "S"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "front-facing close-up worn stone step surface, rough grey stone, cracked edges, worn treads, damp dark patches, mossy green growth, subtle mineral variation, tileable seamless texture",
+          "negative_prompt": "polished shiny, bright colorful, dense noisy pattern",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "worn stone steps, rough stone with cracked edges, grey with dark patches",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_stone_waterway_slope",
+      "canonical_material_id": "stone_waterway_slope",
+      "display_label": "stone_waterway_slope",
+      "material_family": "solid_stone",
+      "semantic_material_family": "solid_stone",
+      "used_by_symbols": [
+        "^"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "^",
+          "material_slot_id": "mat_stone_waterway_slope",
+          "canonical_material_id": "stone_waterway_slope",
+          "expected_mesh_ids": [
+            "slope"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_stone_waterway_slope/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1940888782,
+        "textures": {
+          "basecolor": "textures/mat_stone_waterway_slope/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_stone_waterway_slope/seed_1940888782/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_waterway_slope\\seed_1940888782.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_stone_waterway_slope/seed_1940888782/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_stone_waterway_slope/seed_1940888782/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_stone_waterway_slope/seed_1940888782/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_stone_waterway_slope/seed_1940888782/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_stone_waterway_slope/seed_1940888782/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_waterway_slope_seed_1940888782\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_waterway_slope_seed_1940888782\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_waterway_slope_seed_1940888782\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_waterway_slope_seed_1940888782\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_waterway_slope_seed_1940888782\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_waterway_slope\\seed_1940888782.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_waterway_slope\\seed_1940888782.png",
+      "semantic_brief": {
+        "canonical_material_id": "stone_waterway_slope",
+        "identity": "stone",
+        "material_family": "solid_stone",
+        "raw_material_clues": [
+          {
+            "text": "single stone slope transition beside the western bridge and water channel",
+            "source_symbol": "^",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "stone slope",
+            "reason": "object_shape",
+            "source_symbol": "^"
+          },
+          {
+            "term": "water channel",
+            "reason": "landform_context",
+            "source_symbol": "^"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "front-facing close-up worn stone surface, rough grey stone, cracked uneven texture, worn smooth patches, damp dark stains, mossy green growth, subtle mineral variation, tileable seamless texture",
+          "negative_prompt": "polished shiny, bright colorful, dense noisy pattern",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "worn stone surface, rough stone with cracks, grey with dark stains",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_underground_moss_ground",
+      "canonical_material_id": "underground_moss_ground",
+      "display_label": "underground_moss_ground",
+      "material_family": "ground_organic",
+      "semantic_material_family": "ground_organic",
+      "used_by_symbols": [
+        "g"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "g",
+          "material_slot_id": "mat_underground_moss_ground",
+          "canonical_material_id": "underground_moss_ground",
+          "expected_mesh_ids": [
+            "tile_plane"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_underground_moss_ground/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1940888782,
+        "textures": {
+          "basecolor": "textures/mat_underground_moss_ground/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_underground_moss_ground/seed_1940888782/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_underground_moss_ground\\seed_1940888782.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_underground_moss_ground/seed_1940888782/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_underground_moss_ground/seed_1940888782/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_underground_moss_ground/seed_1940888782/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_underground_moss_ground/seed_1940888782/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_underground_moss_ground/seed_1940888782/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_underground_moss_ground_seed_1940888782\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_underground_moss_ground_seed_1940888782\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_underground_moss_ground_seed_1940888782\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_underground_moss_ground_seed_1940888782\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_underground_moss_ground_seed_1940888782\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_underground_moss_ground\\seed_1940888782.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_underground_moss_ground\\seed_1940888782.png",
+      "semantic_brief": {
+        "canonical_material_id": "underground_moss_ground",
+        "identity": "moss",
+        "material_family": "ground_organic",
+        "raw_material_clues": [
+          {
+            "text": "sparse dark moss and organic growth in damp corners around the stone chambers",
+            "source_symbol": "g",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "moss",
+            "reason": "object_shape",
+            "source_symbol": "g"
+          },
+          {
+            "term": "damp corner",
+            "reason": "usage_context",
+            "source_symbol": "g"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top-down close-up dark moss ground surface, dark green moss, damp organic texture, patchy growth, fine leafy detail, subtle color variation, moist dark soil, tileable seamless texture",
+          "negative_prompt": "polished shiny, bright colorful, dense noisy pattern",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "dark moss ground, patchy moss with fine leaves, dark green with dark soil",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_worn_stone_floor",
+      "canonical_material_id": "worn_stone_floor",
+      "display_label": "kaykit_worn_stone_floor",
+      "material_family": "solid_stone",
+      "semantic_material_family": "solid_stone",
+      "used_by_symbols": [
+        "."
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": ".",
+          "material_slot_id": "mat_worn_stone_floor",
+          "canonical_material_id": "worn_stone_floor",
+          "expected_mesh_ids": [
+            "floor_kaykit"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_worn_stone_floor/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1940888782,
+        "textures": {
+          "basecolor": "textures/mat_worn_stone_floor/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_worn_stone_floor/seed_1940888782/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_worn_stone_floor\\seed_1940888782.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1940888782,
+          "candidates": [
+            {
+              "seed": 1940888782,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_worn_stone_floor/seed_1940888782/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_worn_stone_floor/seed_1940888782/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_worn_stone_floor/seed_1940888782/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_worn_stone_floor/seed_1940888782/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_worn_stone_floor/seed_1940888782/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_worn_stone_floor_seed_1940888782\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_worn_stone_floor_seed_1940888782\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_worn_stone_floor_seed_1940888782\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_worn_stone_floor_seed_1940888782\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_worn_stone_floor_seed_1940888782\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_worn_stone_floor\\seed_1940888782.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_133253_kaykit_v2_dungeon_ruins_level_material_generation\\07_generation\\sd15\\plan_a\\mat_worn_stone_floor\\seed_1940888782.png",
+      "semantic_brief": {
+        "canonical_material_id": "worn_stone_floor",
+        "identity": "stone",
+        "material_family": "solid_stone",
+        "raw_material_clues": [
+          {
+            "text": "worn KayKit stone floor slabs filling the main dungeon rooms and shrine approaches",
+            "source_symbol": ".",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "stone floor",
+            "reason": "object_shape",
+            "source_symbol": "."
+          },
+          {
+            "term": "dungeon room",
+            "reason": "usage_context",
+            "source_symbol": "."
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top-down close-up worn stone floor surface, large stone slabs, cracked uneven edges, worn smooth centers, damp dark stains, mossy green patches, subtle grey color variation, tileable seamless texture",
+          "negative_prompt": "polished shiny, bright colorful, dense noisy pattern",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "worn stone floor, large slabs with cracked joints, muted grey with dark stains",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    }
+  ],
+  "warnings": []
+}

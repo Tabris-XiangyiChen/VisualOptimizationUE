@@ -1,0 +1,15 @@
+{
+  "schema_version": "d6g_a2_runtime_data_export_manifest_v1",
+  "created_at": "2026-08-12T23:02:03",
+  "round_id": "d6g_a2_material_manifest_runtime_export",
+  "map_id": "test_map1_clean",
+  "run_dir": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260812_230203_test_map1_clean_d6g_a2_material_manifest_runtime_export",
+  "source_material_generation_run": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260812_225643_test_map1_clean_d6f_a4_full_two_llm_material_generation_preview",
+  "runtime_texture_backend": "sd15",
+  "selected_backend_is_exposed_via_textures": true,
+  "backend_candidates_are_packaged_for_future_ue_switching": true,
+  "ue_copy_destination": "I:\\Disertation\\VisualOptimizationUE\\Content\\VisualOptimization\\RuntimeData",
+  "llm_calls": 0,
+  "sd_webui_generation_calls": 0,
+  "stablematerials_generation_calls": 0
+}

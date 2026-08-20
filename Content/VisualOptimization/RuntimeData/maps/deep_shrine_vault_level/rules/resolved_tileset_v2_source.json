@@ -7,7 +7,7 @@
       "symbol": "#",
       "legend_name": "deep_ritual_stone",
       "tile_type_id": "tile_deep_shrine_vault_level_hash_dark_ritual_stone_wall",
-      "tile_semantics": "vertical stone wall blocks and raised shrine masonry",
+      "tile_semantics": "Wall blocks and raised shrine masonry forming the outer boundary and central shrine structure.",
       "mesh_id": "wall_block",
       "selected_mesh_role_tags": [
         "wall_surface",
@@ -27,14 +27,15 @@
       "symbol": ".",
       "legend_name": "dark_shrine_floor",
       "tile_type_id": "tile_deep_shrine_vault_level_dot_dark_shrine_floor_stone",
-      "tile_semantics": "flat stone floor slabs in the shrine vault",
-      "mesh_id": "tile_plane",
+      "tile_semantics": "Walkable floor slabs inside the shrine vault.",
+      "mesh_id": "floor_kaykit",
       "selected_mesh_role_tags": [
         "floor_surface",
+        "stone_surface",
         "flat_surface",
         "walkable"
       ],
-      "shape_type": "flat_tile",
+      "shape_type": "flat_mesh_tile",
       "height_class": "flat",
       "height": 0,
       "z_offset": 0,
@@ -47,7 +48,7 @@
       "symbol": "0",
       "legend_name": "void",
       "tile_type_id": "tile_deep_shrine_vault_level_zero_no_geometry",
-      "tile_semantics": "empty outside-play-area darkness, no visible surface",
+      "tile_semantics": "Empty darkness outside the playable area; no visible surface.",
       "mesh_id": null,
       "selected_mesh_role_tags": [],
       "shape_type": null,
@@ -63,10 +64,11 @@
       "symbol": "=",
       "legend_name": "sunken_wood_bridge",
       "tile_type_id": "tile_deep_shrine_vault_level_equals_sunken_wood_bridge_planks",
-      "tile_semantics": "flat wooden planks bridging water channels",
+      "tile_semantics": "Wooden bridge planks crossing water channels.",
       "mesh_id": "tile_plane",
       "selected_mesh_role_tags": [
         "floor_surface",
+        "grass_surface",
         "wood_surface",
         "flat_surface",
         "walkable"
@@ -84,15 +86,16 @@
       "symbol": "D",
       "legend_name": "ancient_wooden_gate",
       "tile_type_id": "tile_deep_shrine_vault_level_d_ancient_wooden_gate",
-      "tile_semantics": "vertical wooden gate or doorway",
-      "mesh_id": "door_proxy",
+      "tile_semantics": "Wooden gate or doorway leading deeper into the dungeon.",
+      "mesh_id": "door_a",
       "selected_mesh_role_tags": [
         "door_prop",
         "gate_prop",
         "vertical_prop",
-        "interactive"
+        "interactive",
+        "align_to_wall"
       ],
-      "shape_type": "vertical_prop",
+      "shape_type": "vertical_door_mesh",
       "height_class": "medium",
       "height": 250,
       "z_offset": 0,
@@ -105,10 +108,12 @@
       "symbol": "g",
       "legend_name": "underground_moss",
       "tile_type_id": "tile_deep_shrine_vault_level_g_underground_moss_patch",
-      "tile_semantics": "sparse moss patches on stone surfaces",
+      "tile_semantics": "Sparse moss patches growing in damp cracks of stone surfaces.",
       "mesh_id": "tile_plane",
       "selected_mesh_role_tags": [
         "floor_surface",
+        "grass_surface",
+        "wood_surface",
         "flat_surface",
         "walkable"
       ],
@@ -125,7 +130,7 @@
       "symbol": "~",
       "legend_name": "deep_cold_water",
       "tile_type_id": "tile_deep_shrine_vault_level_tilde_deep_cold_water",
-      "tile_semantics": "flat water surface in channels",
+      "tile_semantics": "Water channels surrounding the central shrine.",
       "mesh_id": "water_plane",
       "selected_mesh_role_tags": [
         "water_surface",

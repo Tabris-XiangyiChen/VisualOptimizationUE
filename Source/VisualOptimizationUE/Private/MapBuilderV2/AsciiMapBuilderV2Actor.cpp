@@ -70,6 +70,7 @@ AAsciiMapBuilderV2Actor::AAsciiMapBuilderV2Actor()
 {
     PrimaryActorTick.bCanEverTick = false;
     SceneRoot = CreateDefaultSubobject<USceneComponent>(TEXT("SceneRoot"));
+    SceneRoot->SetMobility(EComponentMobility::Static);
     SetRootComponent(SceneRoot);
 }
 
@@ -101,6 +102,10 @@ void AAsciiMapBuilderV2Actor::GenerateMapV2()
         return;
     }
     CurrentRuntimeMapId = PackagePaths.MapId;
+    if (!PackagePaths.MapId.IsEmpty())
+    {
+        SelectedMapId = FName(*PackagePaths.MapId);
+    }
 
     TMap<FString, FAsciiRuntimeTileDefinitionV2> Definitions;
     TArray<FString> Lines;
@@ -123,16 +128,28 @@ void AAsciiMapBuilderV2Actor::GenerateMapV2()
     if (RuntimeMaterialProvider && !PackagePaths.MaterialManifestPath.IsEmpty())
     {
         FString MaterialError;
-        if (!RuntimeMaterialProvider->Rebuild(
+        bRuntimeMaterialProviderReady = RuntimeMaterialProvider->Rebuild(
             this,
             PackagePaths.MaterialManifestPath,
             RuntimeMaterialMaster,
             BuilderConfig->TileSizeCm,
-            MaterialError))
+            MaterialError);
+        RuntimeMaterialCount = RuntimeMaterialProvider->GetMaterialCount();
+        if (!bRuntimeMaterialProviderReady)
         {
             UE_LOG(LogTemp, Warning, TEXT("MapBuilderV2: Runtime materials unavailable (%s). Registry fallback will be used where possible."), *MaterialError);
         }
     }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("MapBuilderV2: Runtime material provider is unavailable because the provider or material manifest path is missing. Registry fallback will be used where possible."));
+    }
+    UE_LOG(
+        LogTemp,
+        Display,
+        TEXT("MapBuilderV2: RuntimeMaterialProvider = %s; Runtime material count = %d"),
+        bRuntimeMaterialProviderReady ? TEXT("success") : TEXT("unavailable"),
+        RuntimeMaterialCount);
 
     FName DominantFloorMaterial = NAME_None;
     FAsciiTopologyResolverV2::Resolve(Grid, *MeshRegistryV2, *BuilderConfig, DominantFloorMaterial, MissingMeshIds);
@@ -190,6 +207,10 @@ void AAsciiMapBuilderV2Actor::ClearGeneratedMapV2()
         RuntimeMaterialProvider->Reset();
     }
     RuntimeMaterialProvider = nullptr;
+    bRuntimeMaterialProviderReady = false;
+    RuntimeMaterialCount = 0;
+    bRuntimeMaterialFallbackUsed = false;
+    RuntimeMaterialFallbackSlotIds.Reset();
     LastResolvedCells.Reset();
     CurrentRuntimeMapId.Empty();
 }
@@ -607,8 +628,13 @@ FString AAsciiMapBuilderV2Actor::ResolveIndexRelativePath(
     return Result;
 }
 
-UMaterialInterface* AAsciiMapBuilderV2Actor::ResolveMaterial(const FName MaterialSlotId) const
+UMaterialInterface* AAsciiMapBuilderV2Actor::ResolveMaterial(const FName MaterialSlotId)
 {
+    if (MaterialSlotId.IsNone())
+    {
+        return nullptr;
+    }
+
     if (RuntimeMaterialProvider)
     {
         if (UMaterialInterface* RuntimeMaterial = RuntimeMaterialProvider->ResolveMaterial(MaterialSlotId))
@@ -617,7 +643,19 @@ UMaterialInterface* AAsciiMapBuilderV2Actor::ResolveMaterial(const FName Materia
         }
     }
 
-    return MaterialRegistryFallback ? MaterialRegistryFallback->FindMaterialBySlotId(MaterialSlotId) : nullptr;
+    UMaterialInterface* FallbackMaterial = MaterialRegistryFallback
+        ? MaterialRegistryFallback->FindMaterialBySlotId(MaterialSlotId)
+        : nullptr;
+    if (FallbackMaterial)
+    {
+        bRuntimeMaterialFallbackUsed = true;
+        if (!RuntimeMaterialFallbackSlotIds.Contains(MaterialSlotId))
+        {
+            RuntimeMaterialFallbackSlotIds.Add(MaterialSlotId);
+            UE_LOG(LogTemp, Warning, TEXT("MapBuilderV2: Using registry material fallback for slot '%s'."), *MaterialSlotId.ToString());
+        }
+    }
+    return FallbackMaterial;
 }
 
 UInstancedStaticMeshComponent* AAsciiMapBuilderV2Actor::GetOrCreateInstanceComponent(
@@ -636,15 +674,15 @@ UInstancedStaticMeshComponent* AAsciiMapBuilderV2Actor::GetOrCreateInstanceCompo
 
     const FName UniqueComponentName = MakeUniqueObjectName(this, UInstancedStaticMeshComponent::StaticClass(), ComponentKey);
     UInstancedStaticMeshComponent* Component = NewObject<UInstancedStaticMeshComponent>(this, UniqueComponentName);
-    Component->SetupAttachment(SceneRoot);
+    Component->SetMobility(SceneRoot ? SceneRoot->GetMobility() : EComponentMobility::Movable);
     Component->SetStaticMesh(Mesh);
-    Component->SetMobility(EComponentMobility::Static);
     if (Material)
     {
         Component->SetMaterial(0, Material);
     }
-    Component->RegisterComponent();
+    Component->SetupAttachment(SceneRoot);
     AddInstanceComponent(Component);
+    Component->RegisterComponent();
     RuntimeInstanceComponents.Add(ComponentKey, Component);
     return Component;
 }
@@ -691,6 +729,7 @@ void AAsciiMapBuilderV2Actor::ResetGenerationStats()
 {
     GeneratedBaseSurfaceCount = 0;
     GeneratedUnderlayCount = 0;
+    UnresolvedUnderlayCount = 0;
     GeneratedStructureCount = 0;
     GeneratedInteractiveActorCount = 0;
     GeneratedDecorationCount = 0;
@@ -699,6 +738,10 @@ void AAsciiMapBuilderV2Actor::ResetGenerationStats()
     AmbiguousOrientationCount = 0;
     MissingMeshIds.Reset();
     MissingMaterialSlotIds.Reset();
+    RuntimeMaterialFallbackSlotIds.Reset();
+    bRuntimeMaterialProviderReady = false;
+    RuntimeMaterialCount = 0;
+    bRuntimeMaterialFallbackUsed = false;
     WallConnectivityDistribution.Reset();
 }
 
@@ -716,12 +759,13 @@ void AAsciiMapBuilderV2Actor::LogGenerationSummary(const FAsciiMapGridV2& Grid, 
     }
 
     UE_LOG(LogTemp, Display,
-        TEXT("MapBuilderV2 complete: map=%s grid=%dx%d base=%d underlay=%d structure=%d interactiveActors=%d decoration=%d overlay=%d dominantFloor=%s ambiguous=%d nonUniformStretch=%d missingMeshes=[%s] missingMaterials=[%s]"),
+        TEXT("MapBuilderV2 complete: map=%s grid=%dx%d base=%d underlay=%d unresolvedUnderlay=%d structure=%d interactiveActors=%d decoration=%d overlay=%d dominantFloor=%s ambiguous=%d nonUniformStretch=%d missingMeshes=[%s] missingMaterials=[%s]"),
         *CurrentRuntimeMapId,
         Grid.GetWidth(),
         Grid.GetHeight(),
         GeneratedBaseSurfaceCount,
         GeneratedUnderlayCount,
+        UnresolvedUnderlayCount,
         GeneratedStructureCount,
         GeneratedInteractiveActorCount,
         GeneratedDecorationCount,
@@ -731,6 +775,14 @@ void AAsciiMapBuilderV2Actor::LogGenerationSummary(const FAsciiMapGridV2& Grid, 
         NonUniformStretchCount,
         *FString::Join(MissingMeshes, TEXT(",")),
         *FString::Join(MissingMaterials, TEXT(",")));
+
+    UE_LOG(
+        LogTemp,
+        Display,
+        TEXT("MapBuilderV2 material status: RuntimeMaterialProvider = %s; Runtime material count = %d; Registry fallback = %s"),
+        bRuntimeMaterialProviderReady ? TEXT("success") : TEXT("unavailable"),
+        RuntimeMaterialCount,
+        bRuntimeMaterialFallbackUsed ? TEXT("used") : TEXT("not_used"));
 
     for (const TPair<uint8, int32>& Pair : WallConnectivityDistribution)
     {

@@ -1,6 +1,6 @@
 {
   "schema_version": "d6g_a2_material_candidates_index_v1",
-  "source_run": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation",
+  "source_run": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation",
   "selection_policy": "first_available_seed",
   "runtime_texture_backend": "sd15",
   "include_backend_candidates": true,
@@ -11,37 +11,21 @@
       "selected": {
         "backend": "sd15",
         "plan_id": "plan_a",
-        "seed": 2026613020,
+        "seed": 123,
         "textures": {
-          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_ritual_stone_wall\\seed_2026613020.png"
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_ritual_stone_wall\\seed_123.png"
         },
-        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_ritual_stone_wall\\seed_2026613020_metadata.json"
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_ritual_stone_wall\\seed_123_metadata.json"
       },
       "sd15_candidates": [
         {
           "backend": "sd15",
           "plan_id": "plan_a",
-          "seed": 2026613020,
+          "seed": 123,
           "textures": {
-            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_ritual_stone_wall\\seed_2026613020.png"
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_ritual_stone_wall\\seed_123.png"
           },
-          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_ritual_stone_wall\\seed_2026613020_metadata.json"
-        }
-      ],
-      "stablematerials_candidates": [
-        {
-          "backend": "stablematerials",
-          "plan_id": "stablematerials",
-          "seed": 2026613020,
-          "textures": {
-            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dark_ritual_stone_wall_seed_2026613020\\basecolor.png",
-            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dark_ritual_stone_wall_seed_2026613020\\normal.png",
-            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dark_ritual_stone_wall_seed_2026613020\\roughness.png",
-            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dark_ritual_stone_wall_seed_2026613020\\height.png",
-            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dark_ritual_stone_wall_seed_2026613020\\metallic.png"
-          },
-          "missing_maps": [],
-          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dark_ritual_stone_wall_seed_2026613020\\metadata.json"
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_ritual_stone_wall\\seed_123_metadata.json"
         }
       ]
     },
@@ -51,37 +35,21 @@
       "selected": {
         "backend": "sd15",
         "plan_id": "plan_a",
-        "seed": 2026613020,
+        "seed": 123,
         "textures": {
-          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_shrine_floor_stone\\seed_2026613020.png"
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_shrine_floor_stone\\seed_123.png"
         },
-        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_shrine_floor_stone\\seed_2026613020_metadata.json"
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_shrine_floor_stone\\seed_123_metadata.json"
       },
       "sd15_candidates": [
         {
           "backend": "sd15",
           "plan_id": "plan_a",
-          "seed": 2026613020,
+          "seed": 123,
           "textures": {
-            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_shrine_floor_stone\\seed_2026613020.png"
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_shrine_floor_stone\\seed_123.png"
           },
-          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_shrine_floor_stone\\seed_2026613020_metadata.json"
-        }
-      ],
-      "stablematerials_candidates": [
-        {
-          "backend": "stablematerials",
-          "plan_id": "stablematerials",
-          "seed": 2026613020,
-          "textures": {
-            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dark_shrine_floor_stone_seed_2026613020\\basecolor.png",
-            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dark_shrine_floor_stone_seed_2026613020\\normal.png",
-            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dark_shrine_floor_stone_seed_2026613020\\roughness.png",
-            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dark_shrine_floor_stone_seed_2026613020\\height.png",
-            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dark_shrine_floor_stone_seed_2026613020\\metallic.png"
-          },
-          "missing_maps": [],
-          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dark_shrine_floor_stone_seed_2026613020\\metadata.json"
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_dark_shrine_floor_stone\\seed_123_metadata.json"
         }
       ]
     },
@@ -91,37 +59,21 @@
       "selected": {
         "backend": "sd15",
         "plan_id": "plan_a",
-        "seed": 2026613020,
+        "seed": 123,
         "textures": {
-          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_sunken_wood_bridge_planks\\seed_2026613020.png"
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_sunken_wood_bridge_planks\\seed_123.png"
         },
-        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_sunken_wood_bridge_planks\\seed_2026613020_metadata.json"
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_sunken_wood_bridge_planks\\seed_123_metadata.json"
       },
       "sd15_candidates": [
         {
           "backend": "sd15",
           "plan_id": "plan_a",
-          "seed": 2026613020,
+          "seed": 123,
           "textures": {
-            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_sunken_wood_bridge_planks\\seed_2026613020.png"
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_sunken_wood_bridge_planks\\seed_123.png"
           },
-          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_sunken_wood_bridge_planks\\seed_2026613020_metadata.json"
-        }
-      ],
-      "stablematerials_candidates": [
-        {
-          "backend": "stablematerials",
-          "plan_id": "stablematerials",
-          "seed": 2026613020,
-          "textures": {
-            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_sunken_wood_bridge_planks_seed_2026613020\\basecolor.png",
-            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_sunken_wood_bridge_planks_seed_2026613020\\normal.png",
-            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_sunken_wood_bridge_planks_seed_2026613020\\roughness.png",
-            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_sunken_wood_bridge_planks_seed_2026613020\\height.png",
-            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_sunken_wood_bridge_planks_seed_2026613020\\metallic.png"
-          },
-          "missing_maps": [],
-          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_sunken_wood_bridge_planks_seed_2026613020\\metadata.json"
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_sunken_wood_bridge_planks\\seed_123_metadata.json"
         }
       ]
     },
@@ -131,37 +83,21 @@
       "selected": {
         "backend": "sd15",
         "plan_id": "plan_a",
-        "seed": 2026613020,
+        "seed": 123,
         "textures": {
-          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_ancient_wooden_gate\\seed_2026613020.png"
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_ancient_wooden_gate\\seed_123.png"
         },
-        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_ancient_wooden_gate\\seed_2026613020_metadata.json"
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_ancient_wooden_gate\\seed_123_metadata.json"
       },
       "sd15_candidates": [
         {
           "backend": "sd15",
           "plan_id": "plan_a",
-          "seed": 2026613020,
+          "seed": 123,
           "textures": {
-            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_ancient_wooden_gate\\seed_2026613020.png"
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_ancient_wooden_gate\\seed_123.png"
           },
-          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_ancient_wooden_gate\\seed_2026613020_metadata.json"
-        }
-      ],
-      "stablematerials_candidates": [
-        {
-          "backend": "stablematerials",
-          "plan_id": "stablematerials",
-          "seed": 2026613020,
-          "textures": {
-            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_ancient_wooden_gate_seed_2026613020\\basecolor.png",
-            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_ancient_wooden_gate_seed_2026613020\\normal.png",
-            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_ancient_wooden_gate_seed_2026613020\\roughness.png",
-            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_ancient_wooden_gate_seed_2026613020\\height.png",
-            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_ancient_wooden_gate_seed_2026613020\\metallic.png"
-          },
-          "missing_maps": [],
-          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_ancient_wooden_gate_seed_2026613020\\metadata.json"
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_ancient_wooden_gate\\seed_123_metadata.json"
         }
       ]
     },
@@ -171,37 +107,21 @@
       "selected": {
         "backend": "sd15",
         "plan_id": "plan_a",
-        "seed": 2026613020,
+        "seed": 123,
         "textures": {
-          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_underground_moss_patch\\seed_2026613020.png"
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_underground_moss_patch\\seed_123.png"
         },
-        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_underground_moss_patch\\seed_2026613020_metadata.json"
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_underground_moss_patch\\seed_123_metadata.json"
       },
       "sd15_candidates": [
         {
           "backend": "sd15",
           "plan_id": "plan_a",
-          "seed": 2026613020,
+          "seed": 123,
           "textures": {
-            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_underground_moss_patch\\seed_2026613020.png"
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_underground_moss_patch\\seed_123.png"
           },
-          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_underground_moss_patch\\seed_2026613020_metadata.json"
-        }
-      ],
-      "stablematerials_candidates": [
-        {
-          "backend": "stablematerials",
-          "plan_id": "stablematerials",
-          "seed": 2026613020,
-          "textures": {
-            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_underground_moss_patch_seed_2026613020\\basecolor.png",
-            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_underground_moss_patch_seed_2026613020\\normal.png",
-            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_underground_moss_patch_seed_2026613020\\roughness.png",
-            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_underground_moss_patch_seed_2026613020\\height.png",
-            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_underground_moss_patch_seed_2026613020\\metallic.png"
-          },
-          "missing_maps": [],
-          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_underground_moss_patch_seed_2026613020\\metadata.json"
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_underground_moss_patch\\seed_123_metadata.json"
         }
       ]
     },
@@ -211,37 +131,21 @@
       "selected": {
         "backend": "sd15",
         "plan_id": "plan_a",
-        "seed": 2026613020,
+        "seed": 123,
         "textures": {
-          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_deep_cold_water\\seed_2026613020.png"
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_deep_cold_water\\seed_123.png"
         },
-        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_deep_cold_water\\seed_2026613020_metadata.json"
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_deep_cold_water\\seed_123_metadata.json"
       },
       "sd15_candidates": [
         {
           "backend": "sd15",
           "plan_id": "plan_a",
-          "seed": 2026613020,
+          "seed": 123,
           "textures": {
-            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_deep_cold_water\\seed_2026613020.png"
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_deep_cold_water\\seed_123.png"
           },
-          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_deep_cold_water\\seed_2026613020_metadata.json"
-        }
-      ],
-      "stablematerials_candidates": [
-        {
-          "backend": "stablematerials",
-          "plan_id": "stablematerials",
-          "seed": 2026613020,
-          "textures": {
-            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_deep_cold_water_seed_2026613020\\basecolor.png",
-            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_deep_cold_water_seed_2026613020\\normal.png",
-            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_deep_cold_water_seed_2026613020\\roughness.png",
-            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_deep_cold_water_seed_2026613020\\height.png",
-            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_deep_cold_water_seed_2026613020\\metallic.png"
-          },
-          "missing_maps": [],
-          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_161628_deep_shrine_vault_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_deep_cold_water_seed_2026613020\\metadata.json"
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210102_deep_shrine_vault_level_material_generation\\07_generation\\sd15\\plan_a\\mat_deep_cold_water\\seed_123_metadata.json"
         }
       ]
     }

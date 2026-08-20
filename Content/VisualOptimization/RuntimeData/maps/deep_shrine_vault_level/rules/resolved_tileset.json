@@ -53,7 +53,7 @@
       "tile_count_in_map": 104,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "vertical stone wall blocks and raised shrine masonry",
+        "tile_semantics": "Wall blocks and raised shrine masonry forming the outer boundary and central shrine structure.",
         "canonical_material_id": "dark_ritual_stone_wall",
         "material_identity_coarse": "stone",
         "material_category": "solid_stone"
@@ -64,7 +64,7 @@
       "legend_name": "dark_shrine_floor",
       "tile_type_id": "tile_deep_shrine_vault_level_dot_dark_shrine_floor_stone",
       "role": "floor_surface",
-      "mesh_id": "tile_plane",
+      "mesh_id": "floor_kaykit",
       "material_slot_id": "mat_dark_shrine_floor_stone",
       "slot_id_compat": "mat_dark_shrine_floor_stone",
       "material_family": "solid_stone",
@@ -73,16 +73,17 @@
       "z_offset": 0,
       "generate": true,
       "generate_material": true,
-      "shape_type": "flat_tile",
+      "shape_type": "flat_mesh_tile",
       "selected_mesh_role_tags": [
         "floor_surface",
+        "stone_surface",
         "flat_surface",
         "walkable"
       ],
       "tile_count_in_map": 218,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "flat stone floor slabs in the shrine vault",
+        "tile_semantics": "Walkable floor slabs inside the shrine vault.",
         "canonical_material_id": "dark_shrine_floor_stone",
         "material_identity_coarse": "stone",
         "material_category": "solid_stone"
@@ -107,7 +108,7 @@
       "tile_count_in_map": 124,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "empty outside-play-area darkness, no visible surface",
+        "tile_semantics": "Empty darkness outside the playable area; no visible surface.",
         "canonical_material_id": null,
         "material_identity_coarse": null,
         "material_category": null
@@ -130,6 +131,7 @@
       "shape_type": "flat_tile",
       "selected_mesh_role_tags": [
         "floor_surface",
+        "grass_surface",
         "wood_surface",
         "flat_surface",
         "walkable"
@@ -137,7 +139,7 @@
       "tile_count_in_map": 16,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "flat wooden planks bridging water channels",
+        "tile_semantics": "Wooden bridge planks crossing water channels.",
         "canonical_material_id": "sunken_wood_bridge_planks",
         "material_identity_coarse": "wood",
         "material_category": "wood"
@@ -148,7 +150,7 @@
       "legend_name": "ancient_wooden_gate",
       "tile_type_id": "tile_deep_shrine_vault_level_d_ancient_wooden_gate",
       "role": "door_prop",
-      "mesh_id": "door_proxy",
+      "mesh_id": "door_a",
       "material_slot_id": "mat_ancient_wooden_gate",
       "slot_id_compat": "mat_ancient_wooden_gate",
       "material_family": "wood",
@@ -157,17 +159,18 @@
       "z_offset": 0,
       "generate": true,
       "generate_material": true,
-      "shape_type": "vertical_prop",
+      "shape_type": "vertical_door_mesh",
       "selected_mesh_role_tags": [
         "door_prop",
         "gate_prop",
         "vertical_prop",
-        "interactive"
+        "interactive",
+        "align_to_wall"
       ],
       "tile_count_in_map": 6,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "vertical wooden gate or doorway",
+        "tile_semantics": "Wooden gate or doorway leading deeper into the dungeon.",
         "canonical_material_id": "ancient_wooden_gate",
         "material_identity_coarse": "wood",
         "material_category": "wood"
@@ -190,15 +193,17 @@
       "shape_type": "flat_tile",
       "selected_mesh_role_tags": [
         "floor_surface",
+        "grass_surface",
+        "wood_surface",
         "flat_surface",
         "walkable"
       ],
       "tile_count_in_map": 8,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "sparse moss patches on stone surfaces",
+        "tile_semantics": "Sparse moss patches growing in damp cracks of stone surfaces.",
         "canonical_material_id": "underground_moss_patch",
-        "material_identity_coarse": "organic",
+        "material_identity_coarse": "moss",
         "material_category": "ground_organic"
       }
     },
@@ -224,7 +229,7 @@
       "tile_count_in_map": 44,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "flat water surface in channels",
+        "tile_semantics": "Water channels surrounding the central shrine.",
         "canonical_material_id": "deep_cold_water",
         "material_identity_coarse": "water",
         "material_category": "water_like"

@@ -1,0 +1,369 @@
+{
+  "schema_version": "d6g_a2_material_candidates_index_v1",
+  "source_run": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation",
+  "selection_policy": "first_available_seed",
+  "runtime_texture_backend": "sd15",
+  "include_backend_candidates": true,
+  "materials": [
+    {
+      "material_slot_id": "mat_stone_wall",
+      "display_label": "connectable_stone_wall",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 916597327,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_wall\\seed_916597327.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_wall\\seed_916597327_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_wall\\seed_916597327.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_wall\\seed_916597327_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_wall_seed_916597327\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_wall_seed_916597327\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_wall_seed_916597327\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_wall_seed_916597327\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_wall_seed_916597327\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_wall_seed_916597327\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_stone_floor",
+      "display_label": "kaykit_stone_floor",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 916597327,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_floor\\seed_916597327.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_floor\\seed_916597327_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_floor\\seed_916597327.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_floor\\seed_916597327_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_floor_seed_916597327\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_floor_seed_916597327\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_floor_seed_916597327\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_floor_seed_916597327\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_floor_seed_916597327\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_floor_seed_916597327\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_wood_bridge",
+      "display_label": "wooden_bridge",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 916597327,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_wood_bridge\\seed_916597327.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_wood_bridge\\seed_916597327_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_wood_bridge\\seed_916597327.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_wood_bridge\\seed_916597327_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wood_bridge_seed_916597327\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wood_bridge_seed_916597327\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wood_bridge_seed_916597327\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wood_bridge_seed_916597327\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wood_bridge_seed_916597327\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wood_bridge_seed_916597327\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_wood_door",
+      "display_label": "kaykit_wooden_door",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 916597327,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_wood_door\\seed_916597327.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_wood_door\\seed_916597327_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_wood_door\\seed_916597327.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_wood_door\\seed_916597327_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wood_door_seed_916597327\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wood_door_seed_916597327\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wood_door_seed_916597327\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wood_door_seed_916597327\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wood_door_seed_916597327\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wood_door_seed_916597327\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_stone_stairs",
+      "display_label": "stone_stairs",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 916597327,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_stairs\\seed_916597327.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_stairs\\seed_916597327_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_stairs\\seed_916597327.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_stairs\\seed_916597327_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_stairs_seed_916597327\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_stairs_seed_916597327\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_stairs_seed_916597327\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_stairs_seed_916597327\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_stairs_seed_916597327\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_stairs_seed_916597327\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_stone_slope",
+      "display_label": "stone_slope",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 916597327,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_slope\\seed_916597327.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_slope\\seed_916597327_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_slope\\seed_916597327.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_stone_slope\\seed_916597327_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_slope_seed_916597327\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_slope_seed_916597327\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_slope_seed_916597327\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_slope_seed_916597327\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_slope_seed_916597327\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stone_slope_seed_916597327\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_dirt_ground",
+      "display_label": "kaykit_dirt_floor",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 916597327,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_dirt_ground\\seed_916597327.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_dirt_ground\\seed_916597327_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_dirt_ground\\seed_916597327.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_dirt_ground\\seed_916597327_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dirt_ground_seed_916597327\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dirt_ground_seed_916597327\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dirt_ground_seed_916597327\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dirt_ground_seed_916597327\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dirt_ground_seed_916597327\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_dirt_ground_seed_916597327\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_mossy_grass",
+      "display_label": "mossy_grass_ground",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 916597327,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_mossy_grass\\seed_916597327.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_mossy_grass\\seed_916597327_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_mossy_grass\\seed_916597327.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_mossy_grass\\seed_916597327_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_mossy_grass_seed_916597327\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_mossy_grass_seed_916597327\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_mossy_grass_seed_916597327\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_mossy_grass_seed_916597327\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_mossy_grass_seed_916597327\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_mossy_grass_seed_916597327\\metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_shallow_water",
+      "display_label": "shallow_river_water",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 916597327,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_shallow_water\\seed_916597327.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_shallow_water\\seed_916597327_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_shallow_water\\seed_916597327.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\sd15\\plan_a\\mat_shallow_water\\seed_916597327_metadata.json"
+        }
+      ],
+      "stablematerials_candidates": [
+        {
+          "backend": "stablematerials",
+          "plan_id": "stablematerials",
+          "seed": 916597327,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_shallow_water_seed_916597327\\basecolor.png",
+            "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_shallow_water_seed_916597327\\normal.png",
+            "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_shallow_water_seed_916597327\\roughness.png",
+            "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_shallow_water_seed_916597327\\height.png",
+            "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_shallow_water_seed_916597327\\metallic.png"
+          },
+          "missing_maps": [],
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260817_042138_kaykit_v2_mesh_test_material_generation\\07_generation\\stablematerials\\stablematerials_mat_shallow_water_seed_916597327\\metadata.json"
+        }
+      ]
+    }
+  ]
+}

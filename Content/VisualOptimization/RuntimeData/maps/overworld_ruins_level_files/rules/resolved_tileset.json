@@ -53,7 +53,7 @@
       "tile_count_in_map": 34,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "ruin stone wall blocks and broken masonry forming vertical structures",
+        "tile_semantics": "ruined stone wall blocks and broken masonry forming vertical structures",
         "canonical_material_id": "ruin_stone_wall",
         "material_identity_coarse": "stone",
         "material_category": "solid_stone"
@@ -64,7 +64,7 @@
       "legend_name": "worn_stone_path",
       "tile_type_id": "tile_overworld_ruins_level_files_dot_worn_stone_path",
       "role": "floor_surface",
-      "mesh_id": "tile_plane",
+      "mesh_id": "floor_kaykit",
       "material_slot_id": "mat_worn_stone_path",
       "slot_id_compat": "mat_worn_stone_path",
       "material_family": "solid_stone",
@@ -73,18 +73,17 @@
       "z_offset": 0,
       "generate": true,
       "generate_material": true,
-      "shape_type": "flat_tile",
+      "shape_type": "flat_mesh_tile",
       "selected_mesh_role_tags": [
         "floor_surface",
-        "grass_surface",
-        "wood_surface",
+        "stone_surface",
         "flat_surface",
         "walkable"
       ],
       "tile_count_in_map": 64,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "flat worn stone path leading to the ruin entrance",
+        "tile_semantics": "flat worn stone path leading to ruin entrance",
         "canonical_material_id": "worn_stone_path",
         "material_identity_coarse": "stone",
         "material_category": "solid_stone"
@@ -140,7 +139,7 @@
       "tile_count_in_map": 20,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "flat wooden bridge planks crossing the river",
+        "tile_semantics": "flat wooden bridge surface crossing river",
         "canonical_material_id": "aged_wood_bridge",
         "material_identity_coarse": "wood",
         "material_category": "wood"
@@ -149,29 +148,30 @@
     {
       "symbol": "D",
       "legend_name": "dungeon_entrance_door",
-      "tile_type_id": "tile_overworld_ruins_level_files_d_dungeon_wood_door",
+      "tile_type_id": "tile_overworld_ruins_level_files_d_dungeon_door_wood",
       "role": "door_prop",
-      "mesh_id": "door_proxy",
-      "material_slot_id": "mat_dungeon_wood_door",
-      "slot_id_compat": "mat_dungeon_wood_door",
+      "mesh_id": "door_a",
+      "material_slot_id": "mat_dungeon_door_wood",
+      "slot_id_compat": "mat_dungeon_door_wood",
       "material_family": "wood",
       "height_class": "medium",
       "height": 250,
       "z_offset": 0,
       "generate": true,
       "generate_material": true,
-      "shape_type": "vertical_prop",
+      "shape_type": "vertical_door_mesh",
       "selected_mesh_role_tags": [
         "door_prop",
         "gate_prop",
         "vertical_prop",
-        "interactive"
+        "interactive",
+        "align_to_wall"
       ],
       "tile_count_in_map": 2,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "vertical wooden door or gate set into the ruin wall",
-        "canonical_material_id": "dungeon_wood_door",
+        "tile_semantics": "vertical wooden door or gate set into ruin",
+        "canonical_material_id": "dungeon_door_wood",
         "material_identity_coarse": "wood",
         "material_category": "wood"
       }
@@ -181,7 +181,7 @@
       "legend_name": "mossy_grass_ground",
       "tile_type_id": "tile_overworld_ruins_level_files_g_mossy_grass_ground",
       "role": "floor_surface",
-      "mesh_id": "tile_plane",
+      "mesh_id": "floor_dirt_kaykit",
       "material_slot_id": "mat_mossy_grass_ground",
       "slot_id_compat": "mat_mossy_grass_ground",
       "material_family": "ground_organic",
@@ -190,18 +190,18 @@
       "z_offset": 0,
       "generate": true,
       "generate_material": true,
-      "shape_type": "flat_tile",
+      "shape_type": "flat_dirt_mesh_tile",
       "selected_mesh_role_tags": [
         "floor_surface",
-        "grass_surface",
-        "wood_surface",
+        "dirt_surface",
+        "ground_surface",
         "flat_surface",
         "walkable"
       ],
       "tile_count_in_map": 222,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "flat mossy grass ground surrounding the ruin",
+        "tile_semantics": "flat grassy ground with mossy patches",
         "canonical_material_id": "mossy_grass_ground",
         "material_identity_coarse": "grass",
         "material_category": "ground_organic"
@@ -229,7 +229,7 @@
       "tile_count_in_map": 54,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "flat shallow river water surface",
+        "tile_semantics": "flat water surface of shallow river",
         "canonical_material_id": "shallow_river_water",
         "material_identity_coarse": "water",
         "material_category": "water_like"

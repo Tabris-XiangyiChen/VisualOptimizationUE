@@ -1,0 +1,818 @@
+{
+  "schema_version": "material_manifest_v1",
+  "map_id": "dungeon_chamber_level",
+  "created_at": "2026-08-16T16:58:04",
+  "source": {
+    "source_run": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation",
+    "resolved_materials_v2": "03_python_resolver/resolved_materials_v2.json",
+    "compiled_sd15_prompts": "06_compiled_prompts/compiled_sd15_prompts_v4.json",
+    "material_mode": "export-only",
+    "runtime_source_backend": "sd15",
+    "selection_policy": "first_available_seed",
+    "llm_calls": 0,
+    "sd_calls": 0,
+    "stablematerials_calls": 0,
+    "new_image_generation": false,
+    "compiled_stablematerials_prompts": "06_compiled_prompts/compiled_stablematerials_prompts_v4.json"
+  },
+  "materials": [
+    {
+      "material_slot_id": "mat_ancient_stone_wall",
+      "canonical_material_id": "ancient_stone_wall",
+      "display_label": "dungeon_stone_wall",
+      "material_family": "solid_stone",
+      "semantic_material_family": "solid_stone",
+      "used_by_symbols": [
+        "#"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "#",
+          "material_slot_id": "mat_ancient_stone_wall",
+          "canonical_material_id": "ancient_stone_wall",
+          "expected_mesh_ids": [
+            "wall_block"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_ancient_stone_wall/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1220821916,
+        "textures": {
+          "basecolor": "textures/mat_ancient_stone_wall/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1220821916,
+          "candidates": [
+            {
+              "seed": 1220821916,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_ancient_stone_wall/seed_1220821916/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_ancient_stone_wall\\seed_1220821916.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1220821916,
+          "candidates": [
+            {
+              "seed": 1220821916,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_ancient_stone_wall/seed_1220821916/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_ancient_stone_wall/seed_1220821916/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_ancient_stone_wall/seed_1220821916/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_ancient_stone_wall/seed_1220821916/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_ancient_stone_wall/seed_1220821916/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_ancient_stone_wall_seed_1220821916\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_ancient_stone_wall_seed_1220821916\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_ancient_stone_wall_seed_1220821916\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_ancient_stone_wall_seed_1220821916\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_ancient_stone_wall_seed_1220821916\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_ancient_stone_wall\\seed_1220821916.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_ancient_stone_wall\\seed_1220821916.png",
+      "semantic_brief": {
+        "canonical_material_id": "ancient_stone_wall",
+        "identity": "stone",
+        "material_family": "solid_stone",
+        "raw_material_clues": [
+          {
+            "text": "ancient grey stone wall blocks, broken interior masonry, and pillar-like ruin supports",
+            "source_symbol": "#",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "dungeon wall",
+            "reason": "object_shape",
+            "source_symbol": "#"
+          },
+          {
+            "term": "ancient stone",
+            "reason": "map_setting",
+            "source_symbol": "#"
+          },
+          {
+            "term": "ruin support",
+            "reason": "symbolic_marker",
+            "source_symbol": "#"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "front facing closeup ancient stone wall, broken masonry blocks, rough weathered stone texture, grey stone surface, cracked stone joints, aged stone wear, tileable stone wall, seamless stone texture",
+          "negative_prompt": "smooth polished surface, modern clean brick",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "ancient grey stone wall, rough broken masonry blocks with cracks, grey with dark mortar",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_damp_moss_growth",
+      "canonical_material_id": "damp_moss_growth",
+      "display_label": "damp_moss_growth",
+      "material_family": "ground_organic",
+      "semantic_material_family": "ground_organic",
+      "used_by_symbols": [
+        "g"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "g",
+          "material_slot_id": "mat_damp_moss_growth",
+          "canonical_material_id": "damp_moss_growth",
+          "expected_mesh_ids": [
+            "tile_plane"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_damp_moss_growth/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1220821916,
+        "textures": {
+          "basecolor": "textures/mat_damp_moss_growth/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1220821916,
+          "candidates": [
+            {
+              "seed": 1220821916,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_damp_moss_growth/seed_1220821916/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_damp_moss_growth\\seed_1220821916.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1220821916,
+          "candidates": [
+            {
+              "seed": 1220821916,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_damp_moss_growth/seed_1220821916/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_damp_moss_growth/seed_1220821916/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_damp_moss_growth/seed_1220821916/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_damp_moss_growth/seed_1220821916/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_damp_moss_growth/seed_1220821916/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_damp_moss_growth_seed_1220821916\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_damp_moss_growth_seed_1220821916\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_damp_moss_growth_seed_1220821916\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_damp_moss_growth_seed_1220821916\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_damp_moss_growth_seed_1220821916\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_damp_moss_growth\\seed_1220821916.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_damp_moss_growth\\seed_1220821916.png",
+      "semantic_brief": {
+        "canonical_material_id": "damp_moss_growth",
+        "identity": "organic",
+        "material_family": "ground_organic",
+        "raw_material_clues": [
+          {
+            "text": "dark green moss and damp organic growth spreading across old stone floor",
+            "source_symbol": "g",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "moss",
+            "reason": "object_shape",
+            "source_symbol": "g"
+          },
+          {
+            "term": "damp organic",
+            "reason": "landform_context",
+            "source_symbol": "g"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top down closeup damp moss growth, dark green moss patches, wet organic texture, mossy stone surface, dense moss layer, moist green microdetail, tileable moss texture, seamless moss surface",
+          "negative_prompt": "dry barren ground, smooth clean surface",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "damp moss growth, dense green moss patches with wet texture, dark green with brownish undertones",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_rotting_wood_walkway",
+      "canonical_material_id": "rotting_wood_walkway",
+      "display_label": "rotting_wood_walkway",
+      "material_family": "wood",
+      "semantic_material_family": "wood",
+      "used_by_symbols": [
+        "="
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "=",
+          "material_slot_id": "mat_rotting_wood_walkway",
+          "canonical_material_id": "rotting_wood_walkway",
+          "expected_mesh_ids": [
+            "tile_plane"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_rotting_wood_walkway/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1220821916,
+        "textures": {
+          "basecolor": "textures/mat_rotting_wood_walkway/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1220821916,
+          "candidates": [
+            {
+              "seed": 1220821916,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_rotting_wood_walkway/seed_1220821916/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_rotting_wood_walkway\\seed_1220821916.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1220821916,
+          "candidates": [
+            {
+              "seed": 1220821916,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_rotting_wood_walkway/seed_1220821916/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_rotting_wood_walkway/seed_1220821916/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_rotting_wood_walkway/seed_1220821916/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_rotting_wood_walkway/seed_1220821916/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_rotting_wood_walkway/seed_1220821916/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_rotting_wood_walkway_seed_1220821916\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_rotting_wood_walkway_seed_1220821916\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_rotting_wood_walkway_seed_1220821916\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_rotting_wood_walkway_seed_1220821916\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_rotting_wood_walkway_seed_1220821916\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_rotting_wood_walkway\\seed_1220821916.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_rotting_wood_walkway\\seed_1220821916.png",
+      "semantic_brief": {
+        "canonical_material_id": "rotting_wood_walkway",
+        "identity": "wood",
+        "material_family": "wood",
+        "raw_material_clues": [
+          {
+            "text": "aged brown wooden planks forming a narrow walkway across the flooded chamber",
+            "source_symbol": "=",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "wooden walkway",
+            "reason": "object_shape",
+            "source_symbol": "="
+          },
+          {
+            "term": "flooded chamber",
+            "reason": "landform_context",
+            "source_symbol": "="
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top down closeup rotting wood planks, aged brown wooden boards, weathered wood grain, dark brown wood texture, cracked wood surface, mossy wood edges, tileable wood planks, seamless wood texture",
+          "negative_prompt": "new polished wood, clean modern planks",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "rotting wood planks, aged brown boards with grain and cracks, dark brown with greyish tones",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_stagnant_dungeon_water",
+      "canonical_material_id": "stagnant_dungeon_water",
+      "display_label": "stagnant_dungeon_water",
+      "material_family": "water_like",
+      "semantic_material_family": "water_like",
+      "used_by_symbols": [
+        "~"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "~",
+          "material_slot_id": "mat_stagnant_dungeon_water",
+          "canonical_material_id": "stagnant_dungeon_water",
+          "expected_mesh_ids": [
+            "water_plane"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_stagnant_dungeon_water/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1220821916,
+        "textures": {
+          "basecolor": "textures/mat_stagnant_dungeon_water/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1220821916,
+          "candidates": [
+            {
+              "seed": 1220821916,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_stagnant_dungeon_water/seed_1220821916/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_stagnant_dungeon_water\\seed_1220821916.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1220821916,
+          "candidates": [
+            {
+              "seed": 1220821916,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_stagnant_dungeon_water/seed_1220821916/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_stagnant_dungeon_water/seed_1220821916/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_stagnant_dungeon_water/seed_1220821916/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_stagnant_dungeon_water/seed_1220821916/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_stagnant_dungeon_water/seed_1220821916/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stagnant_dungeon_water_seed_1220821916\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stagnant_dungeon_water_seed_1220821916\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stagnant_dungeon_water_seed_1220821916\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stagnant_dungeon_water_seed_1220821916\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_stagnant_dungeon_water_seed_1220821916\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_stagnant_dungeon_water\\seed_1220821916.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_stagnant_dungeon_water\\seed_1220821916.png",
+      "semantic_brief": {
+        "canonical_material_id": "stagnant_dungeon_water",
+        "identity": "water",
+        "material_family": "water_like",
+        "raw_material_clues": [
+          {
+            "text": "dark blue-green stagnant water collected in a shallow interior pool",
+            "source_symbol": "~",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "stagnant water",
+            "reason": "object_shape",
+            "source_symbol": "~"
+          },
+          {
+            "term": "interior pool",
+            "reason": "landform_context",
+            "source_symbol": "~"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top down closeup stagnant water surface, dark blue-green water, murky still water, shallow pool surface, algae tinted water, calm water ripples, tileable water texture, seamless water surface",
+          "negative_prompt": "clear blue ocean, fast flowing river",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "stagnant water surface, murky still water with subtle ripples, dark blue-green with brownish tint",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_wooden_dungeon_door",
+      "canonical_material_id": "wooden_dungeon_door",
+      "display_label": "wooden_dungeon_door",
+      "material_family": "wood",
+      "semantic_material_family": "wood",
+      "used_by_symbols": [
+        "D"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "D",
+          "material_slot_id": "mat_wooden_dungeon_door",
+          "canonical_material_id": "wooden_dungeon_door",
+          "expected_mesh_ids": [
+            "door_proxy"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_wooden_dungeon_door/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1220821916,
+        "textures": {
+          "basecolor": "textures/mat_wooden_dungeon_door/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1220821916,
+          "candidates": [
+            {
+              "seed": 1220821916,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_wooden_dungeon_door/seed_1220821916/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_wooden_dungeon_door\\seed_1220821916.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1220821916,
+          "candidates": [
+            {
+              "seed": 1220821916,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_wooden_dungeon_door/seed_1220821916/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_wooden_dungeon_door/seed_1220821916/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_wooden_dungeon_door/seed_1220821916/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_wooden_dungeon_door/seed_1220821916/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_wooden_dungeon_door/seed_1220821916/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wooden_dungeon_door_seed_1220821916\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wooden_dungeon_door_seed_1220821916\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wooden_dungeon_door_seed_1220821916\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wooden_dungeon_door_seed_1220821916\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_wooden_dungeon_door_seed_1220821916\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_wooden_dungeon_door\\seed_1220821916.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_wooden_dungeon_door\\seed_1220821916.png",
+      "semantic_brief": {
+        "canonical_material_id": "wooden_dungeon_door",
+        "identity": "wood",
+        "material_family": "wood",
+        "raw_material_clues": [
+          {
+            "text": "old wooden door or gate tile connecting dungeon rooms",
+            "source_symbol": "D",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "wooden door",
+            "reason": "object_shape",
+            "source_symbol": "D"
+          },
+          {
+            "term": "dungeon gate",
+            "reason": "gameplay_role",
+            "source_symbol": "D"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "front facing panel old wooden door, aged wood planks, weathered wood grain, dark brown wood texture, cracked wood surface, iron hinges detail, tileable wood panel, seamless wood texture",
+          "negative_prompt": "new polished wood, modern clean door",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "old wooden door surface, aged wood planks with grain and cracks, dark brown with greyish tones",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_worn_stone_floor",
+      "canonical_material_id": "worn_stone_floor",
+      "display_label": "dungeon_stone_floor",
+      "material_family": "solid_stone",
+      "semantic_material_family": "solid_stone",
+      "used_by_symbols": [
+        "."
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": ".",
+          "material_slot_id": "mat_worn_stone_floor",
+          "canonical_material_id": "worn_stone_floor",
+          "expected_mesh_ids": [
+            "tile_plane"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_worn_stone_floor/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 1220821916,
+        "textures": {
+          "basecolor": "textures/mat_worn_stone_floor/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 1220821916,
+          "candidates": [
+            {
+              "seed": 1220821916,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_worn_stone_floor/seed_1220821916/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_worn_stone_floor\\seed_1220821916.png"
+              }
+            }
+          ]
+        },
+        "stablematerials": {
+          "selected_seed": 1220821916,
+          "candidates": [
+            {
+              "seed": 1220821916,
+              "textures": {
+                "basecolor": "backend_candidates/stablematerials/mat_worn_stone_floor/seed_1220821916/basecolor.png",
+                "normal": "backend_candidates/stablematerials/mat_worn_stone_floor/seed_1220821916/normal.png",
+                "roughness": "backend_candidates/stablematerials/mat_worn_stone_floor/seed_1220821916/roughness.png",
+                "height": "backend_candidates/stablematerials/mat_worn_stone_floor/seed_1220821916/height.png",
+                "metallic": "backend_candidates/stablematerials/mat_worn_stone_floor/seed_1220821916/metallic.png"
+              },
+              "missing_maps": [],
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_worn_stone_floor_seed_1220821916\\basecolor.png",
+                "normal": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_worn_stone_floor_seed_1220821916\\normal.png",
+                "roughness": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_worn_stone_floor_seed_1220821916\\roughness.png",
+                "height": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_worn_stone_floor_seed_1220821916\\height.png",
+                "metallic": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\stablematerials\\stablematerials_mat_worn_stone_floor_seed_1220821916\\metallic.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_worn_stone_floor\\seed_1220821916.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15",
+        "stablematerials_lcm"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260816_165554_dungeon_chamber_level_material_generation\\07_generation\\sd15\\plan_a\\mat_worn_stone_floor\\seed_1220821916.png",
+      "semantic_brief": {
+        "canonical_material_id": "worn_stone_floor",
+        "identity": "stone",
+        "material_family": "solid_stone",
+        "raw_material_clues": [
+          {
+            "text": "dark worn stone floor slabs inside the first dungeon chamber",
+            "source_symbol": ".",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "dungeon floor",
+            "reason": "object_shape",
+            "source_symbol": "."
+          },
+          {
+            "term": "worn stone",
+            "reason": "map_setting",
+            "source_symbol": "."
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top down closeup worn stone floor, dark stone slabs, weathered cracked stone, uneven stone tiles, rough stone texture, aged stone wear, tileable stone floor, seamless stone texture",
+          "negative_prompt": "smooth polished surface, modern clean tile",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        },
+        "stablematerials_lcm": {
+          "compiler": "compiled_stablematerials_prompts_v4",
+          "backend": "stablematerials_lcm",
+          "positive_prompt": "worn dark stone floor, cracked uneven slabs with rough texture, dark grey with brownish tones",
+          "negative_prompt": null,
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    }
+  ],
+  "warnings": []
+}

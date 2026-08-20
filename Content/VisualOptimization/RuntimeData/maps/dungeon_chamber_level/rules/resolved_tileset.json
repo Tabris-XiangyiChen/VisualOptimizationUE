@@ -33,11 +33,11 @@
     {
       "symbol": "#",
       "legend_name": "dungeon_stone_wall",
-      "tile_type_id": "tile_dungeon_chamber_level_hash_ancient_stone_wall",
+      "tile_type_id": "tile_dungeon_chamber_level_hash_ancient_grey_stone_wall",
       "role": "wall_surface",
       "mesh_id": "wall_block",
-      "material_slot_id": "mat_ancient_stone_wall",
-      "slot_id_compat": "mat_ancient_stone_wall",
+      "material_slot_id": "mat_ancient_grey_stone_wall",
+      "slot_id_compat": "mat_ancient_grey_stone_wall",
       "material_family": "solid_stone",
       "height_class": "high",
       "height": 300,
@@ -53,8 +53,8 @@
       "tile_count_in_map": 104,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "solid stone wall blocks forming the dungeon chamber boundary",
-        "canonical_material_id": "ancient_stone_wall",
+        "tile_semantics": "solid stone wall block forming the dungeon chamber boundary",
+        "canonical_material_id": "ancient_grey_stone_wall",
         "material_identity_coarse": "stone",
         "material_category": "solid_stone"
       }
@@ -62,30 +62,29 @@
     {
       "symbol": ".",
       "legend_name": "dungeon_stone_floor",
-      "tile_type_id": "tile_dungeon_chamber_level_dot_worn_stone_floor",
+      "tile_type_id": "tile_dungeon_chamber_level_dot_dark_worn_stone_floor",
       "role": "floor_surface",
-      "mesh_id": "tile_plane",
-      "material_slot_id": "mat_worn_stone_floor",
-      "slot_id_compat": "mat_worn_stone_floor",
+      "mesh_id": "floor_kaykit",
+      "material_slot_id": "mat_dark_worn_stone_floor",
+      "slot_id_compat": "mat_dark_worn_stone_floor",
       "material_family": "solid_stone",
       "height_class": "flat",
       "height": 0,
       "z_offset": 0,
       "generate": true,
       "generate_material": true,
-      "shape_type": "flat_tile",
+      "shape_type": "flat_mesh_tile",
       "selected_mesh_role_tags": [
         "floor_surface",
-        "grass_surface",
-        "wood_surface",
+        "stone_surface",
         "flat_surface",
         "walkable"
       ],
       "tile_count_in_map": 236,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "worn stone floor slabs inside the dungeon chamber",
-        "canonical_material_id": "worn_stone_floor",
+        "tile_semantics": "worn stone floor slab inside the dungeon chamber",
+        "canonical_material_id": "dark_worn_stone_floor",
         "material_identity_coarse": "stone",
         "material_category": "solid_stone"
       }
@@ -109,7 +108,7 @@
       "tile_count_in_map": 124,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "empty outside-play-area darkness; no visible surface material",
+        "tile_semantics": "empty outside-play-area darkness with no visible surface",
         "canonical_material_id": null,
         "material_identity_coarse": null,
         "material_category": null
@@ -118,11 +117,11 @@
     {
       "symbol": "=",
       "legend_name": "rotting_wood_walkway",
-      "tile_type_id": "tile_dungeon_chamber_level_equals_rotting_wood_walkway",
+      "tile_type_id": "tile_dungeon_chamber_level_equals_aged_rotting_wood_walkway",
       "role": "floor_surface",
       "mesh_id": "tile_plane",
-      "material_slot_id": "mat_rotting_wood_walkway",
-      "slot_id_compat": "mat_rotting_wood_walkway",
+      "material_slot_id": "mat_aged_rotting_wood_walkway",
+      "slot_id_compat": "mat_aged_rotting_wood_walkway",
       "material_family": "wood",
       "height_class": "flat",
       "height": 0,
@@ -140,8 +139,8 @@
       "tile_count_in_map": 14,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "aged brown wooden planks forming a narrow walkway across the flooded chamber",
-        "canonical_material_id": "rotting_wood_walkway",
+        "tile_semantics": "aged wooden plank walkway crossing the flooded area",
+        "canonical_material_id": "aged_rotting_wood_walkway",
         "material_identity_coarse": "wood",
         "material_category": "wood"
       }
@@ -149,29 +148,30 @@
     {
       "symbol": "D",
       "legend_name": "wooden_dungeon_door",
-      "tile_type_id": "tile_dungeon_chamber_level_d_wooden_dungeon_door",
+      "tile_type_id": "tile_dungeon_chamber_level_d_old_wooden_dungeon_door",
       "role": "door_prop",
-      "mesh_id": "door_proxy",
-      "material_slot_id": "mat_wooden_dungeon_door",
-      "slot_id_compat": "mat_wooden_dungeon_door",
+      "mesh_id": "door_a",
+      "material_slot_id": "mat_old_wooden_dungeon_door",
+      "slot_id_compat": "mat_old_wooden_dungeon_door",
       "material_family": "wood",
       "height_class": "medium",
       "height": 250,
       "z_offset": 0,
       "generate": true,
       "generate_material": true,
-      "shape_type": "vertical_prop",
+      "shape_type": "vertical_door_mesh",
       "selected_mesh_role_tags": [
         "door_prop",
         "gate_prop",
         "vertical_prop",
-        "interactive"
+        "interactive",
+        "align_to_wall"
       ],
       "tile_count_in_map": 4,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
         "tile_semantics": "old wooden door or gate tile connecting dungeon rooms",
-        "canonical_material_id": "wooden_dungeon_door",
+        "canonical_material_id": "old_wooden_dungeon_door",
         "material_identity_coarse": "wood",
         "material_category": "wood"
       }
@@ -201,7 +201,7 @@
       "tile_count_in_map": 8,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "dark green moss and damp organic growth spreading across old stone floor",
+        "tile_semantics": "dark green moss and damp organic growth on old stone floor",
         "canonical_material_id": "damp_moss_growth",
         "material_identity_coarse": "organic",
         "material_category": "ground_organic"
@@ -229,7 +229,7 @@
       "tile_count_in_map": 30,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "dark blue-green stagnant water collected in a shallow interior pool",
+        "tile_semantics": "dark blue-green stagnant water in a shallow interior pool",
         "canonical_material_id": "stagnant_dungeon_water",
         "material_identity_coarse": "water",
         "material_category": "water_like"

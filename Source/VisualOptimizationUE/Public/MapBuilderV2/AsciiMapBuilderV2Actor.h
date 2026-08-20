@@ -57,7 +57,7 @@ private:
 
     FString ResolveIndexPath() const;
     FString ResolveIndexRelativePath(const FString& AbsoluteIndexPath, const FString& RuntimeRelativePath) const;
-    UMaterialInterface* ResolveMaterial(FName MaterialSlotId) const;
+    UMaterialInterface* ResolveMaterial(FName MaterialSlotId);
     UInstancedStaticMeshComponent* GetOrCreateInstanceComponent(
         FName ComponentKey,
         UStaticMesh* Mesh,
@@ -109,8 +109,18 @@ private:
     UPROPERTY(VisibleAnywhere, Transient, Category = "ASCII Map V2|Debug")
     FString CurrentRuntimeMapId;
 
+    UPROPERTY(VisibleAnywhere, Transient, Category = "ASCII Map V2|Debug")
+    bool bRuntimeMaterialProviderReady = false;
+
+    UPROPERTY(VisibleAnywhere, Transient, Category = "ASCII Map V2|Debug")
+    int32 RuntimeMaterialCount = 0;
+
+    UPROPERTY(VisibleAnywhere, Transient, Category = "ASCII Map V2|Debug")
+    bool bRuntimeMaterialFallbackUsed = false;
+
     int32 GeneratedBaseSurfaceCount = 0;
     int32 GeneratedUnderlayCount = 0;
+    int32 UnresolvedUnderlayCount = 0;
     int32 GeneratedStructureCount = 0;
     int32 GeneratedInteractiveActorCount = 0;
     int32 GeneratedDecorationCount = 0;
@@ -119,5 +129,6 @@ private:
     int32 AmbiguousOrientationCount = 0;
     TSet<FName> MissingMeshIds;
     TSet<FName> MissingMaterialSlotIds;
+    TSet<FName> RuntimeMaterialFallbackSlotIds;
     TMap<uint8, int32> WallConnectivityDistribution;
 };

@@ -1,0 +1,342 @@
+{
+  "schema_version": "resolved_tileset_v2",
+  "map_id": "kaykit_v2_mesh_test",
+  "id_policy": "tile_type_id = tile_<map_id>_<symbol_alias>_<normalized_canonical_material_id>",
+  "tiles": [
+    {
+      "symbol": "#",
+      "legend_name": "connectable_stone_wall",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_hash_stone_wall",
+      "tile_semantics": "connectable stone wall segment forming straight walls, corners, T junctions, and cross junctions",
+      "mesh_id": "wall_segment",
+      "selected_mesh_role_tags": [
+        "wall_surface",
+        "blocking",
+        "vertical_structure",
+        "connectable_wall",
+        "simple_wall_segment"
+      ],
+      "shape_type": "wall_segment",
+      "height_class": "high",
+      "height": 300,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "stone_wall",
+      "material_slot_id": "mat_stone_wall"
+    },
+    {
+      "symbol": ".",
+      "legend_name": "kaykit_stone_floor",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_dot_stone_floor",
+      "tile_semantics": "worn stone floor surface inside the ruin and around test rooms",
+      "mesh_id": "floor_kaykit",
+      "selected_mesh_role_tags": [
+        "floor_surface",
+        "stone_surface",
+        "flat_surface",
+        "walkable"
+      ],
+      "shape_type": "flat_mesh_tile",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "stone_floor",
+      "material_slot_id": "mat_stone_floor"
+    },
+    {
+      "symbol": "0",
+      "legend_name": "void",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_zero_no_geometry",
+      "tile_semantics": "empty outside-play-area space with no visible surface",
+      "mesh_id": null,
+      "selected_mesh_role_tags": [],
+      "shape_type": null,
+      "height_class": null,
+      "height": null,
+      "z_offset": null,
+      "generate_geometry": false,
+      "generate_material": false,
+      "canonical_material_id": null,
+      "material_slot_id": null
+    },
+    {
+      "symbol": "=",
+      "legend_name": "wooden_bridge",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_equals_wood_bridge",
+      "tile_semantics": "aged brown wooden plank bridge crossing shallow water",
+      "mesh_id": "tile_plane",
+      "selected_mesh_role_tags": [
+        "floor_surface",
+        "grass_surface",
+        "wood_surface",
+        "flat_surface",
+        "walkable"
+      ],
+      "shape_type": "flat_tile",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "wood_bridge",
+      "material_slot_id": "mat_wood_bridge"
+    },
+    {
+      "symbol": "A",
+      "legend_name": "stone_wall_doorway",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_a_stone_wall",
+      "tile_semantics": "fixed stone wall structure with a doorway opening, not a movable door",
+      "mesh_id": "wall_doorway",
+      "selected_mesh_role_tags": [
+        "wall_surface",
+        "doorway_structure",
+        "blocking",
+        "vertical_structure",
+        "fixed_structure"
+      ],
+      "shape_type": "doorway_structure",
+      "height_class": "high",
+      "height": 300,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "stone_wall",
+      "material_slot_id": "mat_stone_wall"
+    },
+    {
+      "symbol": "D",
+      "legend_name": "kaykit_wooden_door",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_d_wood_door",
+      "tile_semantics": "old wooden door placed in a wall line and aligned to adjacent walls",
+      "mesh_id": "door_a",
+      "selected_mesh_role_tags": [
+        "door_prop",
+        "gate_prop",
+        "vertical_prop",
+        "interactive",
+        "align_to_wall"
+      ],
+      "shape_type": "vertical_door_mesh",
+      "height_class": "medium",
+      "height": 250,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "wood_door",
+      "material_slot_id": "mat_wood_door"
+    },
+    {
+      "symbol": "F",
+      "legend_name": "kaykit_primitive_floor",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_f_stone_floor",
+      "tile_semantics": "simple primitive stone floor tile used for controlled mesh fitting tests",
+      "mesh_id": "primitive_floor_kaykit",
+      "selected_mesh_role_tags": [
+        "floor_surface",
+        "stone_surface",
+        "flat_surface",
+        "walkable"
+      ],
+      "shape_type": "flat_primitive_tile",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "stone_floor",
+      "material_slot_id": "mat_stone_floor"
+    },
+    {
+      "symbol": "H",
+      "legend_name": "kaykit_half_stone_wall",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_h_stone_wall",
+      "tile_semantics": "low stone half wall used to test a smaller structure with a floor underlay",
+      "mesh_id": "wall_half_kaykit",
+      "selected_mesh_role_tags": [
+        "wall_surface",
+        "low_wall",
+        "blocking",
+        "vertical_structure",
+        "manual_orientation"
+      ],
+      "shape_type": "half_wall_mesh",
+      "height_class": "medium",
+      "height": 150,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "stone_wall",
+      "material_slot_id": "mat_stone_wall"
+    },
+    {
+      "symbol": "K",
+      "legend_name": "baseline_stone_block_wall",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_k_stone_wall",
+      "tile_semantics": "full stone block wall used as a baseline comparison against the KayKit wall meshes",
+      "mesh_id": "wall_block",
+      "selected_mesh_role_tags": [
+        "wall_surface",
+        "blocking",
+        "vertical_structure"
+      ],
+      "shape_type": "vertical_block",
+      "height_class": "high",
+      "height": 300,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "stone_wall",
+      "material_slot_id": "mat_stone_wall"
+    },
+    {
+      "symbol": "P",
+      "legend_name": "baseline_gate_proxy",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_p_wood_door",
+      "tile_semantics": "simple baseline gate proxy used to compare with the KayKit door mesh",
+      "mesh_id": "door_proxy",
+      "selected_mesh_role_tags": [
+        "door_prop",
+        "gate_prop",
+        "vertical_prop",
+        "interactive"
+      ],
+      "shape_type": "vertical_prop",
+      "height_class": "medium",
+      "height": 250,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "wood_door",
+      "material_slot_id": "mat_wood_door"
+    },
+    {
+      "symbol": "S",
+      "legend_name": "stone_stairs",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_s_stone_stairs",
+      "tile_semantics": "full tile stone stairs with a manually selected rising direction",
+      "mesh_id": "stairs_full",
+      "selected_mesh_role_tags": [
+        "stair_structure",
+        "walkable",
+        "full_tile_structure",
+        "manual_orientation"
+      ],
+      "shape_type": "full_tile_stairs",
+      "height_class": "medium",
+      "height": 150,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "stone_stairs",
+      "material_slot_id": "mat_stone_stairs"
+    },
+    {
+      "symbol": "W",
+      "legend_name": "kaykit_full_stone_wall",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_w_stone_wall",
+      "tile_semantics": "complete KayKit stone wall section with a strong vertical wall silhouette",
+      "mesh_id": "wall_full_kaykit",
+      "selected_mesh_role_tags": [
+        "wall_surface",
+        "blocking",
+        "vertical_structure",
+        "full_wall"
+      ],
+      "shape_type": "full_wall_mesh",
+      "height_class": "high",
+      "height": 300,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "stone_wall",
+      "material_slot_id": "mat_stone_wall"
+    },
+    {
+      "symbol": "^",
+      "legend_name": "stone_slope",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_caret_stone_slope",
+      "tile_semantics": "single stone slope tile with a manually selected facing direction",
+      "mesh_id": "slope",
+      "selected_mesh_role_tags": [
+        "slope_structure",
+        "walkable",
+        "manual_orientation",
+        "requires_underlay"
+      ],
+      "shape_type": "slope",
+      "height_class": "medium",
+      "height": 150,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "stone_slope",
+      "material_slot_id": "mat_stone_slope"
+    },
+    {
+      "symbol": "d",
+      "legend_name": "kaykit_dirt_floor",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_d_dirt_ground",
+      "tile_semantics": "rough dirt ground mesh outside the stone ruin",
+      "mesh_id": "floor_dirt_kaykit",
+      "selected_mesh_role_tags": [
+        "floor_surface",
+        "dirt_surface",
+        "ground_surface",
+        "flat_surface",
+        "walkable"
+      ],
+      "shape_type": "flat_dirt_mesh_tile",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "dirt_ground",
+      "material_slot_id": "mat_dirt_ground"
+    },
+    {
+      "symbol": "g",
+      "legend_name": "mossy_grass_ground",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_g_mossy_grass",
+      "tile_semantics": "dark green grassy ground with mossy damp patches around the ruin",
+      "mesh_id": "tile_plane",
+      "selected_mesh_role_tags": [
+        "floor_surface",
+        "grass_surface",
+        "wood_surface",
+        "flat_surface",
+        "walkable"
+      ],
+      "shape_type": "flat_tile",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": 0,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "mossy_grass",
+      "material_slot_id": "mat_mossy_grass"
+    },
+    {
+      "symbol": "~",
+      "legend_name": "shallow_river_water",
+      "tile_type_id": "tile_kaykit_v2_mesh_test_tilde_shallow_water",
+      "tile_semantics": "dark blue-green shallow water channel crossing the test area",
+      "mesh_id": "water_plane",
+      "selected_mesh_role_tags": [
+        "water_surface",
+        "flat_surface"
+      ],
+      "shape_type": "flat_tile",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": -20,
+      "generate_geometry": true,
+      "generate_material": true,
+      "canonical_material_id": "shallow_water",
+      "material_slot_id": "mat_shallow_water"
+    }
+  ]
+}
