@@ -17,9 +17,9 @@ namespace
     static const FNeighborDirectionV2 NeighborDirections[] =
     {
         {-1, 0, AsciiMapV2Connectivity::North, 90.0f},
-        {0, 1, AsciiMapV2Connectivity::East, 0.0f},
+        {0, 1, AsciiMapV2Connectivity::East, 180.0f},
         {1, 0, AsciiMapV2Connectivity::South, -90.0f},
-        {0, -1, AsciiMapV2Connectivity::West, 180.0f}
+        {0, -1, AsciiMapV2Connectivity::West, 0.0f}
     };
 
     bool ContainsSemanticText(const FString& Value, const TCHAR* SearchText)

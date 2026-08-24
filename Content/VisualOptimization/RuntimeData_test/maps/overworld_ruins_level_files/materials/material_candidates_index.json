@@ -1,0 +1,153 @@
+{
+  "schema_version": "d6g_a2_material_candidates_index_v1",
+  "source_run": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation",
+  "selection_policy": "first_available_seed",
+  "runtime_texture_backend": "sd15",
+  "include_backend_candidates": true,
+  "materials": [
+    {
+      "material_slot_id": "mat_ruin_stone_wall",
+      "display_label": "surface_ruin_stone",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 123,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_ruin_stone_wall\\seed_123.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_ruin_stone_wall\\seed_123_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 123,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_ruin_stone_wall\\seed_123.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_ruin_stone_wall\\seed_123_metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_worn_stone_path",
+      "display_label": "worn_stone_path",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 123,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_worn_stone_path\\seed_123.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_worn_stone_path\\seed_123_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 123,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_worn_stone_path\\seed_123.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_worn_stone_path\\seed_123_metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_aged_wood_bridge",
+      "display_label": "wooden_bridge",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 123,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_aged_wood_bridge\\seed_123.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_aged_wood_bridge\\seed_123_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 123,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_aged_wood_bridge\\seed_123.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_aged_wood_bridge\\seed_123_metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_dungeon_wood_door",
+      "display_label": "dungeon_entrance_door",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 123,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_dungeon_wood_door\\seed_123.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_dungeon_wood_door\\seed_123_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 123,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_dungeon_wood_door\\seed_123.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_dungeon_wood_door\\seed_123_metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_mossy_grass_ground",
+      "display_label": "mossy_grass_ground",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 123,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_mossy_grass_ground\\seed_123.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_mossy_grass_ground\\seed_123_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 123,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_mossy_grass_ground\\seed_123.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_mossy_grass_ground\\seed_123_metadata.json"
+        }
+      ]
+    },
+    {
+      "material_slot_id": "mat_shallow_river_water",
+      "display_label": "shallow_river_water",
+      "selected": {
+        "backend": "sd15",
+        "plan_id": "plan_a",
+        "seed": 123,
+        "textures": {
+          "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_shallow_river_water\\seed_123.png"
+        },
+        "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_shallow_river_water\\seed_123_metadata.json"
+      },
+      "sd15_candidates": [
+        {
+          "backend": "sd15",
+          "plan_id": "plan_a",
+          "seed": 123,
+          "textures": {
+            "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_shallow_river_water\\seed_123.png"
+          },
+          "source_metadata": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_shallow_river_water\\seed_123_metadata.json"
+        }
+      ]
+    }
+  ]
+}

@@ -248,11 +248,11 @@ bool FAsciiGeometryEmitterV2::EmitConnectedThinWall(
 
         if ((Mask & AsciiMapV2Connectivity::East) != 0)
         {
-            EmitSizedPart(HalfArmLength, 0.0f, FVector(Config.TileSizeCm * 0.25f, 0.0f, 0.0f), TEXT("wall_arm_horizontal"));
+            EmitSizedPart(HalfArmLength, 0.0f, FVector(-Config.TileSizeCm * 0.25f, 0.0f, 0.0f), TEXT("wall_arm_horizontal"));
         }
         if ((Mask & AsciiMapV2Connectivity::West) != 0)
         {
-            EmitSizedPart(HalfArmLength, 0.0f, FVector(-Config.TileSizeCm * 0.25f, 0.0f, 0.0f), TEXT("wall_arm_horizontal"));
+            EmitSizedPart(HalfArmLength, 0.0f, FVector(Config.TileSizeCm * 0.25f, 0.0f, 0.0f), TEXT("wall_arm_horizontal"));
         }
         if ((Mask & AsciiMapV2Connectivity::North) != 0)
         {

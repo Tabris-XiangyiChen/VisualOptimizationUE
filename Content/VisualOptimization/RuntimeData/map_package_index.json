@@ -1,9 +1,9 @@
 {
   "schema_version": "map_package_index_v1",
-  "created_at": "2026-08-18T21:06:09",
+  "created_at": "2026-08-23T20:45:04",
   "created_by": "runtime_export",
   "runtime_root": "VisualOptimization/RuntimeData",
-  "runtime_root_absolute": "I:\\Disertation\\VisualOptimise\\generated\\ue_ready\\runtime_data",
+  "runtime_root_absolute": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260823_204504_deep_shrine_vault_level_runtime_export\\03_runtime_data_package",
   "ue_copy_destination": "I:\\Disertation\\VisualOptimizationUE\\Content\\VisualOptimization\\RuntimeData",
   "maps": [
     {
@@ -27,26 +27,6 @@
       "material_textures_dir": "maps/dungeon_chamber_level/materials/textures"
     },
     {
-      "map_id": "kaykit_v2_dungeon_ruins_level",
-      "display_name": "kaykit_v2_dungeon_ruins_level",
-      "package_dir": "maps/kaykit_v2_dungeon_ruins_level",
-      "manifest": "maps/kaykit_v2_dungeon_ruins_level/manifest.json",
-      "layout": "maps/kaykit_v2_dungeon_ruins_level/layout/map.txt",
-      "resolved_tileset": "maps/kaykit_v2_dungeon_ruins_level/rules/resolved_tileset.json",
-      "material_manifest": "maps/kaykit_v2_dungeon_ruins_level/materials/material_manifest.json",
-      "material_textures_dir": "maps/kaykit_v2_dungeon_ruins_level/materials/textures"
-    },
-    {
-      "map_id": "kaykit_v2_mesh_test",
-      "display_name": "kaykit_v2_mesh_test",
-      "package_dir": "maps/kaykit_v2_mesh_test",
-      "manifest": "maps/kaykit_v2_mesh_test/manifest.json",
-      "layout": "maps/kaykit_v2_mesh_test/layout/map.txt",
-      "resolved_tileset": "maps/kaykit_v2_mesh_test/rules/resolved_tileset.json",
-      "material_manifest": "maps/kaykit_v2_mesh_test/materials/material_manifest.json",
-      "material_textures_dir": "maps/kaykit_v2_mesh_test/materials/textures"
-    },
-    {
       "map_id": "overworld_ruins_level_files",
       "display_name": "overworld_ruins_level_files",
       "package_dir": "maps/overworld_ruins_level_files",
@@ -55,36 +35,6 @@
       "resolved_tileset": "maps/overworld_ruins_level_files/rules/resolved_tileset.json",
       "material_manifest": "maps/overworld_ruins_level_files/materials/material_manifest.json",
       "material_textures_dir": "maps/overworld_ruins_level_files/materials/textures"
-    },
-    {
-      "map_id": "test_map1_clean",
-      "display_name": "test_map1_clean",
-      "package_dir": "maps/test_map1_clean",
-      "manifest": "maps/test_map1_clean/manifest.json",
-      "layout": "maps/test_map1_clean/layout/map.txt",
-      "resolved_tileset": "maps/test_map1_clean/rules/resolved_tileset.json",
-      "material_manifest": "maps/test_map1_clean/materials/material_manifest.json",
-      "material_textures_dir": "maps/test_map1_clean/materials/textures"
-    },
-    {
-      "map_id": "test_map2",
-      "display_name": "test_map2",
-      "package_dir": "maps/test_map2",
-      "manifest": "maps/test_map2/manifest.json",
-      "layout": "maps/test_map2/layout/map.txt",
-      "resolved_tileset": "maps/test_map2/rules/resolved_tileset.json",
-      "material_manifest": "maps/test_map2/materials/material_manifest.json",
-      "material_textures_dir": "maps/test_map2/materials/textures"
-    },
-    {
-      "map_id": "test_map3",
-      "display_name": "test_map3",
-      "package_dir": "maps/test_map3",
-      "manifest": "maps/test_map3/manifest.json",
-      "layout": "maps/test_map3/layout/map.txt",
-      "resolved_tileset": "maps/test_map3/rules/resolved_tileset.json",
-      "material_manifest": "maps/test_map3/materials/material_manifest.json",
-      "material_textures_dir": "maps/test_map3/materials/textures"
     }
   ],
   "warnings": []

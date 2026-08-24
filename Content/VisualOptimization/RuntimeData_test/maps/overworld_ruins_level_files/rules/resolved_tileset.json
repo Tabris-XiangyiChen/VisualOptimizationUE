@@ -1,0 +1,244 @@
+{
+  "schema_version": "resolved_tileset_v1",
+  "map_id": "overworld_ruins_level_files",
+  "source_map_package": "data\\maps\\overworld_ruins_level_files",
+  "solver": {
+    "name": "dynamic_tileset_runtime_adapter",
+    "version": "runtime_export_v1",
+    "source_schema": "resolved_tileset_v2",
+    "llm_calls": 0,
+    "sd_calls": 0,
+    "stablematerials_calls": 0
+  },
+  "ue_registry_expectations": {
+    "mesh_registry": "DA_GlobalMeshRegistry",
+    "material_registry": "runtime_material_manifest_json",
+    "dynamic_material_slots": true
+  },
+  "map_summary": {
+    "width": 26,
+    "height": 20,
+    "symbol_counts": {
+      "#": 34,
+      ".": 64,
+      "0": 124,
+      "=": 20,
+      "D": 2,
+      "g": 222,
+      "~": 54
+    },
+    "style_excerpt": "A semi-realistic fantasy roguelike overworld ruin entrance.\nThe map shows an old dungeon entrance discovered above ground, surrounded by mossy grass, broken grey stone ruins, a shallow blue-green river, and an aged wooden bridge.\nThe mood is mysterious and abandoned, with muted natural colours, damp stone, overgrown grass, and readable tile-based game materials.\nGenerate flat or front-facing tileable material surfaces suitable for later UE5 modular tile and PCG reconstruction."
+  },
+  "tiles": [
+    {
+      "symbol": "#",
+      "legend_name": "surface_ruin_stone",
+      "tile_type_id": "tile_overworld_ruins_level_files_hash_ruin_stone_wall",
+      "role": "wall_surface",
+      "mesh_id": "wall_block",
+      "material_slot_id": "mat_ruin_stone_wall",
+      "slot_id_compat": "mat_ruin_stone_wall",
+      "material_family": "solid_stone",
+      "height_class": "high",
+      "height": 300,
+      "z_offset": 0,
+      "generate": true,
+      "generate_material": true,
+      "shape_type": "vertical_block",
+      "selected_mesh_role_tags": [
+        "wall_surface",
+        "blocking",
+        "vertical_structure"
+      ],
+      "tile_count_in_map": 34,
+      "inference": {
+        "source": "material_generation_resolved_tileset_v2",
+        "tile_semantics": "ruined stone wall blocks and broken masonry forming vertical structures",
+        "canonical_material_id": "ruin_stone_wall",
+        "material_identity_coarse": "stone",
+        "material_category": "solid_stone"
+      }
+    },
+    {
+      "symbol": ".",
+      "legend_name": "worn_stone_path",
+      "tile_type_id": "tile_overworld_ruins_level_files_dot_worn_stone_path",
+      "role": "floor_surface",
+      "mesh_id": "floor_kaykit",
+      "material_slot_id": "mat_worn_stone_path",
+      "slot_id_compat": "mat_worn_stone_path",
+      "material_family": "solid_stone",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": 0,
+      "generate": true,
+      "generate_material": true,
+      "shape_type": "flat_mesh_tile",
+      "selected_mesh_role_tags": [
+        "floor_surface",
+        "stone_surface",
+        "flat_surface",
+        "walkable"
+      ],
+      "tile_count_in_map": 64,
+      "inference": {
+        "source": "material_generation_resolved_tileset_v2",
+        "tile_semantics": "flat worn stone path leading to the ruin entrance",
+        "canonical_material_id": "worn_stone_path",
+        "material_identity_coarse": "stone",
+        "material_category": "solid_stone"
+      }
+    },
+    {
+      "symbol": "0",
+      "legend_name": "void",
+      "tile_type_id": "tile_overworld_ruins_level_files_zero_no_geometry",
+      "role": "void",
+      "mesh_id": null,
+      "material_slot_id": null,
+      "slot_id_compat": null,
+      "material_family": null,
+      "height_class": null,
+      "height": 0,
+      "z_offset": 0,
+      "generate": false,
+      "generate_material": false,
+      "shape_type": null,
+      "selected_mesh_role_tags": [],
+      "tile_count_in_map": 124,
+      "inference": {
+        "source": "material_generation_resolved_tileset_v2",
+        "tile_semantics": "empty outside-play-area space with no visible surface",
+        "canonical_material_id": null,
+        "material_identity_coarse": null,
+        "material_category": null
+      }
+    },
+    {
+      "symbol": "=",
+      "legend_name": "wooden_bridge",
+      "tile_type_id": "tile_overworld_ruins_level_files_equals_aged_wood_bridge",
+      "role": "floor_surface",
+      "mesh_id": "tile_plane",
+      "material_slot_id": "mat_aged_wood_bridge",
+      "slot_id_compat": "mat_aged_wood_bridge",
+      "material_family": "wood",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": 0,
+      "generate": true,
+      "generate_material": true,
+      "shape_type": "flat_tile",
+      "selected_mesh_role_tags": [
+        "floor_surface",
+        "grass_surface",
+        "wood_surface",
+        "flat_surface",
+        "walkable"
+      ],
+      "tile_count_in_map": 20,
+      "inference": {
+        "source": "material_generation_resolved_tileset_v2",
+        "tile_semantics": "flat wooden bridge surface crossing the river",
+        "canonical_material_id": "aged_wood_bridge",
+        "material_identity_coarse": "wood",
+        "material_category": "wood"
+      }
+    },
+    {
+      "symbol": "D",
+      "legend_name": "dungeon_entrance_door",
+      "tile_type_id": "tile_overworld_ruins_level_files_d_dungeon_wood_door",
+      "role": "door_prop",
+      "mesh_id": "door_a",
+      "material_slot_id": "mat_dungeon_wood_door",
+      "slot_id_compat": "mat_dungeon_wood_door",
+      "material_family": "wood",
+      "height_class": "medium",
+      "height": 250,
+      "z_offset": 0,
+      "generate": true,
+      "generate_material": true,
+      "shape_type": "vertical_door_mesh",
+      "selected_mesh_role_tags": [
+        "door_prop",
+        "gate_prop",
+        "vertical_prop",
+        "interactive",
+        "align_to_wall"
+      ],
+      "tile_count_in_map": 2,
+      "inference": {
+        "source": "material_generation_resolved_tileset_v2",
+        "tile_semantics": "vertical wooden door or gate set into the ruin wall",
+        "canonical_material_id": "dungeon_wood_door",
+        "material_identity_coarse": "wood",
+        "material_category": "wood"
+      }
+    },
+    {
+      "symbol": "g",
+      "legend_name": "mossy_grass_ground",
+      "tile_type_id": "tile_overworld_ruins_level_files_g_mossy_grass_ground",
+      "role": "floor_surface",
+      "mesh_id": "floor_dirt_kaykit",
+      "material_slot_id": "mat_mossy_grass_ground",
+      "slot_id_compat": "mat_mossy_grass_ground",
+      "material_family": "ground_organic",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": 0,
+      "generate": true,
+      "generate_material": true,
+      "shape_type": "flat_dirt_mesh_tile",
+      "selected_mesh_role_tags": [
+        "floor_surface",
+        "dirt_surface",
+        "ground_surface",
+        "flat_surface",
+        "walkable"
+      ],
+      "tile_count_in_map": 222,
+      "inference": {
+        "source": "material_generation_resolved_tileset_v2",
+        "tile_semantics": "flat mossy grass ground covering the overworld clearing",
+        "canonical_material_id": "mossy_grass_ground",
+        "material_identity_coarse": "grass",
+        "material_category": "ground_organic"
+      }
+    },
+    {
+      "symbol": "~",
+      "legend_name": "shallow_river_water",
+      "tile_type_id": "tile_overworld_ruins_level_files_tilde_shallow_river_water",
+      "role": "water_surface",
+      "mesh_id": "water_plane",
+      "material_slot_id": "mat_shallow_river_water",
+      "slot_id_compat": "mat_shallow_river_water",
+      "material_family": "water_like",
+      "height_class": "flat",
+      "height": 0,
+      "z_offset": -20,
+      "generate": true,
+      "generate_material": true,
+      "shape_type": "flat_tile",
+      "selected_mesh_role_tags": [
+        "water_surface",
+        "flat_surface"
+      ],
+      "tile_count_in_map": 54,
+      "inference": {
+        "source": "material_generation_resolved_tileset_v2",
+        "tile_semantics": "flat shallow river water surface",
+        "canonical_material_id": "shallow_river_water",
+        "material_identity_coarse": "water",
+        "material_category": "water_like"
+      }
+    }
+  ],
+  "source_files": {
+    "authoring_map_package": "I:\\Disertation\\VisualOptimise\\data\\maps\\overworld_ruins_level_files",
+    "resolved_tileset_v2": "source_run/03_python_resolver/resolved_tileset_v2.json",
+    "resolved_materials_v2": "source_run/03_python_resolver/resolved_materials_v2.json"
+  }
+}

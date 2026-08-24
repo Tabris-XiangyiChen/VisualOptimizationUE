@@ -1,0 +1,17 @@
+{
+  "schema_version": "d6g_a2_runtime_data_export_manifest_v1",
+  "created_at": "2026-08-23T20:33:06",
+  "stage_id": "runtime_export",
+  "round_id": "runtime_export",
+  "compatibility_id": "d6g_a2_material_manifest_runtime_export",
+  "map_id": "overworld_ruins_level_files",
+  "run_dir": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260823_203306_overworld_ruins_level_files_runtime_export",
+  "source_material_generation_run": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260823_203142_overworld_ruins_level_files_material_generation",
+  "runtime_texture_backend": "sd15",
+  "selected_backend_is_exposed_via_textures": true,
+  "backend_candidates_are_packaged_for_future_ue_switching": true,
+  "ue_copy_destination": "I:\\Disertation\\VisualOptimizationUE\\Content\\VisualOptimization\\RuntimeData",
+  "llm_calls": 0,
+  "sd_webui_generation_calls": 0,
+  "stablematerials_generation_calls": 0
+}

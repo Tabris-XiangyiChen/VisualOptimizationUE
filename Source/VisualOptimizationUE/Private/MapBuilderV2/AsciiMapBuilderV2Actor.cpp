@@ -465,7 +465,7 @@ bool AAsciiMapBuilderV2Actor::BuildSemanticGrid(
 
     OutGrid.Initialize(Width, Lines.Num());
     const float TileSize = BuilderConfig->TileSizeCm;
-    const float OriginX = BuilderConfig->bCenterMapOnActor ? -0.5f * (Width - 1) * TileSize : 0.0f;
+    const float OriginX = BuilderConfig->bCenterMapOnActor ? 0.5f * (Width - 1) * TileSize : 0.0f;
     const float OriginY = BuilderConfig->bCenterMapOnActor ? 0.5f * (Lines.Num() - 1) * TileSize : 0.0f;
 
     TSet<FString> UnknownSymbols;
@@ -493,7 +493,7 @@ bool AAsciiMapBuilderV2Actor::BuildSemanticGrid(
             }
 
             Cell->ResolvedLocation = FVector(
-                OriginX + Column * TileSize,
+                OriginX - Column * TileSize,
                 OriginY - Row * TileSize,
                 Cell->TileDefinition.ZOffset);
         }

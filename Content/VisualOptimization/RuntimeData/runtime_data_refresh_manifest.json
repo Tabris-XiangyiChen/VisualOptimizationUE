@@ -1,17 +1,11 @@
 {
   "schema_version": "runtime_data_refresh_manifest_v1",
-  "created_at": "2026-08-18T21:06:09",
+  "created_at": "2026-08-23T20:35:16",
   "mode": "merge_or_update_map_packages",
-  "source_runtime_package": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260818_210605_kaykit_v2_dungeon_ruins_level_runtime_export\\03_runtime_data_package",
+  "source_runtime_package": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260823_203516_dungeon_chamber_level_runtime_export\\03_runtime_data_package",
   "target_runtime_data": "I:\\Disertation\\VisualOptimise\\generated\\ue_ready\\runtime_data",
   "maps": [
-    "deep_shrine_vault_level",
     "dungeon_chamber_level",
-    "kaykit_v2_dungeon_ruins_level",
-    "kaykit_v2_mesh_test",
-    "overworld_ruins_level_files",
-    "test_map1_clean",
-    "test_map2",
-    "test_map3"
+    "overworld_ruins_level_files"
   ]
 }

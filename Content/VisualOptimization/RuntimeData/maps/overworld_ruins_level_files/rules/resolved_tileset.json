@@ -83,7 +83,7 @@
       "tile_count_in_map": 64,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "flat worn stone path leading to ruin entrance",
+        "tile_semantics": "flat worn stone path leading to the ruin entrance",
         "canonical_material_id": "worn_stone_path",
         "material_identity_coarse": "stone",
         "material_category": "solid_stone"
@@ -139,7 +139,7 @@
       "tile_count_in_map": 20,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "flat wooden bridge surface crossing river",
+        "tile_semantics": "aged wooden plank bridge crossing the river",
         "canonical_material_id": "aged_wood_bridge",
         "material_identity_coarse": "wood",
         "material_category": "wood"
@@ -148,11 +148,11 @@
     {
       "symbol": "D",
       "legend_name": "dungeon_entrance_door",
-      "tile_type_id": "tile_overworld_ruins_level_files_d_dungeon_door_wood",
+      "tile_type_id": "tile_overworld_ruins_level_files_d_old_wooden_door",
       "role": "door_prop",
       "mesh_id": "door_a",
-      "material_slot_id": "mat_dungeon_door_wood",
-      "slot_id_compat": "mat_dungeon_door_wood",
+      "material_slot_id": "mat_old_wooden_door",
+      "slot_id_compat": "mat_old_wooden_door",
       "material_family": "wood",
       "height_class": "medium",
       "height": 250,
@@ -170,8 +170,8 @@
       "tile_count_in_map": 2,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "vertical wooden door or gate set into ruin",
-        "canonical_material_id": "dungeon_door_wood",
+        "tile_semantics": "old wooden door or gate set into the ruin wall",
+        "canonical_material_id": "old_wooden_door",
         "material_identity_coarse": "wood",
         "material_category": "wood"
       }
@@ -201,7 +201,7 @@
       "tile_count_in_map": 222,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "flat grassy ground with mossy patches",
+        "tile_semantics": "flat mossy grass ground covering the overworld clearing",
         "canonical_material_id": "mossy_grass_ground",
         "material_identity_coarse": "grass",
         "material_category": "ground_organic"
@@ -229,7 +229,7 @@
       "tile_count_in_map": 54,
       "inference": {
         "source": "material_generation_resolved_tileset_v2",
-        "tile_semantics": "flat water surface of shallow river",
+        "tile_semantics": "flat shallow river water surface",
         "canonical_material_id": "shallow_river_water",
         "material_identity_coarse": "water",
         "material_category": "water_like"

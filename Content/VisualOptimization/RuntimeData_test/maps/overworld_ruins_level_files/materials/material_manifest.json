@@ -1,0 +1,678 @@
+{
+  "schema_version": "material_manifest_v1",
+  "map_id": "overworld_ruins_level_files",
+  "created_at": "2026-08-24T20:19:15",
+  "source": {
+    "source_run": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation",
+    "resolved_materials_v2": "03_python_resolver/resolved_materials_v2.json",
+    "compiled_sd15_prompts": "06_compiled_prompts/compiled_sd15_prompts_v4.json",
+    "material_mode": "export-only",
+    "runtime_source_backend": "sd15",
+    "selection_policy": "first_available_seed",
+    "llm_calls": 0,
+    "sd_calls": 0,
+    "stablematerials_calls": 0,
+    "new_image_generation": false
+  },
+  "materials": [
+    {
+      "material_slot_id": "mat_aged_wood_bridge",
+      "canonical_material_id": "aged_wood_bridge",
+      "display_label": "wooden_bridge",
+      "material_family": "wood",
+      "semantic_material_family": "wood",
+      "used_by_symbols": [
+        "="
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "=",
+          "material_slot_id": "mat_aged_wood_bridge",
+          "canonical_material_id": "aged_wood_bridge",
+          "expected_mesh_ids": [
+            "tile_plane"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_aged_wood_bridge/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 123,
+        "textures": {
+          "basecolor": "textures/mat_aged_wood_bridge/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 123,
+          "candidates": [
+            {
+              "seed": 123,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_aged_wood_bridge/seed_123/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_aged_wood_bridge\\seed_123.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_aged_wood_bridge\\seed_123.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_aged_wood_bridge\\seed_123.png",
+      "semantic_brief": {
+        "canonical_material_id": "aged_wood_bridge",
+        "identity": "wood",
+        "material_family": "wood",
+        "raw_material_clues": [
+          {
+            "text": "aged brown wooden plank bridge crossing the shallow river",
+            "source_symbol": "=",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "bridge",
+            "reason": "object_shape",
+            "source_symbol": "="
+          },
+          {
+            "term": "wood",
+            "reason": "material_identity",
+            "source_symbol": "="
+          },
+          {
+            "term": "walkable",
+            "reason": "gameplay_role",
+            "source_symbol": "="
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top-down close-up aged wood plank surface, brown weathered wood grain, worn wooden surface with cracks, rough wood texture, dark aged wood color, fine wood grain detail, seamless tileable wood",
+          "negative_prompt": "new polished wood, painted wood",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_dungeon_wood_door",
+      "canonical_material_id": "dungeon_wood_door",
+      "display_label": "dungeon_entrance_door",
+      "material_family": "wood",
+      "semantic_material_family": "wood",
+      "used_by_symbols": [
+        "D"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "D",
+          "material_slot_id": "mat_dungeon_wood_door",
+          "canonical_material_id": "dungeon_wood_door",
+          "expected_mesh_ids": [
+            "door_a"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_dungeon_wood_door/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 123,
+        "textures": {
+          "basecolor": "textures/mat_dungeon_wood_door/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 123,
+          "candidates": [
+            {
+              "seed": 123,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_dungeon_wood_door/seed_123/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_dungeon_wood_door\\seed_123.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_dungeon_wood_door\\seed_123.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_dungeon_wood_door\\seed_123.png",
+      "semantic_brief": {
+        "canonical_material_id": "dungeon_wood_door",
+        "identity": "wood",
+        "material_family": "wood",
+        "raw_material_clues": [
+          {
+            "text": "old dark wooden entrance door or gate set into the surface ruin",
+            "source_symbol": "D",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "door",
+            "reason": "object_shape",
+            "source_symbol": "D"
+          },
+          {
+            "term": "gate",
+            "reason": "object_shape",
+            "source_symbol": "D"
+          },
+          {
+            "term": "wood",
+            "reason": "material_identity",
+            "source_symbol": "D"
+          },
+          {
+            "term": "interactive",
+            "reason": "gameplay_role",
+            "source_symbol": "D"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "front-facing close-up aged wood panel surface, dark brown weathered wood grain, worn wooden surface with scratches, rough wood texture, dark aged wood color, fine wood grain detail, seamless tileable wood",
+          "negative_prompt": "new polished wood, painted wood",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_mossy_grass_ground",
+      "canonical_material_id": "mossy_grass_ground",
+      "display_label": "mossy_grass_ground",
+      "material_family": "ground_organic",
+      "semantic_material_family": "ground_organic",
+      "used_by_symbols": [
+        "g"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "g",
+          "material_slot_id": "mat_mossy_grass_ground",
+          "canonical_material_id": "mossy_grass_ground",
+          "expected_mesh_ids": [
+            "floor_dirt_kaykit"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_mossy_grass_ground/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 123,
+        "textures": {
+          "basecolor": "textures/mat_mossy_grass_ground/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 123,
+          "candidates": [
+            {
+              "seed": 123,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_mossy_grass_ground/seed_123/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_mossy_grass_ground\\seed_123.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_mossy_grass_ground\\seed_123.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_mossy_grass_ground\\seed_123.png",
+      "semantic_brief": {
+        "canonical_material_id": "mossy_grass_ground",
+        "identity": "grass",
+        "material_family": "ground_organic",
+        "raw_material_clues": [
+          {
+            "text": "dark green grassy ground with mossy damp patches around the ruin clearing",
+            "source_symbol": "g",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "grass",
+            "reason": "material_identity",
+            "source_symbol": "g"
+          },
+          {
+            "term": "ground",
+            "reason": "landform_context",
+            "source_symbol": "g"
+          },
+          {
+            "term": "moss",
+            "reason": "material_identity",
+            "source_symbol": "g"
+          },
+          {
+            "term": "walkable",
+            "reason": "gameplay_role",
+            "source_symbol": "g"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top-down close-up mossy grass ground surface, dark green grass with moss patches, damp organic ground texture, mossy patches on grass, rough uneven ground, fine grass detail, seamless tileable grass",
+          "negative_prompt": "dry brown grass, manicured lawn",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_ruin_stone_wall",
+      "canonical_material_id": "ruin_stone_wall",
+      "display_label": "surface_ruin_stone",
+      "material_family": "solid_stone",
+      "semantic_material_family": "solid_stone",
+      "used_by_symbols": [
+        "#"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "#",
+          "material_slot_id": "mat_ruin_stone_wall",
+          "canonical_material_id": "ruin_stone_wall",
+          "expected_mesh_ids": [
+            "wall_block"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_ruin_stone_wall/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 123,
+        "textures": {
+          "basecolor": "textures/mat_ruin_stone_wall/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 123,
+          "candidates": [
+            {
+              "seed": 123,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_ruin_stone_wall/seed_123/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_ruin_stone_wall\\seed_123.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_ruin_stone_wall\\seed_123.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_ruin_stone_wall\\seed_123.png",
+      "semantic_brief": {
+        "canonical_material_id": "ruin_stone_wall",
+        "identity": "stone",
+        "material_family": "solid_stone",
+        "raw_material_clues": [
+          {
+            "text": "ancient grey stone wall blocks, broken ruin fragments, and dungeon entrance masonry",
+            "source_symbol": "#",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "ruin",
+            "reason": "map_setting",
+            "source_symbol": "#"
+          },
+          {
+            "term": "wall",
+            "reason": "object_shape",
+            "source_symbol": "#"
+          },
+          {
+            "term": "stone",
+            "reason": "material_identity",
+            "source_symbol": "#"
+          },
+          {
+            "term": "blocking",
+            "reason": "gameplay_role",
+            "source_symbol": "#"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "front-facing close-up ancient stone wall surface, grey stone blocks with broken edges, damp weathered stone texture, mossy patches on stone, cracked stone surface, rough mineral variation, aged masonry joints, seamless tileable stone",
+          "negative_prompt": "smooth polished stone, dry clean stone",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_shallow_river_water",
+      "canonical_material_id": "shallow_river_water",
+      "display_label": "shallow_river_water",
+      "material_family": "water_like",
+      "semantic_material_family": "water_like",
+      "used_by_symbols": [
+        "~"
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": "~",
+          "material_slot_id": "mat_shallow_river_water",
+          "canonical_material_id": "shallow_river_water",
+          "expected_mesh_ids": [
+            "water_plane"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_shallow_river_water/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 123,
+        "textures": {
+          "basecolor": "textures/mat_shallow_river_water/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 123,
+          "candidates": [
+            {
+              "seed": 123,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_shallow_river_water/seed_123/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_shallow_river_water\\seed_123.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_shallow_river_water\\seed_123.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_shallow_river_water\\seed_123.png",
+      "semantic_brief": {
+        "canonical_material_id": "shallow_river_water",
+        "identity": "water",
+        "material_family": "water_like",
+        "raw_material_clues": [
+          {
+            "text": "dark blue-green shallow river water flowing across the overworld ruin",
+            "source_symbol": "~",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "river",
+            "reason": "landform_context",
+            "source_symbol": "~"
+          },
+          {
+            "term": "water",
+            "reason": "material_identity",
+            "source_symbol": "~"
+          },
+          {
+            "term": "shallow",
+            "reason": "landform_context",
+            "source_symbol": "~"
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top-down close-up shallow water surface, dark blue-green water with ripples, clear shallow water texture, gentle water ripples, muted water color, fine water detail, seamless tileable water",
+          "negative_prompt": "murky water, frozen water",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    },
+    {
+      "material_slot_id": "mat_worn_stone_path",
+      "canonical_material_id": "worn_stone_path",
+      "display_label": "worn_stone_path",
+      "material_family": "solid_stone",
+      "semantic_material_family": "solid_stone",
+      "used_by_symbols": [
+        "."
+      ],
+      "used_by_tile_type_ids": [],
+      "tile_references": [
+        {
+          "symbol": ".",
+          "material_slot_id": "mat_worn_stone_path",
+          "canonical_material_id": "worn_stone_path",
+          "expected_mesh_ids": [
+            "floor_kaykit"
+          ]
+        }
+      ],
+      "textures": {
+        "basecolor": "textures/mat_worn_stone_path/basecolor.png"
+      },
+      "selected_backend": "sd15",
+      "selected": {
+        "backend": "sd15",
+        "seed": 123,
+        "textures": {
+          "basecolor": "textures/mat_worn_stone_path/basecolor.png"
+        },
+        "selection_policy": "first_available_seed"
+      },
+      "backend_candidates": {
+        "sd15": {
+          "selected_seed": 123,
+          "candidates": [
+            {
+              "seed": 123,
+              "textures": {
+                "basecolor": "backend_candidates/sd15/mat_worn_stone_path/seed_123/basecolor.png"
+              },
+              "source_textures": {
+                "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_worn_stone_path\\seed_123.png"
+              }
+            }
+          ]
+        }
+      },
+      "source_textures": {
+        "basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_worn_stone_path\\seed_123.png"
+      },
+      "available_maps": [
+        "basecolor"
+      ],
+      "missing_maps": [
+        "normal",
+        "roughness",
+        "height",
+        "metallic"
+      ],
+      "source_backend_hint": "sd15",
+      "reuse_decision": "export_existing_generated_texture",
+      "generated_backends": [
+        "sd15"
+      ],
+      "sd15_basecolor": "I:\\Disertation\\VisualOptimise\\outputs\\runs\\20260824_201744_overworld_ruins_level_files_material_generation\\07_generation\\sd15\\plan_a\\mat_worn_stone_path\\seed_123.png",
+      "semantic_brief": {
+        "canonical_material_id": "worn_stone_path",
+        "identity": "stone",
+        "material_family": "solid_stone",
+        "raw_material_clues": [
+          {
+            "text": "dark worn stone path and compacted grey ground leading toward the ruin entrance",
+            "source_symbol": ".",
+            "source_field": "legend.description"
+          }
+        ],
+        "context_clues_for_prompt_llm": [
+          {
+            "term": "path",
+            "reason": "usage_context",
+            "source_symbol": "."
+          },
+          {
+            "term": "stone",
+            "reason": "material_identity",
+            "source_symbol": "."
+          },
+          {
+            "term": "walkable",
+            "reason": "gameplay_role",
+            "source_symbol": "."
+          }
+        ]
+      },
+      "compiled_prompt_refs": {
+        "sd15": {
+          "compiler": "compiled_sd15_prompts_v4",
+          "backend": "sd15_a1111_txt2img",
+          "positive_prompt": "top-down close-up worn stone path surface, dark grey compacted stone ground, cracked and worn stone texture, damp patches on stone, rough uneven stone surface, fine mineral variation, aged weathered stone, seamless tileable stone",
+          "negative_prompt": "smooth polished stone, clean dry stone",
+          "source": "d6f_a3_fix3_llm2_prompt_briefs_v4"
+        }
+      },
+      "selection_policy": "first_available_seed"
+    }
+  ],
+  "warnings": [
+    "mat_ruin_stone_wall: no StableMaterials candidates found.",
+    "mat_worn_stone_path: no StableMaterials candidates found.",
+    "mat_aged_wood_bridge: no StableMaterials candidates found.",
+    "mat_dungeon_wood_door: no StableMaterials candidates found.",
+    "mat_mossy_grass_ground: no StableMaterials candidates found.",
+    "mat_shallow_river_water: no StableMaterials candidates found."
+  ]
+}
